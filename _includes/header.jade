@@ -1,0 +1,18 @@
+header.header
+	.row
+		h1.header__titulo.col-12= site.name
+	.header__nav
+		.row
+			nav.col-12
+				a.btn.visible-s.fright.js-btn-nav(href="#")!= "&#9776; Menu"
+				ul
+					li
+						a(href="#sobre")= "Sobre"
+					li
+						a(href="#blog")= "Blog"
+					li
+						a(href="#github")= "Github"
+					li
+						a(href="#trabalhos")= "Trabalhos"
+					li
+						a.js-link-contato(href="#contato")= "Contato"

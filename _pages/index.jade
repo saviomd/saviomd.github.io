@@ -1,0 +1,60 @@
+block pageData
+	- var page = {}
+	- page.path = ''
+	- page.title = 'Sávio Mendes, desenvolvedor web / front-end e designer de interfaces'
+	- page.description = 'Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web'
+
+extends ../_templates/default.jade
+
+block content
+
+	include ../_data/links.jade
+	include ../_data/trabalhos.jade
+
+	section.sobre#sobre
+		.row
+			.sobre__conteudo.col-12.col-m-8.col-m-off-2
+				h2.titulo= 'Sobre'
+				.sobre__texto.animated.fadeInLeft!= 'Olá, meu nome é Sávio Mendes, sou desenvolvedor web / front-end e designer de interfaces, carioca, flamenguista, maluco por filmes, lateral / meio-campo nas peladas de fim de semana, fã de Iron Maiden, Faith No More e Van Halen.'
+			ul.lista-redes-sociais.animated.fadeInUp.col-12.col-m-8.col-m-off-2
+				each link in links
+					li
+						a(class='link-rede-social link-rede-social--' + link.class href=link.url target='_blank' title=link.name)= link.icon
+
+	section.blog.row#blog
+		.col-12
+			h2.titulo= 'Blog'
+			ul.lista-posts.clearfix.js-blog
+			.aright
+				a.js-link-mais(href='http://saviomd.com/blog')= 'Veja mais'
+
+	section.github.row#github
+		.col-12
+			h2.titulo= 'Github'
+			h3.titulo.titulo--sub= 'Starred'
+			ul.lista-posts.lista-posts--titulo-uma-linha.clearfix.js-github-starred
+			.aright
+				a.js-link-mais(href='http://github.com/stars/saviomd')= 'Veja mais'
+
+	section.trabalhos.row#trabalhos
+		.col-12
+			h2.titulo= 'Trabalhos'
+			ul.row
+				each trabalho in trabalhos
+					li.trabalho.col-12.col-m-6.wow.fadeIn
+						img.trabalho__foto(alt=trabalho.name height='450' src=trabalho.image width='600')
+						.trabalho__info
+							header
+								h3.titulo.titulo--sub= trabalho.name
+							ul.trabalho__tecnologias.clearfix
+								each tag in trabalho.tags
+									li= tag
+							if trabalho.url
+								a.btn(href=trabalho.url target='_blank')= 'Visite o site'
+
+	section.contato#contato
+		.row
+			.contato__conteudo.col-12.col-m-6.col-m-off-3
+				h2.titulo= 'Contato'
+				p!= 'Ofertas de emprego para trabalhar pouco e ganhar muito, convites para jogar futebol e etc podem ser enviados para o meu email <a class="contato__link" href="mailto:savio@saviomd.com?subject=[Contato site] " target="_blank">clicando aqui</a>.'
+				a.btn.btn--fechar.js-fechar-contato(href='#')= 'X'
