@@ -99,7 +99,7 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('browser-sync', function() {
-	browserSync.init(null, {
+	browserSync({
 		ghostMode: {
 			clicks: true,
 			forms: true,
