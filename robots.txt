@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: README.md
+Disallow: /README.md
