@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /README.md
+Sitemap: http://saviomd.com/blog/sitemap.xml
