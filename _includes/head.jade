@@ -17,13 +17,8 @@ head
 	link(rel='shortcut icon' href=site.url + 'img/favicon.png')
 	link(rel='apple-touch-icon' href=site.url + 'img/apple-touch-icon.png')
 
-	//- twitter meta tags
-	if site.twitter
-		meta(name='twitter:card' content='summary')
-		meta(name='twitter:site' content=site.twitter)
-		meta(name='twitter:title' content=site.name + ' » ' + page.title)
-		meta(name='twitter:description' content=page.description)
-		meta(name='twitter:image:src' content=site.url + 'img/icon-256.png')
+	//- chrome android meta tags
+	meta(name='theme-color' content='#990000')
 
 	//- open graph meta tags
 	if site.fbadmins
@@ -34,6 +29,14 @@ head
 		meta(property='og:url' content=site.url + page.path)
 		meta(property='og:type' content='website')
 		meta(property='fb:admins' content=site.fbadmins)
+
+	//- twitter meta tags
+	if site.twitter
+		meta(name='twitter:card' content='summary')
+		meta(name='twitter:site' content=site.twitter)
+		meta(name='twitter:title' content=site.name + ' » ' + page.title)
+		meta(name='twitter:description' content=page.description)
+		meta(name='twitter:image:src' content=site.url + 'img/icon-256.png')
 
 	<!--[if lt IE 9]><script src='/lib/js/html5shiv.min.js'></script>
 	<script src='/lib/js/respond.min.js'></script><![endif]-->
