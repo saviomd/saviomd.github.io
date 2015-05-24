@@ -13,10 +13,10 @@ block content
 
 	section.sobre#sobre
 		.row
-			.sobre__conteudo.col-12.col-m-8.col-m-off-2
+			.sobre__conteudo.col-12.col-m-10.col-m-off-1.col-l-8.col-l-off-2
 				h2.titulo= 'Sobre'
 				.sobre__texto.animated.fadeInLeft!= 'Olá, meu nome é Sávio Mendes, sou desenvolvedor web / front-end e designer de interfaces, carioca, flamenguista, maluco por filmes, lateral / meio-campo nas peladas de fim de semana, fã de Iron Maiden, Faith No More e Van Halen.'
-			ul.lista-redes-sociais.animated.fadeInUp.col-12.col-m-8.col-m-off-2
+			ul.lista-redes-sociais.animated.fadeInUp.col-12.col-m-10.col-m-off-1.col-l-8.col-l-off-2
 				each link in links
 					li
 						a(class='link-rede-social link-rede-social--' + link.class href=link.url target='_blank' title=link.name)= link.icon

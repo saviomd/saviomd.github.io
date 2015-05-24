@@ -927,7 +927,7 @@ ul {
   color: #fff;
 }
 .loading {
-  background: url("../img/ajax-loader.gif") no-repeat center center;
+  background: url(../img/ajax-loader.gif) no-repeat center center;
   min-height: 52px;
   min-width: 52px;
 }
@@ -956,6 +956,10 @@ Botoes
   position: absolute;
   right: 20px;
   top: 20px;
+}
+.btn--nav:before {
+  content: "☰";
+  padding-right: 4px;
 }
 /*
 Titulos
@@ -1068,12 +1072,10 @@ Sobre
 .sobre {
   background: #eee;
 }
-.sobre .row {
-  background: url("http://avatar.xboxlive.com/avatar/saviomd/avatar-body.png") no-repeat right -50px;
-  min-height: 240px;
-}
 .sobre__conteudo {
+  background: url(https://avatar-ssl.xboxlive.com/avatar/saviomd/avatar-body.png) no-repeat right -50px;
   font-size: 18px;
+  min-height: 240px;
   padding-right: 130px;
 }
 .sobre__texto {
@@ -1094,7 +1096,6 @@ Sobre
 @media (min-width: 768px) {
   .sobre__conteudo {
     font-size: 21px;
-    padding-right: 0;
   }
 }
 .lista-redes-sociais {
