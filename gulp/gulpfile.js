@@ -52,7 +52,7 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
 	return gulp.src('../_css/saviomd.less')
-		.pipe(csscomb())
+		//.pipe(csscomb())
 		.pipe(gulp.dest('../_css'))
 		.pipe(less())
 		.pipe(autoprefixer(autoprefixerConfig))
