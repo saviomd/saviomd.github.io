@@ -1,29 +1,30 @@
 {
   "name": "saviomd.com",
-  "version": "1.0.20150607",
+  "version": "1.0.20150719",
   "description": "Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/saviomd/saviomd.github.io.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saviomd/saviomd.github.io.git"
   },
   "dependencies": {
-    "browser-sync": "2.7.6",
+    "browser-sync": "2.8.0",
     "del": "1.2.0",
     "gulp": "3.9.0",
     "gulp-autoprefixer": "2.3.1",
-    "gulp-concat": "2.5.2",
-    "gulp-csscomb": "3.0.3",
+    "gulp-concat": "2.6.0",
+    "gulp-csscomb": "3.0.6",
     "gulp-csslint": "0.1.5",
-    "gulp-imagemin": "2.2.1",
+    "gulp-imagemin": "2.3.0",
     "gulp-jade": "1.0.1",
-    "gulp-jshint": "1.11.0",
+    "gulp-jscs": "1.6.0",
+    "gulp-jshint": "1.11.2",
     "gulp-less": "3.0.3",
-    "gulp-minify-css": "1.1.6",
-    "gulp-minify-html": "1.0.3",
+    "gulp-minify-css": "1.2.0",
+    "gulp-minify-html": "1.0.4",
     "gulp-notify": "2.2.0",
     "gulp-rename": "1.2.2",
-    "gulp-stylestats": "0.6.1",
+    "gulp-stylestats": "0.8.0",
     "gulp-uglify": "1.2.0",
-    "gulp-util": "3.0.5"
+    "gulp-util": "3.0.6"
   }
 }

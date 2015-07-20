@@ -1,8 +1,9 @@
+/* global _gaq, WOW */
 /*! saviomd.js */
 
 var saviomd = saviomd || {};
 
-saviomd.load = function(){
+saviomd.load = (function() {
 
 	/*
 	indicador de javascript
@@ -18,9 +19,9 @@ saviomd.load = function(){
 		console.log('Original source code: http://github.com/saviomd/saviomd.github.io');
 	}
 
-}();
+})();
 
-saviomd.animations = function(){
+saviomd.animations = (function() {
 
 	/*
 	animacoes no scroll
@@ -28,15 +29,15 @@ saviomd.animations = function(){
 	*/
 	new WOW().init();
 
-}();
+})();
 
-saviomd.nav = function(){
+saviomd.nav = (function() {
 
 	/*
 	toggle nav menu
 	==================================================
 	*/
-	$('.js-btn-nav').on('click touchstart', function(e){
+	$('.js-btn-nav').on('click touchstart', function(e) {
 		e.preventDefault();
 		$(this).siblings('ul').slideToggle();
 	});
@@ -47,32 +48,32 @@ saviomd.nav = function(){
 	*/
 	$('.header__nav a').smoothScroll();
 
-}();
+})();
 
-saviomd.contato = function(){
+saviomd.contato = (function() {
 
 	/*
 	contato
 	==================================================
 	*/
-	$('.js-link-contato').on('click touchstart', function(e){
+	$('.js-link-contato').on('click touchstart', function(e) {
 		e.preventDefault();
-		if (!$(this).hasClass('ativo')){
+		if (!$(this).hasClass('ativo')) {
 			$('.header').animate({marginTop:$('.contato').height()});
 			$(this).addClass('ativo');
 		} else {
 			$('.js-fechar-contato').trigger('click');
 		}
 	});
-	$('.js-fechar-contato').on('click touchstart', function(e){
+	$('.js-fechar-contato').on('click touchstart', function(e) {
 		e.preventDefault();
 		$('.header').animate({marginTop:0});
 		$('.js-link-contato').removeClass('ativo');
 	});
 
-}();
+})();
 
-saviomd.templates = function(){
+saviomd.templates = (function() {
 
 	var posts = '<li class="animated fadeInRight col-6 col-m-4">' +
 			'<a href="{{link}}">' +
@@ -81,7 +82,7 @@ saviomd.templates = function(){
 			'</a>' +
 		'</li>';
 
-	var getPosts = function(){
+	var getPosts = function() {
 		return posts;
 	};
 
@@ -89,9 +90,9 @@ saviomd.templates = function(){
 		getPosts:getPosts
 	};
 
-}();
+})();
 
-saviomd.syndication = function(){
+saviomd.syndication = (function() {
 
 	/*
 	posts do blog
@@ -103,23 +104,23 @@ saviomd.syndication = function(){
 		dataType:'xml',
 		type:'GET',
 		url:'http://saviomd.com/blog/atom.xml'
-	}).done(function(response){
-		var itens = $(response).find('entry').slice(0,9);
+	}).done(function(response) {
+		var itens = $(response).find('entry').slice(0, 9);
 		var html = '';
 		var template = saviomd.templates.getPosts();
-		for (var i = 0, len = itens.length; i < len; i++){
+		for (var i = 0, len = itens.length; i < len; i++) {
 			var item = template;
 			var link = $(itens[i]).find('link').attr('href');
 			var title = $(itens[i]).find('title').text();
 			var updated = $(itens[i]).find('updated').text().split('T')[0].split('-');
-			var date = updated[2] + '/'+ updated[1] + '/'+ updated[0];
+			var date = updated[2] + '/' + updated[1] + '/' + updated[0];
 			item = item.replace('{{link}}', link)
 				.replace('{{titulo}}', title)
 				.replace('{{corpo}}', date);
 			html += item;
 		}
 		$blog.html(html);
-	}).fail(function(){
+	}).fail(function() {
 		$blog.html('<li class="animated fadeInRight col-12 acenter">N&atilde;o foi poss&iacute;vel carregar</li>');
 	});
 
@@ -133,17 +134,17 @@ saviomd.syndication = function(){
 		dataType:'jsonp',
 		type:'GET',
 		url:'https://api.github.com/users/saviomd/starred?per_page=6'
-	}).done(function(response){
+	}).done(function(response) {
 		if (response.meta.status === 200) {
 			var itens = response.data;
 			var html = '';
 			var template = saviomd.templates.getPosts();
-			for (var i = 0, len = itens.length; i < len; i++){
+			for (var i = 0, len = itens.length; i < len; i++) {
 				var item = template;
-				/* jshint ignore:start */
+				// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 				var link = itens[i].html_url;
 				var name = itens[i].full_name;
-				/* jshint ignore:end */
+				// jscs:enable requireCamelCaseOrUpperCaseIdentifiers
 				var description = itens[i].description;
 				item = item.replace('{{link}}', link)
 					.replace('{{titulo}}', name)
@@ -154,49 +155,49 @@ saviomd.syndication = function(){
 		} else if (response.meta.status === 403) {
 			$githubStarred.html('<li class="animated fadeInRight col-12 acenter">Limite da API atingido</li>');
 		}
-	}).fail(function(){
+	}).fail(function() {
 		$githubStarred.html('<li class="animated fadeInRight col-12 acenter">N&atilde;o foi poss&iacute;vel carregar</li>');
 	});
 
-}();
+})();
 
-saviomd.track = function(){
+saviomd.track = (function() {
 
 	/*
 	event track
 	==================================================
 	*/
-	if (location.search.indexOf('a=0') === -1){
+	if (location.search.indexOf('a=0') === -1) {
 
-		$('.header__nav ul a').on('click', function(){
+		$('.header__nav ul a').on('click', function() {
 			_gaq.push(['_trackEvent', 'saviomd.com', 'Navegação', $(this).text()]);
 		});
 
-		$('.link-rede-social').on('click', function(){
+		$('.link-rede-social').on('click', function() {
 			_gaq.push(['_trackEvent', 'saviomd.com', 'Links de redes sociais', $(this).attr('title')]);
 		});
 
-		$(document).on('click', '.js-blog a', function(){
+		$(document).on('click', '.js-blog a', function() {
 			_gaq.push(['_trackEvent', 'saviomd.com', 'Posts do blog', $(this).find('.lista-posts__titulo').text()]);
 		});
 
-		$('.blog .js-link-mais').on('click', function(){
+		$('.blog .js-link-mais').on('click', function() {
 			_gaq.push(['_trackEvent', 'saviomd.com', 'Veja mais no blog']);
 		});
 
-		$(document).on('click', '.js-github-starred a', function(){
+		$(document).on('click', '.js-github-starred a', function() {
 			_gaq.push(['_trackEvent', 'saviomd.com', 'Github starred', $(this).find('.lista-posts__titulo').text()]);
 		});
 
-		$('.github .js-link-mais').on('click', function(){
+		$('.github .js-link-mais').on('click', function() {
 			_gaq.push(['_trackEvent', 'saviomd.com', 'Veja mais no github']);
 		});
 
-		$('.trabalhos .btn').on('click', function(){
+		$('.trabalhos .btn').on('click', function() {
 			_gaq.push(['_trackEvent', 'saviomd.com', 'Trabalhos', $(this).siblings('header').find('.titulo').text()]);
 		});
 
-		$('.contato__link').on('click', function(){
+		$('.contato__link').on('click', function() {
 			_gaq.push(['_trackEvent', 'saviomd.com', 'Enviar email no contato']);
 		});
 
@@ -210,4 +211,4 @@ saviomd.track = function(){
 
 	}
 
-}();
+})();
