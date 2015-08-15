@@ -4,6 +4,7 @@ head
 	link(rel='dns-prefetch' href='//avatar-ssl.xboxlive.com')
 	link(rel='dns-prefetch' href='//cdn.mouseflow.com')
 	link(rel='dns-prefetch' href='//fonts.googleapis.com')
+	link(rel='dns-prefetch' href='//fonts.gstatic.com')
 	link(rel='dns-prefetch' href='//www.google-analytics.com')
 	link(rel='dns-prefetch' href='//www.w3.org')
 	meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
@@ -13,9 +14,16 @@ head
 	if page.keywords
 		meta(name='keywords' content=page.keywords)
 	meta(name='author' content='Sávio Mendes')
+	if site.noindex
+		meta(name='robots' content='noindex, nofollow')
 
 	link(rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato')
-	link(rel='stylesheet' href='css/saviomd.min.css')
+	if site.dev
+		link(rel='stylesheet' href='css/vendor.css')
+		link(rel='stylesheet' href='css/saviomd.css')
+	else
+		link(rel='stylesheet' href='css/vendor.min.css')
+		link(rel='stylesheet' href='css/saviomd.min.css')
 	link(rel='shortcut icon' href=site.url + 'img/favicon.png')
 	link(rel='apple-touch-icon' href=site.url + 'img/apple-touch-icon.png')
 
@@ -40,12 +48,14 @@ head
 		meta(name='twitter:description' content=page.description)
 		meta(name='twitter:image:src' content=site.url + 'img/icon-256.png')
 
-	<!--[if lt IE 9]><script src='/lib/js/html5shiv.min.js'></script>
-	<script src='/lib/js/respond.min.js'></script><![endif]-->
+	<!--[if lt IE 9]>
+	script(src='js/html5shiv.min.js')
+	script(src='js/respond.min.js')
+	<![endif]-->
 
 	script.
 		// google analytics
-		if (location.search.indexOf('a=0') === -1){
+		if (location.search.indexOf('a=0') === -1) {
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

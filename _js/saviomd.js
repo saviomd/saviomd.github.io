@@ -1,5 +1,4 @@
 /* global _gaq, WOW */
-/*! saviomd.js */
 
 var saviomd = saviomd || {};
 
@@ -7,17 +6,9 @@ saviomd.load = (function() {
 
 	/*
 	indicador de javascript
-	==================================================
+	====================
 	*/
 	$('html').removeClass('no-js').addClass('js');
-
-	/*
-	caminho dos arquivos no console
-	==================================================
-	*/
-	if ('console' in window) {
-		console.log('Original source code: http://github.com/saviomd/saviomd.github.io');
-	}
 
 })();
 
@@ -25,7 +16,7 @@ saviomd.animations = (function() {
 
 	/*
 	animacoes no scroll
-	==================================================
+	====================
 	*/
 	new WOW().init();
 
@@ -35,7 +26,7 @@ saviomd.nav = (function() {
 
 	/*
 	toggle nav menu
-	==================================================
+	====================
 	*/
 	$('.js-btn-nav').on('click touchstart', function(e) {
 		e.preventDefault();
@@ -44,7 +35,7 @@ saviomd.nav = (function() {
 
 	/*
 	animacao p/ scroll
-	==================================================
+	====================
 	*/
 	$('.header__nav a').smoothScroll();
 
@@ -54,12 +45,12 @@ saviomd.contato = (function() {
 
 	/*
 	contato
-	==================================================
+	====================
 	*/
 	$('.js-link-contato').on('click touchstart', function(e) {
 		e.preventDefault();
 		if (!$(this).hasClass('ativo')) {
-			$('.header').animate({marginTop:$('.contato').height()});
+			$('.header').animate({marginTop: $('.contato').height()});
 			$(this).addClass('ativo');
 		} else {
 			$('.js-fechar-contato').trigger('click');
@@ -67,7 +58,7 @@ saviomd.contato = (function() {
 	});
 	$('.js-fechar-contato').on('click touchstart', function(e) {
 		e.preventDefault();
-		$('.header').animate({marginTop:0});
+		$('.header').animate({marginTop: 0});
 		$('.js-link-contato').removeClass('ativo');
 	});
 
@@ -87,7 +78,7 @@ saviomd.templates = (function() {
 	};
 
 	return {
-		getPosts:getPosts
+		getPosts: getPosts
 	};
 
 })();
@@ -96,14 +87,14 @@ saviomd.syndication = (function() {
 
 	/*
 	posts do blog
-	==================================================
+	====================
 	*/
 	var $blog = $('.js-blog');
 	$blog.html('<li class="loading col-12"></li>');
 	$.ajax({
-		dataType:'xml',
-		type:'GET',
-		url:'http://saviomd.com/blog/atom.xml'
+		dataType: 'xml',
+		type: 'GET',
+		url: 'http://saviomd.com/blog/atom.xml'
 	}).done(function(response) {
 		var itens = $(response).find('entry').slice(0, 9);
 		var html = '';
@@ -126,14 +117,14 @@ saviomd.syndication = (function() {
 
 	/*
 	github starred
-	==================================================
+	====================
 	*/
 	var $githubStarred = $('.js-github-starred');
 	$githubStarred.html('<li class="loading col-12"></li>');
 	$.ajax({
-		dataType:'jsonp',
-		type:'GET',
-		url:'https://api.github.com/users/saviomd/starred?per_page=6'
+		dataType: 'jsonp',
+		type: 'GET',
+		url: 'https://api.github.com/users/saviomd/starred?per_page=6'
 	}).done(function(response) {
 		if (response.meta.status === 200) {
 			var itens = response.data;
@@ -165,7 +156,7 @@ saviomd.track = (function() {
 
 	/*
 	event track
-	==================================================
+	====================
 	*/
 	if (location.search.indexOf('a=0') === -1) {
 
