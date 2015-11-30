@@ -1,0 +1,14 @@
+header.header
+	h1.header__title.container-fluid= site.name
+	.header__nav
+		nav.container-fluid
+			a.btn.btn--nav.pull-right.hidden-md-up.js-btn-nav(href="#")!= "Menu"
+			ul.list-unstyled.m-b-0
+				li
+					a(href="#about")= "Sobre"
+				li
+					a(href="#feeds")= "Feeds"
+				li
+					a(href="#work")= "Trabalhos"
+				li
+					a.js-link-contact(href="#contact")= "Contato"

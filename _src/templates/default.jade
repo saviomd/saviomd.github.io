@@ -1,0 +1,12 @@
+include /data/site.jade
+
+doctype html
+html.no-js(lang=site.lang)
+
+	block pageData
+
+	include /includes/head.jade
+	body
+		include /includes/header.jade
+		block content
+		include /includes/footer.jade

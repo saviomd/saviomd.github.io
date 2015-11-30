@@ -1,0 +1,14 @@
+block pageData
+	- var page = {}
+	- page.path = ''
+	- page.title = 'Sávio Mendes, desenvolvedor web / front-end e designer de interfaces'
+	- page.description = 'Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web'
+
+extends /templates/default.jade
+
+block content
+
+	include /includes/index-about.jade
+	include /includes/index-feeds.jade
+	include /includes/index-work.jade
+	include /includes/index-contact.jade

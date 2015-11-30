@@ -10351,7 +10351,7 @@ return jQuery;
 }));
 
 /*!
- * jQuery Smooth Scroll - v1.5.5 - 2015-02-19
+ * jQuery Smooth Scroll - v1.5.6 - 2015-09-08
  * https://github.com/kswedberg/jquery-smooth-scroll
  * Copyright (c) 2015 Karl Swedberg
  * Licensed MIT (https://github.com/kswedberg/jquery-smooth-scroll/blob/master/LICENSE-MIT)
@@ -10370,7 +10370,7 @@ return jQuery;
   }
 }(function ($) {
 
-  var version = '1.5.5',
+  var version = '1.5.6',
       optionOverrides = {},
       defaults = {
         exclude: [],
@@ -10410,9 +10410,18 @@ return jQuery;
             dir = opts.dir && opts.dir === 'left' ? 'scrollLeft' : 'scrollTop';
 
         this.each(function() {
-
-          if (this === document || this === window) { return; }
           var el = $(this);
+
+          if (this === document || this === window) {
+            return;
+          }
+
+          if ( document.scrollingElement && (this === document.documentElement || this === document.body) ) {
+            scrollable.push(document.scrollingElement);
+
+            return false;
+          }
+
           if ( el[dir]() > 0 ) {
             scrollable.push(this);
           } else {

@@ -1,0 +1,31 @@
+body {
+	color: #333;
+}
+
+a {
+	color: #900;
+	font-weight: 600;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+a:hover,
+a:focus {
+	color: #c00;
+	text-decoration: underline;
+}
+
+::selection {
+	background: #900;
+	color: #fff;
+}
+
+.container-fluid {
+	max-width: map-get($container-max-widths, xl);
+}
+
+.loading {
+	background: url("../img/ajax-loader.gif") no-repeat center center;
+	min-height: 52px;
+	min-width: 52px;
+}

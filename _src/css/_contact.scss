@@ -1,0 +1,25 @@
+.contact {
+	background: #666;
+	color: #fff;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+.contact__content {
+	padding-bottom: 20px;
+	padding-top: 20px;
+	position: relative;
+}
+
+.contact__link {
+	color: #ddd;
+	text-decoration: underline;
+}
+
+.contact__link:hover,
+.contact__link:focus {
+	color: #ccc;
+}
