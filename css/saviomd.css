@@ -82,7 +82,8 @@ a:focus {
   font: bold 42px Verdana, Geneva, sans-serif;
   height: 40px;
   letter-spacing: -3px;
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   overflow: hidden;
   text-shadow: 1px -1px 0 rgba(0, 0, 16, 0.5); }
 
