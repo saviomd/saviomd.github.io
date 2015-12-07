@@ -26,27 +26,18 @@ head
 		link(rel='stylesheet', href='css/saviomd.min.css')
 	link(rel='shortcut icon', href=site.url + 'img/favicon.png')
 	link(rel='apple-touch-icon', href=site.url + 'img/apple-touch-icon.png')
+	link(rel='canonical', href=site.url + page.path)
 
 	//- chrome android meta tags
 	meta(name='theme-color', content='#990000')
 
-	//- open graph meta tags
-	if site.fbadmins
-		meta(property='og:title', content=site.name + ' » ' + page.title)
-		meta(property='og:site_name', content=site.name)
-		meta(property='og:description', content=page.description)
-		meta(property='og:image', content=site.url + 'img/icon-256.png')
-		meta(property='og:url', content=site.url + page.path)
-		meta(property='og:type', content='website')
-		meta(property='fb:admins', content=site.fbadmins)
-
-	//- twitter meta tags
-	if site.twitter
-		meta(name='twitter:card', content='summary')
-		meta(name='twitter:site', content=site.twitter)
-		meta(name='twitter:title', content=site.name + ' » ' + page.title)
-		meta(name='twitter:description', content=page.description)
-		meta(name='twitter:image:src', content=site.url + 'img/icon-256.png')
+	//- twitter and open graph meta tags
+	meta(name='twitter:card', content='summary')
+	meta(name='twitter:site', content=site.twitter)
+	meta(property='og:url', content=site.url + page.path)
+	meta(property='og:title', content=site.name + ' » ' + page.title)
+	meta(property='og:description', content=page.description)
+	meta(property='og:image', content=site.url + 'img/icon-256.png')
 
 	<!--[if lt IE 9]>
 	script(src='js/html5shiv.min.js')
