@@ -10351,10 +10351,10 @@ return jQuery;
 }));
 
 /*!
- * jQuery Smooth Scroll - v1.5.6 - 2015-09-08
+ * jQuery Smooth Scroll - v1.6.1 - 2015-12-26
  * https://github.com/kswedberg/jquery-smooth-scroll
  * Copyright (c) 2015 Karl Swedberg
- * Licensed MIT (https://github.com/kswedberg/jquery-smooth-scroll/blob/master/LICENSE-MIT)
+ * Licensed MIT
  */
 
 (function (factory) {
@@ -10370,15 +10370,19 @@ return jQuery;
   }
 }(function ($) {
 
-  var version = '1.5.6',
+  var version = '1.6.1',
       optionOverrides = {},
       defaults = {
         exclude: [],
-        excludeWithin:[],
+        excludeWithin: [],
         offset: 0,
 
         // one of 'top' or 'left'
         direction: 'top',
+
+        // if set, bind click events through delegation
+        //  supported since jQuery 1.4.2
+        delegateSelector: null,
 
         // jQuery set of elements you wish to scroll (for $.smoothScroll).
         //  if null (default), $('html, body').firstScrollable() is used.
@@ -10481,12 +10485,9 @@ return jQuery;
         });
       }
 
-      var opts = $.extend({}, $.fn.smoothScroll.defaults, options),
-          locationPath = $.smoothScroll.filterPath(location.pathname);
+      var opts = $.extend({}, $.fn.smoothScroll.defaults, options);
 
-      this
-      .unbind('click.smoothscroll')
-      .bind('click.smoothscroll', function(event) {
+      var clickHandler = function(event) {
         var link = this,
             $link = $(this),
             thisOpts = $.extend({}, opts, $link.data('ssOpts') || {}),
@@ -10495,8 +10496,10 @@ return jQuery;
             elCounter = 0, ewlCounter = 0,
             include = true,
             clickOpts = {},
+            locationPath = $.smoothScroll.filterPath(location.pathname),
+            linkPath = $.smoothScroll.filterPath(link.pathname),
             hostMatch = ((location.hostname === link.hostname) || !link.hostname),
-            pathMatch = thisOpts.scrollTarget || ( $.smoothScroll.filterPath(link.pathname) === locationPath ),
+            pathMatch = thisOpts.scrollTarget || ( linkPath === locationPath ),
             thisHash = escapeSelector(link.hash);
 
         if ( !thisOpts.scrollTarget && (!hostMatch || !pathMatch || !thisHash) ) {
@@ -10527,7 +10530,17 @@ return jQuery;
 
           $.smoothScroll( clickOpts );
         }
-      });
+      };
+
+      if (options.delegateSelector !== null) {
+        this
+          .undelegate(options.delegateSelector, 'click.smoothscroll')
+          .delegate(options.delegateSelector, 'click.smoothscroll', clickHandler);
+      } else {
+        this
+          .unbind('click.smoothscroll')
+          .bind('click.smoothscroll', clickHandler);
+      }
 
       return this;
     }
@@ -10583,12 +10596,9 @@ return jQuery;
     // automatically calculate the speed of the scroll based on distance / coefficient
     if (speed === 'auto') {
 
-      // $scroller.scrollTop() is position before scroll, aniProps[scrollDir] is position after
+      // $scroller[scrollDir]() is position before scroll, aniProps[scrollDir] is position after
       // When delta is greater, speed will be greater.
-      delta = aniProps[scrollDir] - $scroller.scrollTop();
-      if(delta < 0) {
-        delta *= -1;
-      }
+      delta = Math.abs(aniProps[scrollDir] - $scroller[scrollDir]());
 
       // Divide the delta by the coefficient
       speed = delta / opts.autoCoefficient;
