@@ -78,11 +78,7 @@ gulp.task('copyJs', function() {
 });
 
 gulp.task('buildJsVendor', function() {
-	return gulp.src([
-			'node_modules/jquery/dist/jquery.js',
-			'node_modules/jquery-smooth-scroll/jquery.smooth-scroll.js',
-			'node_modules/wow/dist/wow.js'
-		])
+	return gulp.src(require('./_src/js/vendor.js'))
 		.pipe(concat('vendor.js'))
 		.pipe(gulp.dest('js'))
 		.pipe(uglify())
@@ -91,16 +87,7 @@ gulp.task('buildJsVendor', function() {
 });
 
 gulp.task('buildJsSite', function() {
-	return gulp.src([
-			'_src/js/_templates.js',
-			'_src/js/_header.js',
-			'_src/js/_about.js',
-			'_src/js/_feeds.js',
-			'_src/js/_work.js',
-			'_src/js/_contact.js',
-			'_src/js/_footer.js',
-			'_src/js/_animations.js'
-		])
+	return gulp.src(require('./_src/js/saviomd.js'))
 		.pipe(eslint(eslintConfig))
 		.pipe(eslint.format())
 		.pipe(concat('saviomd.js'))
