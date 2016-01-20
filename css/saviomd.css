@@ -194,7 +194,6 @@ a:focus {
           box-shadow: -2px 2px 0 rgba(0, 0, 16, 0.5);
   text-decoration: none;
   -webkit-transform: rotate(-2deg) scale(1.2);
-      -ms-transform: rotate(-2deg) scale(1.2);
           transform: rotate(-2deg) scale(1.2); }
 
 .link-social--atom:hover,
@@ -317,7 +316,6 @@ pins
 .pin:hover,
 .pin:focus {
   -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
           transform: scale(1.1); }
 
 .work {
