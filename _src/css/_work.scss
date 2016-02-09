@@ -1,44 +1,21 @@
 .work {
 	border-bottom: 1px solid #ccc;
-	padding-bottom: 20px;
-	padding-top: 20px;
 }
 
-.work ul {
-	padding: 0;
-}
-
-.work__item {
-	margin: 0 0 40px;
-}
-
-.work__img {
+.work__img-wrapper {
 	border: 1px solid #ccc;
-	display: block;
-	margin: 0 0 10px;
-	padding: 0;
 }
 
 .work__info {
-	height: 130px; /* title+(work__technologies*2)+btn */
-	padding: 0;
+	height: ((24px * 1.2) + 8) + (16 * 1.5 * 2) + (16 * 1.5 + 5 * 2);
 }
 
-.work__technologies {
-	margin: 0 0 10px;
-}
-
-.work__technologies > li {
-	float: left;
-	margin: 0;
-}
-
-.work__technologies > li:after {
+.work__technology:after {
 	content: ",";
 	margin-right: 5px;
 }
 
-.work__technologies > li:last-child:after {
+.work__technology:last-child:after {
 	content: "";
 	margin-right: 0;
 }

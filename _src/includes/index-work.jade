@@ -1,16 +1,17 @@
 include /data/work.jade
 
-section#work.work.container-fluid
+section#work.work.container-fluid.p-y-1
 	h2.title= 'Trabalhos'
 	ul.list-unstyled.row
 		each item in work
-			li.work__item.col-xs-12.col-md-6.wow.fadeIn
-				img.work__img.img-responsive(alt=item.name, height='450', src=item.image, width='600')
+			li.col-xs-12.col-md-6.m-b-3.wow.fadeIn
+				.work__img-wrapper.embed-responsive.embed-responsive-4by3.m-b-1
+					img.embed-responsive-item(alt=item.name, height='450', src=item.image, width='600')
 				.work__info
 					header
 						h3.title.title--sub= item.name
-					ul.list-unstyled.work__technologies.clearfix
+					ul.clearfix.list-unstyled.m-b-1
 						each tag in item.tags
-							li= tag
+							li.work__technology.pull-xs-left= tag
 					if item.url
-						a.btn.pull-right.js-btn-work(href=item.url, target='_blank')= 'Visite o site'
+						a.btn.pull-xs-right.js-btn-work(href=item.url, target='_blank')= 'Visite o site'

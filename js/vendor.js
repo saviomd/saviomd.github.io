@@ -11027,7 +11027,7 @@ return jQuery;
 }));
 
 /*!
- * jQuery Smooth Scroll - v1.7.1 - 2016-01-18
+ * jQuery Smooth Scroll - v1.7.2 - 2016-01-23
  * https://github.com/kswedberg/jquery-smooth-scroll
  * Copyright (c) 2016 Karl Swedberg
  * Licensed MIT
@@ -11046,7 +11046,7 @@ return jQuery;
   }
 }(function($) {
 
-  var version = '1.7.1';
+  var version = '1.7.2';
   var optionOverrides = {};
   var defaults = {
     exclude: [],
@@ -11195,6 +11195,10 @@ return jQuery;
         var pathMatch = thisOpts.scrollTarget || (linkPath === locationPath);
         var thisHash = escapeSelector(link.hash);
 
+        if (thisHash && !$(thisHash).length) {
+          include = false;
+        }
+
         if (!thisOpts.scrollTarget && (!hostMatch || !pathMatch || !thisHash)) {
           include = false;
         } else {
@@ -11333,6 +11337,7 @@ return jQuery;
   $.fn.smoothScroll.defaults = defaults;
 
 }));
+
 
 (function() {
   var MutationObserver, Util, WeakMap, getComputedStyle, getComputedStyleRX,

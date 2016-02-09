@@ -1,7 +1,5 @@
 .about {
 	background: #eee;
-	padding-bottom: 20px;
-	padding-top: 20px;
 }
 
 .about__content {
@@ -11,10 +9,15 @@
 	padding-right: 130px;
 }
 
+@include media-breakpoint-up(md) {
+	.about__content {
+		font-size: 21px;
+	}
+}
+
 .about__text {
 	background: #fff;
 	border-radius: 5px;
-	padding: 10px;
 	position: relative;
 }
 
@@ -25,21 +28,6 @@
 	position: absolute;
 	right: -30px;
 	top: 20px;
-}
-
-@include media-breakpoint-up(md) {
-	.about__content {
-		font-size: 21px;
-	}
-}
-
-.list-social {
-	padding-top: 10px;
-}
-
-.list-social > li {
-	float: left;
-	margin: 10px 10px 0 0;
 }
 
 .link-social {

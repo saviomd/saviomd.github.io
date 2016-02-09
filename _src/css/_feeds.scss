@@ -1,7 +1,5 @@
 .feeds {
 	border-bottom: 1px solid #ccc;
-	padding-bottom: 20px;
-	padding-top: 20px;
 }
 
 /*
@@ -13,8 +11,8 @@ posts
 	background: #eee;
 	border-radius: 5px;
 	display: block;
-	height: 86px;
-	padding: 10px 15px;
+	height: ($font-size-base * $line-height * 2) + ($font-size-xs * $line-height) + ($font-size-xs * 2);
+	padding: ($spacer / 2) $spacer;
 	text-decoration: none;
 }
 
@@ -25,19 +23,19 @@ posts
 }
 
 .post__title {
-	max-height: 48px; /* (font-size*line-height)*2 */
+	max-height: $font-size-base * $line-height * 2;
 	overflow: hidden;
 }
 
 .post-wrapper--title-one-line .post__title {
-	max-height: 24px;
+	max-height: $font-size-base * $line-height;
 }
 
 .post__body {
 	color: #333;
-	font-size: 12px;
+	font-size: $font-size-xs;
 	font-weight: 400;
-	max-height: 36px; /* (font-size*line-height)*2 */
+	max-height: $font-size-xs * $line-height * 2;
 	overflow: hidden;
 }
 
@@ -47,23 +45,13 @@ pins
 */
 
 .pin-wrapper {
-	height: 0;
-	padding-bottom: 100%;
-	position: relative;
-	width: 100%;
+	overflow: visible;
 }
 
 .pin {
 	background-position: center;
 	background-size: cover;
-	border: 1px solid #ccc;
-	display: block;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 1;
+	border: 1px solid #ccc !important;
 }
 
 .pin:hover,

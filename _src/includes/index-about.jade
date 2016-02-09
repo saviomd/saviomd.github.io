@@ -1,12 +1,12 @@
 include /data/links.jade
 
-section.about#about
+section.about.p-y-1#about
 	.container-fluid
 		.row
 			.about__content.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 				h2.title= 'Sobre'
-				.about__text.animated.fadeInLeft= 'Olá, meu nome é Sávio Mendes, sou desenvolvedor web / front-end e designer de interfaces, carioca, flamenguista, maluco por filmes, lateral / meio-campo nas peladas de fim de semana, fã de Iron Maiden, Van Halen e Faith No More.'
-			ul.list-social.list-unstyled.animated.fadeInUp.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
+				.about__text.p-a-1.animated.fadeInLeft= 'Olá, meu nome é Sávio Mendes, sou desenvolvedor web / front-end e designer de interfaces, carioca, flamenguista, maluco por filmes, lateral / meio-campo nas peladas de fim de semana, fã de Iron Maiden, Van Halen e Faith No More.'
+			ul.list-unstyled.m-b-0.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2.animated.fadeInUp
 				each link in links
-					li
+					li.pull-xs-left.m-t-1.m-r-1
 						a(class='link-social link-social--' + link.class, href=link.url, target='_blank', title=link.name)= link.icon
