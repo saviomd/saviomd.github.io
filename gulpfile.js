@@ -1,6 +1,7 @@
 var autoprefixer = require('autoprefixer');
 var autoprefixerConfig = require('autoprefixer-config-saviomd');
 var browserSync = require('browser-sync');
+var browserSyncConfig = require('browser-sync-config-saviomd')
 var concat = require('gulp-concat');
 var cssnano = require('cssnano');
 var cssnanoConfig = require('cssnano-config-saviomd');
@@ -11,6 +12,7 @@ var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
 var htmlminConfig = require('htmlmin-config-saviomd');
 var imagemin = require('gulp-imagemin');
+var imageminConfig = require('imagemin-config-saviomd');
 var jade = require('gulp-jade');
 var jadeConfig = require('jade-config-saviomd');
 var postcss = require('gulp-postcss');
@@ -99,22 +101,12 @@ gulp.task('buildJsSite', function() {
 
 gulp.task('imagemin', function() {
 	return gulp.src('imgmin/**/*.+(gif|jpg|png)')
-		.pipe(imagemin({ optimizationLevel: 7, pngquant: false, progressive: true }))
+		.pipe(imagemin(imageminConfig))
 		.pipe(gulp.dest('img'))
 });
 
 gulp.task('browser-sync', function() {
-	browserSync.init({
-		ghostMode: {
-			clicks: true,
-			forms: true,
-			scroll: true
-		},
-		server: {
-			baseDir: './',
-		},
-		startPath: '?a=0'
-	});
+	browserSync.init(browserSyncConfig);
 });
 
 /*

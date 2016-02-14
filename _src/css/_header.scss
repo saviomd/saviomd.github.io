@@ -13,10 +13,12 @@
 }
 
 @include media-breakpoint-up(md) {
+
 	.header__title {
 		font-size: 80px;
 		height: 75px;
 	}
+
 }
 
 .header__nav-wrapper {
@@ -27,9 +29,11 @@
 }
 
 @include media-breakpoint-up(md) {
+
 	.header__nav-wrapper {
 		padding: 0;
 	}
+
 }
 
 .header__nav {
@@ -40,10 +44,12 @@
 }
 
 @include media-breakpoint-up(md) {
+
 	.header__nav {
 		float: right;
 		max-height: initial;
 	}
+
 }
 
 .header__nav.active {
