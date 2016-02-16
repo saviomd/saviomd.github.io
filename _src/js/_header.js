@@ -16,7 +16,7 @@ saviomd.header = (function () {
 	animacao p/ scroll e track de evento
 	====================
 	*/
-	$('.header__nav').find('ul a').smoothScroll().on('click', function (e) {
+	$('.header__nav-link').smoothScroll().on('click', function (e) {
 		e.preventDefault();
 		if (typeof ga !== 'undefined') {
 			ga('send', 'event', 'saviomd.com', 'Cabeçalho', $(this).text());
