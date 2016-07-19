@@ -2,12 +2,8 @@
 	border-bottom: 1px solid #ccc;
 }
 
-.work__img-wrapper {
-	border: 1px solid #ccc;
-}
-
-.work__info {
-	height: ((24px * 1.2) + 8) + (16 * 1.5 * 2) + (16 * 1.5 + 5 * 2);
+.work__item {
+	border-bottom: 1px solid #ccc;
 }
 
 .work__technology:after {

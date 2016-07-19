@@ -19,7 +19,7 @@
 
 .about__text {
 	background: #fff;
-	border-radius: 5px;
+	border-radius: $spacer / 2;
 	position: relative;
 }
 
@@ -34,7 +34,7 @@
 
 .link-social {
 	background: #aaa;
-	border-radius: 5px;
+	border-radius: $spacer / 2;
 	color: #fff;
 	display: block;
 	font-size: 22px;

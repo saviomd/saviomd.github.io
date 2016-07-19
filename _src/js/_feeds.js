@@ -1,8 +1,17 @@
 /* global ga */
 
+/* eslint-disable no-use-before-define */
 var saviomd = saviomd || {};
+/* eslint-enable no-use-before-define */
 
 saviomd.feeds = (function () {
+	var templatePost = '<li class="animated fadeInRight col-xs-12 col-sm-6 col-md-4 m-b-1">' +
+			'<a href="{{link}}" class="post" target="_blank" data-event-category="saviomd.com" data-event-action="{{feed}}" data-event-label="{{titulo}}">' +
+				'<div class="post__title" title="{{titulo}}">{{titulo}}</div>' +
+				'<div class="post__body">{{corpo}}</div>' +
+			'</a>' +
+		'</li>';
+
 	/*
 	posts do blog
 	====================
@@ -14,16 +23,16 @@ saviomd.feeds = (function () {
 		type: 'GET',
 		url: 'http://saviomd.com/blog/atom.xml'
 	}).done(function (response) {
-		var itens = $(response).find('entry').slice(0, 9);
+		var itens = $(response).find('entry').slice(0, 6);
 		var html = '';
-		var template = saviomd.templates.getPost();
 		for (var i = 0, len = itens.length; i < len; i++) {
-			var item = template;
+			var item = templatePost;
 			var link = $(itens[i]).find('link').attr('href');
 			var title = $(itens[i]).find('title').text();
 			var updated = $(itens[i]).find('updated').text().split('T')[0].split('-');
 			var date = updated[2] + '/' + updated[1] + '/' + updated[0];
-			item = item.replace(/{{link}}/g, link)
+			item = item.replace(/{{feed}}/g, 'Blog')
+				.replace(/{{link}}/g, link)
 				.replace(/{{titulo}}/g, title)
 				.replace(/{{corpo}}/g, date);
 			html += item;
@@ -31,17 +40,10 @@ saviomd.feeds = (function () {
 		$blog.html(html);
 	}).fail(function () {
 		$blog.html('<li class="animated fadeInRight col-xs-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
+		if (typeof ga !== 'undefined') {
+			ga('send', 'event', 'saviomd.com', 'Blog', 'Erro - Ajax fail');
+		}
 	});
-
-	if (typeof ga !== 'undefined') {
-		$(document).on('click', '.js-blog .post', function () {
-			ga('send', 'event', 'saviomd.com', 'Blog', $(this).find('.post__title').text());
-		});
-
-		$('.js-link-more-blog').on('click', function () {
-			ga('send', 'event', 'saviomd.com', 'Blog', 'Veja mais');
-		});
-	}
 
 	/*
 	github starred
@@ -57,39 +59,41 @@ saviomd.feeds = (function () {
 		if (response.meta.status === 200) {
 			var itens = response.data;
 			var html = '';
-			var template = saviomd.templates.getPost();
 			for (var i = 0, len = itens.length; i < len; i++) {
-				var item = template;
+				var item = templatePost;
 				var link = itens[i].html_url;
 				var name = itens[i].full_name;
 				var description = itens[i].description;
-				item = item.replace(/{{link}}/g, link)
+				item = item.replace(/{{feed}}/g, 'GitHub Starred')
+					.replace(/{{link}}/g, link)
 					.replace(/{{titulo}}/g, name)
 					.replace(/{{corpo}}/g, description);
 				html += item;
 			}
 			$githubStarred.html(html);
-		} else if (response.meta.status === 403) {
+		} else {
 			$githubStarred.html('<li class="animated fadeInRight col-xs-12 text-center">Limite da API atingido</li>');
+			if (typeof ga !== 'undefined') {
+				ga('send', 'event', 'saviomd.com', 'GitHub Starred', 'Erro - Status: ' + response.meta.status + ', RateLimit Remaining:' + response.meta['X-RateLimit-Remaining']);
+			}
 		}
 	}).fail(function () {
 		$githubStarred.html('<li class="animated fadeInRight col-xs-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
+		if (typeof ga !== 'undefined') {
+			ga('send', 'event', 'saviomd.com', 'GitHub Starred', 'Erro - Ajax fail');
+		}
 	});
-
-	if (typeof ga !== 'undefined') {
-		$(document).on('click', '.js-github-starred .post', function () {
-			ga('send', 'event', 'saviomd.com', 'GitHub starred', $(this).find('.post__title').text());
-		});
-
-		$('.js-link-more-github-starred').on('click', function () {
-			ga('send', 'event', 'saviomd.com', 'GitHub starred', 'Veja mais');
-		});
-	}
 
 	/*
 	pins
 	====================
 	*/
+	var templatePin = '<li class="animated fadeInRight col-xs-6 col-md-3 m-b-1">' +
+			'<div class="pin-wrapper embed-responsive embed-responsive-1by1">' +
+				'<a class="pin embed-responsive-item" href="https://www.pinterest.com/pin/{{id}}/" style="background-color: {{dominantColor}}; background-image: url({{imageUrl}})" target="_blank" data-event-category="saviomd.com" data-event-action="Pinterest" data-event-label="https://www.pinterest.com/pin/{{id}}/"></a>' +
+			'</div>' +
+		'</li>';
+
 	var $pinterest = $('.js-pinterest');
 	$pinterest.html('<li class="loading col-xs-12"></li>');
 	$.ajax({
@@ -97,33 +101,30 @@ saviomd.feeds = (function () {
 		type: 'GET',
 		url: 'https://widgets.pinterest.com/v3/pidgets/users/saviomd/pins'
 	}).done(function (response) {
-		var pins = response.data.pins;
-		var html = '';
-		var template = saviomd.templates.getPin();
-		for (var i = 0; i < 8; i++) {
-			var item = template;
-			var description = pins[i].description;
-			var dominantColor = pins[i].dominant_color;
-			var imageUrl = pins[i].images['237x'].url;
-			var id = pins[i].id;
-			item = item.replace(/{{description}}/g, description)
-				.replace(/{{dominantColor}}/g, dominantColor)
-				.replace(/{{imageUrl}}/g, imageUrl)
-				.replace(/{{id}}/g, id);
-			html += item;
+		if (response.status === 'success') {
+			var pins = response.data.pins;
+			var html = '';
+			for (var i = 0; i < 8; i++) {
+				var item = templatePin;
+				var dominantColor = pins[i].dominant_color;
+				var imageUrl = pins[i].images['237x'].url;
+				var id = pins[i].id;
+				item = item.replace(/{{dominantColor}}/g, dominantColor)
+					.replace(/{{imageUrl}}/g, imageUrl)
+					.replace(/{{id}}/g, id);
+				html += item;
+			}
+			$pinterest.html(html);
+		} else {
+			$pinterest.html('<li class="animated fadeInRight col-xs-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
+			if (typeof ga !== 'undefined') {
+				ga('send', 'event', 'saviomd.com', 'Pinterest', 'Erro - Status: ' + response.status + ', Message: ' + response.message);
+			}
 		}
-		$pinterest.html(html);
 	}).fail(function () {
 		$pinterest.html('<li class="animated fadeInRight col-xs-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
+		if (typeof ga !== 'undefined') {
+			ga('send', 'event', 'saviomd.com', 'Pinterest', 'Erro - Ajax fail');
+		}
 	});
-
-	if (typeof ga !== 'undefined') {
-		$(document).on('click', '.pin', function () {
-			ga('send', 'event', 'saviomd.com', 'Pinterest', $(this).attr('href'));
-		});
-
-		$('.js-link-more-pinterest').on('click', function () {
-			ga('send', 'event', 'saviomd.com', 'Pinterest', 'Veja mais');
-		});
-	}
 })();

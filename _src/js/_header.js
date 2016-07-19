@@ -1,6 +1,6 @@
-/* global ga */
-
+/* eslint-disable no-use-before-define */
 var saviomd = saviomd || {};
+/* eslint-enable no-use-before-define */
 
 saviomd.header = (function () {
 	/*
@@ -13,13 +13,8 @@ saviomd.header = (function () {
 	});
 
 	/*
-	animacao p/ scroll e track de evento
+	animacao p/ scroll
 	====================
 	*/
-	$('.header__nav-link').smoothScroll().on('click', function (e) {
-		e.preventDefault();
-		if (typeof ga !== 'undefined') {
-			ga('send', 'event', 'saviomd.com', 'Cabeçalho', $(this).text());
-		}
-	});
+	$('.header__nav-link').smoothScroll();
 })();

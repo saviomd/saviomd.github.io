@@ -7,13 +7,22 @@ posts
 ====================
 */
 
+$post-padding-y: ($spacer / 2);
+
 .post {
 	background: #eee;
-	border-radius: 5px;
+	border-radius: $spacer / 2;
 	display: block;
-	height: ($font-size-base * $line-height * 2) + ($font-size-xs * $line-height) + ($font-size-xs * 2);
-	padding: ($spacer / 2) $spacer;
+	padding: $post-padding-y $spacer;
 	text-decoration: none;
+}
+
+@include media-breakpoint-up(sm) {
+
+	.post {
+		height: ($font-size-base * $line-height * 2) + ($font-size-xs * $line-height) + ($post-padding-y * 2);
+	}
+
 }
 
 .post:hover,
@@ -22,21 +31,32 @@ posts
 	text-decoration: none;
 }
 
-.post__title {
-	max-height: $font-size-base * $line-height * 2;
-	overflow: hidden;
-}
+@include media-breakpoint-up(sm) {
 
-.post-wrapper--title-one-line .post__title {
-	max-height: $font-size-base * $line-height;
+	.post__title {
+		max-height: $font-size-base * $line-height * 2;
+		overflow: hidden;
+	}
+
+	.post-wrapper--title-one-line .post__title {
+		max-height: $font-size-base * $line-height;
+	}
+
 }
 
 .post__body {
 	color: #333;
 	font-size: $font-size-xs;
 	font-weight: 400;
-	max-height: $font-size-xs * $line-height * 2;
-	overflow: hidden;
+}
+
+@include media-breakpoint-up(sm) {
+
+	.post__body {
+		max-height: $font-size-xs * $line-height * 2;
+		overflow: hidden;
+	}
+
 }
 
 /*
@@ -52,6 +72,7 @@ pins
 	background-position: center;
 	background-size: cover;
 	border: 1px solid #ccc !important;
+	border-radius: $spacer / 2;
 }
 
 .pin:hover,

@@ -1,14 +1,11 @@
+include /data/sections.jade
+
 header.header
 	h1.header__title.container-fluid.m-y-0= site.name
 	.header__nav-wrapper
 		nav.container-fluid
-			a.btn.btn--nav.pull-xs-right.hidden-md-up.js-btn-nav(href='#')= 'Menu'
-			ul.header__nav.list-unstyled.m-b-0
-				li.pull-md-left
-					a.header__nav-link.p-x-1.text-xs-center(href='#about')= 'Sobre'
-				li.pull-md-left
-					a.header__nav-link.p-x-1.text-xs-center(href='#feeds')= 'Feeds'
-				li.pull-md-left
-					a.header__nav-link.p-x-1.text-xs-center(href='#work')= 'Trabalhos'
-				li.pull-md-left
-					a.header__nav-link.p-x-1.text-xs-center.js-link-contact(href='#contact')= 'Contato'
+			a.btn.btn--nav.pull-xs-right.hidden-sm-up.js-btn-nav(href='#')= 'Menu'
+			ul.header__nav.list-unstyled.m-b-0.pull-sm-right
+				each section in sections
+					li.pull-sm-left
+						a.header__nav-link.p-x-1.text-xs-center(class=(section.id === 'contact') ? 'js-link-contact' : '', href='##{section.id}', data-event-category=site.name, data-event-action='Cabeçalho', data-event-label=section.name)= section.name

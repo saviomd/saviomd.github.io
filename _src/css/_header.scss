@@ -28,7 +28,7 @@
 	padding: $spacer 0;
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(sm) {
 
 	.header__nav-wrapper {
 		padding: 0;
@@ -43,10 +43,9 @@
 	transition: 0.3s;
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(sm) {
 
 	.header__nav {
-		float: right;
 		max-height: initial;
 	}
 

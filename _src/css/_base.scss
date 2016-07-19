@@ -26,8 +26,26 @@ a:focus {
 	max-width: map-get($container-max-widths, xl);
 }
 
-.loading {
-	background: url("../img/ajax-loader.gif") no-repeat center center;
-	min-height: 52px;
-	min-width: 52px;
+@keyframes rotate {
+
+	0% {
+		transform: rotateZ(0deg);
+	}
+
+	100% {
+		transform: rotateZ(360deg);
+	}
+
+}
+
+.loading:after {
+	animation: rotate 1s infinite linear;
+	border: 6px solid #c00;
+	border-radius: 36px;
+	border-top-color: transparent;
+	content: "";
+	display: block;
+	height: 36px;
+	margin: 0 auto;
+	width: 36px;
 }

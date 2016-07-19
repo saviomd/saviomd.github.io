@@ -1,6 +1,6 @@
-/* global ga */
-
+/* eslint-disable no-use-before-define */
 var saviomd = saviomd || {};
+/* eslint-enable no-use-before-define */
 
 saviomd.contact = (function () {
 	/*
@@ -25,14 +25,5 @@ saviomd.contact = (function () {
 		e.preventDefault();
 		$('.header').animate({marginTop: 0});
 		$('.js-link-contact').removeClass('active');
-		if (typeof ga !== 'undefined') {
-			ga('send', 'event', 'saviomd.com', 'Contato', 'Fechar');
-		}
 	});
-
-	if (typeof ga !== 'undefined') {
-		$('.contact__link').on('click', function () {
-			ga('send', 'event', 'saviomd.com', 'Contato', 'Enviar email');
-		});
-	}
 })();

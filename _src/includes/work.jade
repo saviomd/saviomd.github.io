@@ -1,0 +1,17 @@
+include /data/work.jade
+
+section#work.work.container-fluid.p-y-1
+	.row
+		.col-xs-12.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3
+			h2.title= 'Trabalhos'
+			ul.list-unstyled
+				each item in work
+					li
+						.work__item.m-b-2.p-a-1.clearfix.wow.fadeIn
+							header
+								h3.title.title--sub= item.name
+							ul.clearfix.list-unstyled.m-b-1
+								each tag in item.tags
+									li.work__technology.pull-xs-left= tag
+							if item.url
+								a.btn.work__btn.pull-xs-right(href=item.url, target='_blank', data-event-category=site.name, data-event-action='Trabalhos', data-event-label=item.name)= 'Visite o site'
