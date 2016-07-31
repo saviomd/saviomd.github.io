@@ -8,4 +8,4 @@ header.header
 			ul.header__nav.list-unstyled.m-b-0.pull-sm-right
 				each section in sections
 					li.pull-sm-left
-						a.header__nav-link.p-x-1.text-xs-center(class=(section.id === 'contact') ? 'js-link-contact' : '', href='##{section.id}', data-event-category=site.name, data-event-action='Cabeçalho', data-event-label=section.name)= section.name
+						a.header__nav-link.p-x-1.text-xs-center(class=(section.id === 'contact') ? 'js-link-contact' : '', href='##{section.id}', ga-on='click', ga-event-category=site.name, ga-event-action='Cabeçalho', ga-event-label=section.name)= section.name

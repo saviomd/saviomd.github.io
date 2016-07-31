@@ -6,7 +6,7 @@ var saviomd = saviomd || {};
 
 saviomd.feeds = (function () {
 	var templatePost = '<li class="animated fadeInRight col-xs-12 col-sm-6 col-md-4 m-b-1">' +
-			'<a href="{{link}}" class="post" target="_blank" data-event-category="saviomd.com" data-event-action="{{feed}}" data-event-label="{{titulo}}">' +
+			'<a href="{{link}}" class="post" target="_blank" ga-on="click" ga-event-category="saviomd.com" ga-event-action="{{feed}}" ga-event-label="{{titulo}}">' +
 				'<div class="post__title" title="{{titulo}}">{{titulo}}</div>' +
 				'<div class="post__body">{{corpo}}</div>' +
 			'</a>' +
@@ -90,7 +90,7 @@ saviomd.feeds = (function () {
 	*/
 	var templatePin = '<li class="animated fadeInRight col-xs-6 col-md-3 m-b-1">' +
 			'<div class="pin-wrapper embed-responsive embed-responsive-1by1">' +
-				'<a class="pin embed-responsive-item" href="https://www.pinterest.com/pin/{{id}}/" style="background-color: {{dominantColor}}; background-image: url({{imageUrl}})" target="_blank" data-event-category="saviomd.com" data-event-action="Pinterest" data-event-label="https://www.pinterest.com/pin/{{id}}/"></a>' +
+				'<a class="pin embed-responsive-item" href="https://www.pinterest.com/pin/{{id}}/" style="background-color: {{dominantColor}}; background-image: url({{imageUrl}})" target="_blank" ga-on="click" ga-event-category="saviomd.com" ga-event-action="Pinterest" ga-event-label="https://www.pinterest.com/pin/{{id}}/"></a>' +
 			'</div>' +
 		'</li>';
 
