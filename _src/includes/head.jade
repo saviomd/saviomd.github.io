@@ -22,14 +22,17 @@ head
 		meta(name='robots', content='noindex, nofollow')
 
 	link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato')
-	link(rel='stylesheet', href='css/vendor' + (site.dev ? '' : '.min') + '.css')
-	link(rel='stylesheet', href='css/saviomd' + (site.dev ? '' : '.min') + '.css')
+	link(rel='stylesheet', href='css/vendor' + (site.minify ? '.min' : '') + '.css')
+	link(rel='stylesheet', href='css/saviomd' + (site.minify ? '.min' : '') + '.css')
 	link(rel='shortcut icon', href=site.url + 'img/favicon.png')
 	link(rel='apple-touch-icon', href=site.url + 'img/apple-touch-icon.png')
 	link(rel='canonical', href=site.url + page.path)
 
-	//- chrome android meta tags
-	meta(name='theme-color', content='#990000')
+	//- web app manifest
+	link(rel='manifest', href=site.url + 'manifest.json')
+
+	//- chrome android toolbar color
+	meta(name='theme-color', content=site.themeColor)
 
 	//- twitter and open graph meta tags
 	meta(name='twitter:card', content='summary')
@@ -38,6 +41,10 @@ head
 	meta(property='og:title', content=pageTitle)
 	meta(property='og:description', content=page.description)
 	meta(property='og:image', content=site.url + 'img/icon-256.png')
+
+	//- windows pinned site
+	meta(name='msapplication-TileImage', content='img/favicon.png')
+	meta(name='msapplication-TileColor', content=site.themeColor)
 
 	<!--[if lt IE 9]>
 	script(src='js/html5shiv.min.js')

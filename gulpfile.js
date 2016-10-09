@@ -29,7 +29,7 @@ tasks
 gulp.task('clean', function(cb) {
 	return del([
 			'+(css|js)',
-			'+(404.html|index.html)'
+			'+(404.html|index.html|manifest.json)'
 		], cb)
 });
 
@@ -37,6 +37,13 @@ gulp.task('html', function() {
 	return gulp.src('_src/pages/*.jade')
 		.pipe(jade(jadeConfig))
 		.pipe(htmlmin(htmlminConfig))
+		.pipe(gulp.dest('./'))
+});
+
+gulp.task('manifests', function() {
+	return gulp.src('_src/manifests/*.jade')
+		.pipe(jade(jadeConfig))
+		.pipe(rename({ extname: '.json' }))
 		.pipe(gulp.dest('./'))
 });
 
@@ -106,7 +113,7 @@ build and dev tasks
 ====================
 */
 gulp.task('default', ['clean'], function() {
-	gulp.start('html', 'css', 'js');
+	gulp.start('html', 'manifests', 'css', 'js');
 });
 
 gulp.task('css', function() {
@@ -119,6 +126,7 @@ gulp.task('js', function() {
 
 gulp.task('dev', ['browserSync'], function() {
 	gulp.watch('_src/**/*.jade', ['html', browserSync.reload])
+	gulp.watch('_src/manifests/*.jade', ['manifests', browserSync.reload])
 	gulp.watch('_src/css/*.scss', ['css', browserSync.reload])
 	gulp.watch('_src/js/*.js', ['js', browserSync.reload])
 });
