@@ -5,7 +5,7 @@ var saviomd = saviomd || {};
 /* eslint-enable no-use-before-define */
 
 saviomd.feeds = (function () {
-	var templatePost = '<li class="animated fadeInRight col-xs-12 col-sm-6 col-md-4 m-b-1">' +
+	var templatePost = '<li class="animated fadeInRight col-xs-12 col-sm-6 col-md-4 mb-1">' +
 			'<a href="{{link}}" class="post" target="_blank" ga-on="click" ga-event-category="saviomd.com" ga-event-action="{{feed}}" ga-event-label="{{titulo}}">' +
 				'<div class="post__title" title="{{titulo}}">{{titulo}}</div>' +
 				'<div class="post__body">{{corpo}}</div>' +
@@ -88,7 +88,7 @@ saviomd.feeds = (function () {
 	pins
 	====================
 	*/
-	var templatePin = '<li class="animated fadeInRight col-xs-6 col-md-3 m-b-1">' +
+	var templatePin = '<li class="animated fadeInRight col-xs-6 col-sm-4 col-md-2 mb-1">' +
 			'<div class="pin-wrapper embed-responsive embed-responsive-1by1">' +
 				'<a class="pin embed-responsive-item" href="https://www.pinterest.com/pin/{{id}}/" style="background-color: {{dominantColor}}; background-image: url({{imageUrl}})" target="_blank" ga-on="click" ga-event-category="saviomd.com" ga-event-action="Pinterest" ga-event-label="https://www.pinterest.com/pin/{{id}}/"></a>' +
 			'</div>' +
@@ -104,7 +104,7 @@ saviomd.feeds = (function () {
 		if (response.status === 'success') {
 			var pins = response.data.pins;
 			var html = '';
-			for (var i = 0; i < 8; i++) {
+			for (var i = 0; i < 6; i++) {
 				var item = templatePin;
 				var dominantColor = pins[i].dominant_color;
 				var imageUrl = pins[i].images['237x'].url;

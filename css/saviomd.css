@@ -124,7 +124,7 @@ a:focus {
           box-shadow: 0 3px 3px rgba(0, 0, 16, 0.5);
   padding: 1rem 0; }
 
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .header__nav-wrapper {
     padding: 0; } }
 
@@ -135,7 +135,7 @@ a:focus {
   -webkit-transition: 0.3s;
   transition: 0.3s; }
 
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .header__nav {
     max-height: initial; } }
 
@@ -273,7 +273,7 @@ posts
   padding: 0.5rem 1rem;
   text-decoration: none; }
 
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .post {
     height: 5.125rem; } }
 
@@ -282,7 +282,7 @@ posts
   color: #c00;
   text-decoration: none; }
 
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .post__title {
     max-height: 3rem;
     overflow: hidden; }
@@ -294,7 +294,7 @@ posts
   font-size: 0.75rem;
   font-weight: 400; }
 
-@media (min-width: 544px) {
+@media (min-width: 576px) {
   .post__body {
     max-height: 2.25rem;
     overflow: hidden; } }

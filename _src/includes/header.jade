@@ -1,11 +1,11 @@
 include /data/sections.jade
 
 header.header
-	h1.header__title.container-fluid.m-y-0= site.name
+	h1.header__title.container-fluid.my-0= site.name
 	.header__nav-wrapper
 		nav.container-fluid
-			a.btn.btn--nav.pull-xs-right.hidden-sm-up.js-btn-nav(href='#')= 'Menu'
-			ul.header__nav.list-unstyled.m-b-0.pull-sm-right
+			a.btn.btn--nav.float-xs-right.hidden-sm-up.js-btn-nav(href='#')= 'Menu'
+			ul.header__nav.list-unstyled.mb-0.float-sm-right
 				each section in sections
-					li.pull-sm-left
-						a.header__nav-link.p-x-1.text-xs-center(class=(section.id === 'contact') ? 'js-link-contact' : '', href='##{section.id}', ga-on='click', ga-event-category=site.name, ga-event-action='Cabeçalho', ga-event-label=section.name)= section.name
+					li.float-sm-left
+						a.header__nav-link.px-1.text-xs-center(class=(section.id === 'contact') ? 'js-link-contact' : '', href='##{section.id}', ga-on='click', ga-event-category=site.name, ga-event-action='Cabeçalho', ga-event-label=section.name)= section.name
