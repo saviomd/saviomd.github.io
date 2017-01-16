@@ -1,17 +1,17 @@
 include /data/work.jade
 
-section#work.work.container-fluid.py-1
+section#work.work.container-fluid.py-3
 	.row
-		.col-xs-12.col-md-8.offset-md-2.col-lg-6.offset-lg-3
+		.col-12.col-md-8.offset-md-2.col-lg-6.offset-lg-3
 			h2.title= 'Trabalhos'
 			ul.list-unstyled
 				each item in work
 					li
-						.work__item.mb-2.p-1.clearfix.wow.fadeIn
+						.work__item.mb-4.py-3.clearfix.wow.fadeIn
 							header
 								h3.title.title--sub= item.name
-							ul.clearfix.list-unstyled.mb-1
+							ul.clearfix.list-unstyled.mb-3
 								each tag in item.tags
-									li.work__technology.float-xs-left= tag
+									li.work__technology.float-left= tag
 							if item.url
-								a.btn.work__btn.float-xs-right(href=item.url, target='_blank', ga-on='click', ga-event-category=site.name, ga-event-action='Trabalhos', ga-event-label=item.name)= 'Visite o site'
+								a.btn.work__btn.float-right(href=item.url, target='_blank', ga-on='click', ga-event-category=site.name, ga-event-action='Trabalhos', ga-event-label=item.name)= 'Visite o site'

@@ -1,12 +1,12 @@
 include /data/links.jade
 
-section.about.py-1#about
+section.about.py-3#about
 	.container-fluid
 		.row
-			.about__content.col-xs-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
+			.about__content.col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
 				h2.title= 'Sobre'
-				.about__text.p-1.animated.fadeInLeft= 'Olá, meu nome é Sávio Mendes, sou desenvolvedor front-end / designer de interfaces / analista de produto (não necessariamente ao mesmo tempo e nessa ordem), carioca, flamenguista, maluco por filmes, lateral / ala direito nas peladas de quarta e sábado, fã de Iron Maiden, Van Halen e Faith No More.'
-			ul.list-unstyled.mb-0.col-xs-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2.animated.fadeInUp
+				.about__text.p-3.animated.fadeInLeft= 'Olá, meu nome é Sávio Mendes, sou desenvolvedor front-end / designer de interfaces, carioca, flamenguista, maluco por filmes, lateral / ala direito nas peladas de quarta e sábado, fã de Iron Maiden, Van Halen e Faith No More.'
+			ul.list-unstyled.mb-0.col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2.animated.fadeInUp
 				each link in links
-					li.float-xs-left.mt-1.mr-1
+					li.float-left.mt-3.mr-3
 						a(class='link-social link-social--' + link.class, href=link.url, target='_blank', title=link.name, ga-on='click', ga-event-category=site.name, ga-event-action='Sobre', ga-event-label=link.name)= link.icon

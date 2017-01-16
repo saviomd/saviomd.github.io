@@ -14,6 +14,7 @@ var htmlminConfig = require('tools-config-saviomd/htmlmin-config');
 var jade = require('gulp-jade');
 var jadeConfig = require('tools-config-saviomd/jade-config');
 var postcss = require('gulp-postcss');
+var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var stylelint = require('stylelint');
@@ -50,7 +51,7 @@ gulp.task('manifests', function() {
 gulp.task('cssVendor', function() {
 	return gulp.src('_src/css/vendor.scss')
 		.pipe(sass())
-		.pipe(postcss([ autoprefixer(autoprefixerConfig) ]))
+		.pipe(postcss([ autoprefixer(autoprefixerConfig), postcssFlexbugsFixes() ]))
 		.pipe(gulp.dest('css'))
 		.pipe(postcss([ cssnano(cssnanoConfig) ]))
 		.pipe(rename({ suffix: '.min' }))
@@ -67,7 +68,7 @@ gulp.task('cssSiteLint', function() {
 gulp.task('cssSite', ['cssSiteLint'], function() {
 	return gulp.src('_src/css/saviomd.scss')
 		.pipe(sass())
-		.pipe(postcss([ autoprefixer(autoprefixerConfig) ]))
+		.pipe(postcss([ autoprefixer(autoprefixerConfig), postcssFlexbugsFixes() ]))
 		.pipe(gulp.dest('css'))
 		.pipe(postcss([ cssnano(cssnanoConfig) ]))
 		.pipe(rename({ suffix: '.min' }))

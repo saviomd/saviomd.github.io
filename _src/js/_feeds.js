@@ -5,7 +5,7 @@ var saviomd = saviomd || {};
 /* eslint-enable no-use-before-define */
 
 saviomd.feeds = (function () {
-	var templatePost = '<li class="animated fadeInRight col-xs-12 col-sm-6 col-md-4 mb-1">' +
+	var templatePost = '<li class="animated fadeInRight col-12 col-sm-6 col-md-4 mb-3">' +
 			'<a href="{{link}}" class="post" target="_blank" ga-on="click" ga-event-category="saviomd.com" ga-event-action="{{feed}}" ga-event-label="{{titulo}}">' +
 				'<div class="post__title" title="{{titulo}}">{{titulo}}</div>' +
 				'<div class="post__body">{{corpo}}</div>' +
@@ -17,7 +17,7 @@ saviomd.feeds = (function () {
 	====================
 	*/
 	var $blog = $('.js-blog');
-	$blog.html('<li class="loading col-xs-12"></li>');
+	$blog.html('<li class="loading col-12"></li>');
 	$.ajax({
 		dataType: 'xml',
 		type: 'GET',
@@ -39,7 +39,7 @@ saviomd.feeds = (function () {
 		}
 		$blog.html(html);
 	}).fail(function () {
-		$blog.html('<li class="animated fadeInRight col-xs-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
+		$blog.html('<li class="animated fadeInRight col-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
 		if (typeof ga !== 'undefined') {
 			ga('send', 'event', 'saviomd.com', 'Blog', 'Erro - Ajax fail');
 		}
@@ -50,7 +50,7 @@ saviomd.feeds = (function () {
 	====================
 	*/
 	var $githubStarred = $('.js-github-starred');
-	$githubStarred.html('<li class="loading col-xs-12"></li>');
+	$githubStarred.html('<li class="loading col-12"></li>');
 	$.ajax({
 		dataType: 'jsonp',
 		type: 'GET',
@@ -72,13 +72,13 @@ saviomd.feeds = (function () {
 			}
 			$githubStarred.html(html);
 		} else {
-			$githubStarred.html('<li class="animated fadeInRight col-xs-12 text-center">Limite da API atingido</li>');
+			$githubStarred.html('<li class="animated fadeInRight col-12 text-center">Limite da API atingido</li>');
 			if (typeof ga !== 'undefined') {
 				ga('send', 'event', 'saviomd.com', 'GitHub Starred', 'Erro - Status: ' + response.meta.status + ', RateLimit Remaining:' + response.meta['X-RateLimit-Remaining']);
 			}
 		}
 	}).fail(function () {
-		$githubStarred.html('<li class="animated fadeInRight col-xs-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
+		$githubStarred.html('<li class="animated fadeInRight col-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
 		if (typeof ga !== 'undefined') {
 			ga('send', 'event', 'saviomd.com', 'GitHub Starred', 'Erro - Ajax fail');
 		}
@@ -88,14 +88,14 @@ saviomd.feeds = (function () {
 	pins
 	====================
 	*/
-	var templatePin = '<li class="animated fadeInRight col-xs-6 col-sm-4 col-md-2 mb-1">' +
+	var templatePin = '<li class="animated fadeInRight col-6 col-sm-4 col-md-2 mb-3">' +
 			'<div class="pin-wrapper embed-responsive embed-responsive-1by1">' +
 				'<a class="pin embed-responsive-item" href="https://www.pinterest.com/pin/{{id}}/" style="background-color: {{dominantColor}}; background-image: url({{imageUrl}})" target="_blank" ga-on="click" ga-event-category="saviomd.com" ga-event-action="Pinterest" ga-event-label="https://www.pinterest.com/pin/{{id}}/"></a>' +
 			'</div>' +
 		'</li>';
 
 	var $pinterest = $('.js-pinterest');
-	$pinterest.html('<li class="loading col-xs-12"></li>');
+	$pinterest.html('<li class="loading col-12"></li>');
 	$.ajax({
 		dataType: 'jsonp',
 		type: 'GET',
@@ -116,13 +116,13 @@ saviomd.feeds = (function () {
 			}
 			$pinterest.html(html);
 		} else {
-			$pinterest.html('<li class="animated fadeInRight col-xs-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
+			$pinterest.html('<li class="animated fadeInRight col-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
 			if (typeof ga !== 'undefined') {
 				ga('send', 'event', 'saviomd.com', 'Pinterest', 'Erro - Status: ' + response.status + ', Message: ' + response.message);
 			}
 		}
 	}).fail(function () {
-		$pinterest.html('<li class="animated fadeInRight col-xs-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
+		$pinterest.html('<li class="animated fadeInRight col-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
 		if (typeof ga !== 'undefined') {
 			ga('send', 'event', 'saviomd.com', 'Pinterest', 'Erro - Ajax fail');
 		}
