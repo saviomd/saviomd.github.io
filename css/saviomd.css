@@ -213,11 +213,6 @@ a:focus {
   background: #3b5998;
   color: #fff; }
 
-.link-social--fifa:hover,
-.link-social--fifa:focus {
-  background: #2faec0;
-  color: #d2f311; }
-
 .link-social--github:hover,
 .link-social--github:focus {
   background: #eaeaea;

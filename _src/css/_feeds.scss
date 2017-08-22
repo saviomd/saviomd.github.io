@@ -7,6 +7,7 @@ posts
 ====================
 */
 
+$post-body-font-size: ($font-size-base * (3 / 4));
 $post-padding-y: ($spacer / 2);
 
 .post {
@@ -20,7 +21,7 @@ $post-padding-y: ($spacer / 2);
 @include media-breakpoint-up(sm) {
 
 	.post {
-		height: ($font-size-base * $line-height-base * 2) + ($font-size-xs * $line-height-base) + ($post-padding-y * 2);
+		height: ($font-size-base * $line-height-base * 2) + ($post-body-font-size * $line-height-base) + ($post-padding-y * 2);
 	}
 
 }
@@ -46,14 +47,14 @@ $post-padding-y: ($spacer / 2);
 
 .post__body {
 	color: #333;
-	font-size: $font-size-xs;
+	font-size: $post-body-font-size;
 	font-weight: 400;
 }
 
 @include media-breakpoint-up(sm) {
 
 	.post__body {
-		max-height: $font-size-xs * $line-height-base * 2;
+		max-height: $post-body-font-size * $line-height-base * 2;
 		overflow: hidden;
 	}
 
