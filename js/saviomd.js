@@ -65,7 +65,7 @@ saviomd.feeds = (function () {
 	$.ajax({
 		dataType: 'xml',
 		type: 'GET',
-		url: 'http://saviomd.com/blog/atom.xml'
+		url: 'https://saviomd.com/blog/atom.xml'
 	}).done(function (response) {
 		var itens = $(response).find('entry').slice(0, 6);
 		var html = '';

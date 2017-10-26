@@ -1,6 +1,6 @@
 {
   "name": "saviomd.com",
-  "version": "1.0.20170822",
+  "version": "1.0.20171026",
   "description": "Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web",
   "author": "Sávio Mendes",
   "license": "UNLICENSED",
@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "animate.css": "^3.5.2",
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^7.1.6",
     "autotrack": "^2.4.1",
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^4.0.0-beta.2",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",

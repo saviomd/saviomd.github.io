@@ -4,11 +4,11 @@
 	"description": "Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web",
 	"icons": [
 		{
-			"src": "http://saviomd.com/img/icon-256.png",
+			"src": "https://saviomd.com/img/icon-256.png",
 			"sizes": "256x256"
 		}
 	],
-	"start_url": "http://saviomd.com/",
+	"start_url": "https://saviomd.com/",
 	"display": "browser",
 	"orientation": "portrait",
 	"theme_color": "#fff"

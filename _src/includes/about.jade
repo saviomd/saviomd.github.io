@@ -6,7 +6,7 @@ section.about.py-3#about
 			.about__content.col-12.col-md-10.col-lg-8
 				h2.title= 'Sobre'
 				.about__text.p-3.animated.fadeInLeft= 'Olá, meu nome é Sávio Mendes, sou desenvolvedor front-end / designer de interfaces, carioca, flamenguista, maluco por filmes, lateral / ala direito nas peladas de quarta e sábado, fã de Iron Maiden, Van Halen e Faith No More.'
-			ul.list-unstyled.mb-0.col-12.col-md-10.col-lg-8.animated.fadeInUp
+			ul.list-inline.mb-0.col-12.col-md-10.col-lg-8.animated.fadeInUp
 				each link in links
-					li.float-left.mt-3.mr-3
+					li.list-inline-item.mt-3.mr-3
 						a(class='link-social link-social--' + link.class, href=link.url, target='_blank', title=link.name, ga-on='click', ga-event-category=site.name, ga-event-action='Sobre', ga-event-label=link.name)= link.icon

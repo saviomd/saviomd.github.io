@@ -8,10 +8,8 @@
 
 .work__technology:after {
 	content: ",";
-	margin-right: 5px;
 }
 
 .work__technology:last-child:after {
-	content: "";
-	margin-right: 0;
+	content: ".";
 }

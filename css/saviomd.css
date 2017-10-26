@@ -321,12 +321,10 @@ pins
   border-bottom: 1px solid #ccc; }
 
 .work__technology:after {
-  content: ",";
-  margin-right: 5px; }
+  content: ","; }
 
 .work__technology:last-child:after {
-  content: "";
-  margin-right: 0; }
+  content: "."; }
 
 .contact {
   background: #666;

@@ -10,8 +10,9 @@ section#work.work.container-fluid.py-3
 						.work__item.mb-4.py-3.clearfix.wow.fadeIn
 							header
 								h3.title.title--sub= item.name
-							ul.clearfix.list-unstyled.mb-3
+							ul.list-inline.mb-3
 								each tag in item.tags
-									li.work__technology.float-left= tag
+									li.work__technology.list-inline-item= tag
 							if item.url
-								a.btn.work__btn.float-right(href=item.url, target='_blank', ga-on='click', ga-event-category=site.name, ga-event-action='Trabalhos', ga-event-label=item.name)= 'Visite o site'
+								.text-right
+									a.btn.work__btn(href=item.url, target='_blank', ga-on='click', ga-event-category=site.name, ga-event-action='Trabalhos', ga-event-label=item.name)= 'Visite o site'
