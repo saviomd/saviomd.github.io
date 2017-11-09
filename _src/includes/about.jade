@@ -9,4 +9,4 @@ section.about.py-3#about
 			ul.list-inline.mb-0.col-12.col-md-10.col-lg-8.animated.fadeInUp
 				each link in links
 					li.list-inline-item.mt-3.mr-3
-						a(class='link-social link-social--' + link.class, href=link.url, target='_blank', title=link.name, ga-on='click', ga-event-category=site.name, ga-event-action='Sobre', ga-event-label=link.name)= link.icon
+						a(class='link-social link-social--' + link.class, href=link.url, rel='noopener', target='_blank', title=link.name, ga-on='click', ga-event-category=site.name, ga-event-action='Sobre', ga-event-label=link.name)= link.icon

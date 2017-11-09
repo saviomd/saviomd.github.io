@@ -4,5 +4,8 @@ section.contact#contact
 		.row
 			.contact__content.col-12.col-md-6.offset-md-3.py-3
 				h2.title= 'Contato'
-				p!= 'Ofertas de emprego para trabalhar pouco e ganhar muito, convites para jogar futebol e etc podem ser enviados para o meu email <a class="contact__link" href="mailto:savio@saviomd.com?subject=[Contato site] " target="_blank"  ga-on="click" ga-event-category="' + site.name + '", ga-event-action="' + section + '", ga-event-label="Enviar email">clicando aqui</a>.'
+				p
+					= 'Ofertas de emprego para trabalhar pouco e ganhar muito, convites para jogar futebol e etc podem ser enviados para o meu email'
+					a.ml-1(class='contact__link', href='mailto:savio@saviomd.com?subject=[Contato site] ', rel='noopener', target='_blank', ga-on='click', ga-event-category=site.name, ga-event-action=section, ga-event-label='Enviar email')= 'clicando aqui'
+					= '.'
 				a.btn.btn--close.js-close-contact(href='#', ga-on='click', ga-event-category=site.name, ga-event-action=section, ga-event-label='Fechar')= 'X'
