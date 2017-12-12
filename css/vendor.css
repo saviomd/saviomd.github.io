@@ -30,51 +30,7 @@ bootstrap
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    text-shadow: none !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important; }
-  a,
-  a:visited {
-    text-decoration: underline; }
-  abbr[title]::after {
-    content: " (" attr(title) ")"; }
-  pre {
-    white-space: pre-wrap !important; }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid; }
-  thead {
-    display: table-header-group; }
-  tr,
-  img {
-    page-break-inside: avoid; }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3; }
-  h2,
-  h3 {
-    page-break-after: avoid; }
-  .navbar {
-    display: none; }
-  .badge {
-    border: 1px solid #000; }
-  .table {
-    border-collapse: collapse !important; }
-    .table td,
-    .table th {
-      background-color: #fff !important; }
-  .table-bordered th,
-  .table-bordered td {
-    border: 1px solid #ddd !important; } }
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
 *::before,
@@ -107,7 +63,7 @@ body {
   background-color: #fff; }
 
 [tabindex="-1"]:focus {
-  outline: none !important; }
+  outline: 0 !important; }
 
 hr {
   -webkit-box-sizing: content-box;
@@ -346,7 +302,8 @@ output {
   display: inline-block; }
 
 summary {
-  display: list-item; }
+  display: list-item;
+  cursor: pointer; }
 
 template {
   display: none; }
@@ -431,7 +388,7 @@ mark,
 .list-inline-item {
   display: inline-block; }
   .list-inline-item:not(:last-child) {
-    margin-right: 5px; }
+    margin-right: 0.5rem; }
 
 .initialism {
   font-size: 90%;
@@ -455,11 +412,9 @@ mark,
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #dee2e6;
   -webkit-border-radius: 0.25rem;
           border-radius: 0.25rem;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   max-width: 100%;
   height: auto; }
 
@@ -1339,49 +1294,65 @@ mark,
 .bg-primary {
   background-color: #007bff !important; }
 
-a.bg-primary:focus, a.bg-primary:hover {
+a.bg-primary:focus, a.bg-primary:hover,
+button.bg-primary:focus,
+button.bg-primary:hover {
   background-color: #0062cc !important; }
 
 .bg-secondary {
   background-color: #868e96 !important; }
 
-a.bg-secondary:focus, a.bg-secondary:hover {
+a.bg-secondary:focus, a.bg-secondary:hover,
+button.bg-secondary:focus,
+button.bg-secondary:hover {
   background-color: #6c757d !important; }
 
 .bg-success {
   background-color: #28a745 !important; }
 
-a.bg-success:focus, a.bg-success:hover {
+a.bg-success:focus, a.bg-success:hover,
+button.bg-success:focus,
+button.bg-success:hover {
   background-color: #1e7e34 !important; }
 
 .bg-info {
   background-color: #17a2b8 !important; }
 
-a.bg-info:focus, a.bg-info:hover {
+a.bg-info:focus, a.bg-info:hover,
+button.bg-info:focus,
+button.bg-info:hover {
   background-color: #117a8b !important; }
 
 .bg-warning {
   background-color: #ffc107 !important; }
 
-a.bg-warning:focus, a.bg-warning:hover {
+a.bg-warning:focus, a.bg-warning:hover,
+button.bg-warning:focus,
+button.bg-warning:hover {
   background-color: #d39e00 !important; }
 
 .bg-danger {
   background-color: #dc3545 !important; }
 
-a.bg-danger:focus, a.bg-danger:hover {
+a.bg-danger:focus, a.bg-danger:hover,
+button.bg-danger:focus,
+button.bg-danger:hover {
   background-color: #bd2130 !important; }
 
 .bg-light {
   background-color: #f8f9fa !important; }
 
-a.bg-light:focus, a.bg-light:hover {
+a.bg-light:focus, a.bg-light:hover,
+button.bg-light:focus,
+button.bg-light:hover {
   background-color: #dae0e5 !important; }
 
 .bg-dark {
   background-color: #343a40 !important; }
 
-a.bg-dark:focus, a.bg-dark:hover {
+a.bg-dark:focus, a.bg-dark:hover,
+button.bg-dark:focus,
+button.bg-dark:hover {
   background-color: #1d2124 !important; }
 
 .bg-white {
@@ -3468,6 +3439,50 @@ a.text-dark:focus, a.text-dark:hover {
 
 .invisible {
   visibility: hidden !important; }
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  abbr[title]::after {
+    content: " (" attr(title) ")"; }
+  pre {
+    white-space: pre-wrap !important; }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; }
+  .navbar {
+    display: none; }
+  .badge {
+    border: 1px solid #000; }
+  .table {
+    border-collapse: collapse !important; }
+    .table td,
+    .table th {
+      background-color: #fff !important; }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important; } }
 
 /*
 animate.css

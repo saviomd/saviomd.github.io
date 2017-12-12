@@ -50,7 +50,7 @@ gulp.task('manifests', function() {
 
 gulp.task('cssVendor', function() {
 	return gulp.src('_src/css/vendor.scss')
-		.pipe(sass())
+		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss([ autoprefixer(autoprefixerConfig), postcssFlexbugsFixes() ]))
 		.pipe(gulp.dest('css'))
 		.pipe(postcss([ cssnano(cssnanoConfig) ]))
@@ -67,7 +67,7 @@ gulp.task('cssSiteLint', function() {
 
 gulp.task('cssSite', ['cssSiteLint'], function() {
 	return gulp.src('_src/css/saviomd.scss')
-		.pipe(sass())
+		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss([ autoprefixer(autoprefixerConfig), postcssFlexbugsFixes() ]))
 		.pipe(gulp.dest('css'))
 		.pipe(postcss([ cssnano(cssnanoConfig) ]))
@@ -75,14 +75,6 @@ gulp.task('cssSite', ['cssSiteLint'], function() {
 		.pipe(gulp.dest('css'))
 		.pipe(stylestats(stylestatsConfig))
 		.pipe(gulp.dest('css'))
-});
-
-gulp.task('jsCopy', function() {
-	return gulp.src([
-			'node_modules/html5shiv/dist/html5shiv.min.js',
-			'node_modules/respond.js/dest/respond.min.js'
-		])
-		.pipe(gulp.dest('js'))
 });
 
 gulp.task('jsVendor', function() {
@@ -98,6 +90,7 @@ gulp.task('jsSite', function() {
 	return gulp.src(require('./_src/js/saviomd.js'))
 		.pipe(eslint(eslintConfig))
 		.pipe(eslint.format())
+		.pipe(eslint.failOnError())
 		.pipe(concat('saviomd.js'))
 		.pipe(gulp.dest('js'))
 		.pipe(uglify())
@@ -122,7 +115,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
-	gulp.start('jsCopy', 'jsVendor', 'jsSite');
+	gulp.start('jsVendor', 'jsSite');
 });
 
 gulp.task('dev', ['browserSync'], function() {
