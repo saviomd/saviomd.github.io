@@ -13,7 +13,7 @@ saviomd.feeds = (function () {
 		'</li>';
 
 	/*
-	posts do blog
+	Posts do blog
 	====================
 	*/
 	var $blog = $('.js-blog');
@@ -46,7 +46,7 @@ saviomd.feeds = (function () {
 	});
 
 	/*
-	github starred
+	Github starred
 	====================
 	*/
 	var $githubStarred = $('.js-github-starred');
@@ -85,7 +85,7 @@ saviomd.feeds = (function () {
 	});
 
 	/*
-	pins
+	Pins
 	====================
 	*/
 	var templatePin = '<li class="animated fadeInRight col-6 col-sm-4 col-md-2 mb-3">' +

@@ -4,7 +4,7 @@ var saviomd = saviomd || {};
 
 saviomd.header = (function () {
 	/*
-	toggle nav menu
+	Toggle nav menu
 	====================
 	*/
 	$('.js-btn-nav').on('click', function (e) {
@@ -13,7 +13,7 @@ saviomd.header = (function () {
 	});
 
 	/*
-	animacao p/ scroll
+	Animacao p/ scroll
 	====================
 	*/
 	$('.header__nav-link').smoothScroll();

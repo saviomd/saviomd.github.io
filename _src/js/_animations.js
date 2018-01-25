@@ -6,7 +6,7 @@ var saviomd = saviomd || {};
 
 saviomd.animations = (function () {
 	/*
-	animacoes no scroll
+	Animacoes no scroll
 	====================
 	*/
 	new WOW().init();

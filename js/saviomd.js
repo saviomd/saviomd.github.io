@@ -6,7 +6,7 @@ var saviomd = saviomd || {};
 
 saviomd.animations = (function () {
 	/*
-	animacoes no scroll
+	Animacoes no scroll
 	====================
 	*/
 	new WOW().init();
@@ -18,7 +18,7 @@ var saviomd = saviomd || {};
 
 saviomd.contact = (function () {
 	/*
-	exibir contato
+	Exibir contato
 	====================
 	*/
 	$('.js-link-contact').on('click', function (e) {
@@ -32,7 +32,7 @@ saviomd.contact = (function () {
 	});
 
 	/*
-	fechar contato
+	Fechar contato
 	====================
 	*/
 	$('.js-close-contact').on('click', function (e) {
@@ -57,7 +57,7 @@ saviomd.feeds = (function () {
 		'</li>';
 
 	/*
-	posts do blog
+	Posts do blog
 	====================
 	*/
 	var $blog = $('.js-blog');
@@ -90,7 +90,7 @@ saviomd.feeds = (function () {
 	});
 
 	/*
-	github starred
+	Github starred
 	====================
 	*/
 	var $githubStarred = $('.js-github-starred');
@@ -129,7 +129,7 @@ saviomd.feeds = (function () {
 	});
 
 	/*
-	pins
+	Pins
 	====================
 	*/
 	var templatePin = '<li class="animated fadeInRight col-6 col-sm-4 col-md-2 mb-3">' +
@@ -179,7 +179,7 @@ var saviomd = saviomd || {};
 
 saviomd.header = (function () {
 	/*
-	toggle nav menu
+	Toggle nav menu
 	====================
 	*/
 	$('.js-btn-nav').on('click', function (e) {
@@ -188,7 +188,7 @@ saviomd.header = (function () {
 	});
 
 	/*
-	animacao p/ scroll
+	Animacao p/ scroll
 	====================
 	*/
 	$('.header__nav-link').smoothScroll();

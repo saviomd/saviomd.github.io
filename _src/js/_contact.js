@@ -4,7 +4,7 @@ var saviomd = saviomd || {};
 
 saviomd.contact = (function () {
 	/*
-	exibir contato
+	Exibir contato
 	====================
 	*/
 	$('.js-link-contact').on('click', function (e) {
@@ -18,7 +18,7 @@ saviomd.contact = (function () {
 	});
 
 	/*
-	fechar contato
+	Fechar contato
 	====================
 	*/
 	$('.js-close-contact').on('click', function (e) {

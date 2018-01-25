@@ -7,7 +7,7 @@ var cssnano = require('cssnano');
 var cssnanoConfig = require('tools-config-saviomd/cssnano-config');
 var del = require('del');
 var eslint = require('gulp-eslint');
-var eslintConfig = require('tools-config-saviomd/eslint-config');
+var eslintConfig = './node_modules/tools-config-saviomd/eslint-config/index.js';
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
 var htmlminConfig = require('tools-config-saviomd/htmlmin-config');
@@ -90,7 +90,7 @@ gulp.task('jsSite', function() {
 	return gulp.src(require('./_src/js/saviomd.js'))
 		.pipe(eslint(eslintConfig))
 		.pipe(eslint.format())
-		.pipe(eslint.failOnError())
+		.pipe(eslint.failAfterError())
 		.pipe(concat('saviomd.js'))
 		.pipe(gulp.dest('js'))
 		.pipe(uglify())
