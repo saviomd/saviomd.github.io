@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-var saviomd = saviomd || {};
+const saviomd = saviomd || {};
 /* eslint-enable no-use-before-define */
 
 saviomd.contact = (function () {
@@ -21,7 +21,7 @@ saviomd.contact = (function () {
 	Fechar contato
 	====================
 	*/
-	$('.js-close-contact').on('click', function (e) {
+	$('.js-close-contact').on('click', e => {
 		e.preventDefault();
 		$('.header').animate({marginTop: 0});
 		$('.js-link-contact').removeClass('active');
