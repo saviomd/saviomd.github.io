@@ -19,6 +19,7 @@ var postcss = require('gulp-postcss');
 var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var scss = require('postcss-scss');
 var sourcemaps = require('gulp-sourcemaps');
 var stylelint = require('stylelint');
 var stylelintConfig = require('tools-config-saviomd/stylelint-config');
@@ -51,7 +52,7 @@ gulp.task('manifests', function() {
 
 gulp.task('cssLint', function() {
 	return gulp.src('_src/css/_*.scss')
-		.pipe(postcss([ stylelint(stylelintConfig) ]))
+		.pipe(postcss([ stylelint(stylelintConfig) ], { syntax: scss }))
 });
 
 gulp.task('css', ['cssLint'], function() {

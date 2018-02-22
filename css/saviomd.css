@@ -3548,17 +3548,6 @@ animate.css
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite; }
 
-.animated.hinge {
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s; }
-
-.animated.flipOutX,
-.animated.flipOutY,
-.animated.bounceIn,
-.animated.bounceOut {
-  -webkit-animation-duration: .75s;
-          animation-duration: .75s; }
-
 @-webkit-keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -3566,8 +3555,8 @@ animate.css
             transform: translate3d(-100%, 0, 0); }
   to {
     opacity: 1;
-    -webkit-transform: none;
-            transform: none; } }
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
 
 @keyframes fadeInLeft {
   from {
@@ -3576,8 +3565,8 @@ animate.css
             transform: translate3d(-100%, 0, 0); }
   to {
     opacity: 1;
-    -webkit-transform: none;
-            transform: none; } }
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
 
 .fadeInLeft {
   -webkit-animation-name: fadeInLeft;
@@ -3590,8 +3579,8 @@ animate.css
             transform: translate3d(100%, 0, 0); }
   to {
     opacity: 1;
-    -webkit-transform: none;
-            transform: none; } }
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
 
 @keyframes fadeInRight {
   from {
@@ -3600,8 +3589,8 @@ animate.css
             transform: translate3d(100%, 0, 0); }
   to {
     opacity: 1;
-    -webkit-transform: none;
-            transform: none; } }
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
 
 .fadeInRight {
   -webkit-animation-name: fadeInRight;
@@ -3614,8 +3603,8 @@ animate.css
             transform: translate3d(0, 100%, 0); }
   to {
     opacity: 1;
-    -webkit-transform: none;
-            transform: none; } }
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
 
 @keyframes fadeInUp {
   from {
@@ -3624,8 +3613,8 @@ animate.css
             transform: translate3d(0, 100%, 0); }
   to {
     opacity: 1;
-    -webkit-transform: none;
-            transform: none; } }
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
 
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
@@ -3822,10 +3811,8 @@ a:focus {
   top: 20px; }
 
 .link-social {
-  background: #aaa;
   -webkit-border-radius: 0.5rem;
           border-radius: 0.5rem;
-  color: #fff;
   display: block;
   font-size: 22px;
   text-align: center;
@@ -3839,55 +3826,59 @@ a:focus {
   -webkit-transform: rotate(-2deg) scale(1.2);
           transform: rotate(-2deg) scale(1.2); }
 
+.link-social--atom,
 .link-social--atom:hover,
 .link-social--atom:focus {
-  background: #efeae1;
-  color: #66595c; }
+  background: #584b4f;
+  color: #efeae1; }
 
+.link-social--facebook,
 .link-social--facebook:hover,
 .link-social--facebook:focus {
   background: #3b5998;
   color: #fff; }
 
+.link-social--github,
 .link-social--github:hover,
 .link-social--github:focus {
-  background: #eaeaea;
-  color: #222; }
+  background: #24292e;
+  color: #eee; }
 
+.link-social--goodreads,
 .link-social--goodreads:hover,
 .link-social--goodreads:focus {
   background: #e3dfc9;
   color: #382110; }
 
-.link-social--googleplus:hover,
-.link-social--googleplus:focus {
-  background: #cd3726;
-  color: #fff; }
-
+.link-social--letterboxd,
 .link-social--letterboxd:hover,
 .link-social--letterboxd:focus {
   background: #14181c;
   color: #9ab; }
 
+.link-social--linkedin,
 .link-social--linkedin:hover,
 .link-social--linkedin:focus {
   background: #2e8dd7;
   color: #fff; }
 
+.link-social--pinterest,
 .link-social--pinterest:hover,
 .link-social--pinterest:focus {
   background: #c72527;
   color: #fff; }
 
+.link-social--twitter,
 .link-social--twitter:hover,
 .link-social--twitter:focus {
   background: #2298f0;
   color: #fff; }
 
+.link-social--xbox,
 .link-social--xbox:hover,
 .link-social--xbox:focus {
-  background: #fff;
-  color: #7b4; }
+  background: #107c10;
+  color: #fff; }
 
 .feeds {
   border-bottom: 1px solid #ccc; }

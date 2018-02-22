@@ -1,6 +1,6 @@
 {
   "name": "saviomd.com",
-  "version": "1.0.20180130",
+  "version": "1.0.20180222",
   "description": "Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web",
   "author": "Sávio Mendes",
   "license": "UNLICENSED",
@@ -14,8 +14,8 @@
     "start": "gulp dev"
   },
   "dependencies": {
-    "animate.css": "^3.5.2",
-    "autoprefixer": "^7.2.5",
+    "animate.css": "^3.6.1",
+    "autoprefixer": "^8.0.0",
     "autotrack": "^2.4.1",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -37,7 +37,8 @@
     "jquery": "^3.3.1",
     "jquery-smooth-scroll": "^2.2.0",
     "postcss-flexbugs-fixes": "^3.3.0",
-    "stylelint": "^8.4.0",
+    "postcss-scss": "^1.0.3",
+    "stylelint": "^9.1.1",
     "tools-config-saviomd": "github:saviomd/tools-config-saviomd",
     "wowjs": "^1.1.3"
   }
