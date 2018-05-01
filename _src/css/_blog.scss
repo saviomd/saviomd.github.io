@@ -1,4 +1,4 @@
-.feeds {
+.blog {
 	border-bottom: 1px solid #ccc;
 }
 
@@ -39,44 +39,10 @@ $post-padding-y: ($spacer / 2);
 		overflow: hidden;
 	}
 
-	.post-wrapper--title-one-line .post__title {
-		max-height: $font-size-base * $line-height-base;
-	}
-
 }
 
-.post__body {
+.post__date {
 	color: #333;
 	font-size: $post-body-font-size;
 	font-weight: 400;
-}
-
-@include media-breakpoint-up(sm) {
-
-	.post__body {
-		max-height: $post-body-font-size * $line-height-base * 2;
-		overflow: hidden;
-	}
-
-}
-
-/*
-pins
-====================
-*/
-
-.pin-wrapper {
-	overflow: visible;
-}
-
-.pin {
-	background-position: center;
-	background-size: cover;
-	border: 1px solid #ccc !important;
-	border-radius: $spacer / 2;
-}
-
-.pin:hover,
-.pin:focus {
-	transform: scale(1.1);
 }

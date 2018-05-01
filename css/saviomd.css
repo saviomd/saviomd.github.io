@@ -3683,6 +3683,30 @@ animate.css
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite; }
 
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+          animation-name: fadeInDown; }
+
 @-webkit-keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -3730,30 +3754,6 @@ animate.css
 .fadeInRight {
   -webkit-animation-name: fadeInRight;
           animation-name: fadeInRight; }
-
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0); }
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0); }
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-          animation-name: fadeInUp; }
 
 /*
 saviomd
@@ -3945,77 +3945,7 @@ a:focus {
   right: -30px;
   top: 20px; }
 
-.link-social {
-  -webkit-border-radius: 0.5rem;
-          border-radius: 0.5rem;
-  display: block;
-  font-size: 22px;
-  text-align: center;
-  width: 44px; }
-
-.link-social:hover,
-.link-social:focus {
-  -webkit-box-shadow: -2px 2px 0 rgba(0, 0, 16, 0.5);
-          box-shadow: -2px 2px 0 rgba(0, 0, 16, 0.5);
-  text-decoration: none;
-  -webkit-transform: rotate(-2deg) scale(1.2);
-          transform: rotate(-2deg) scale(1.2); }
-
-.link-social--atom,
-.link-social--atom:hover,
-.link-social--atom:focus {
-  background: #584b4f;
-  color: #efeae1; }
-
-.link-social--facebook,
-.link-social--facebook:hover,
-.link-social--facebook:focus {
-  background: #3b5998;
-  color: #fff; }
-
-.link-social--github,
-.link-social--github:hover,
-.link-social--github:focus {
-  background: #24292e;
-  color: #eee; }
-
-.link-social--goodreads,
-.link-social--goodreads:hover,
-.link-social--goodreads:focus {
-  background: #e3dfc9;
-  color: #382110; }
-
-.link-social--letterboxd,
-.link-social--letterboxd:hover,
-.link-social--letterboxd:focus {
-  background: #14181c;
-  color: #9ab; }
-
-.link-social--linkedin,
-.link-social--linkedin:hover,
-.link-social--linkedin:focus {
-  background: #2e8dd7;
-  color: #fff; }
-
-.link-social--pinterest,
-.link-social--pinterest:hover,
-.link-social--pinterest:focus {
-  background: #c72527;
-  color: #fff; }
-
-.link-social--twitter,
-.link-social--twitter:hover,
-.link-social--twitter:focus {
-  background: #2298f0;
-  color: #fff; }
-
-.link-social--xbox,
-.link-social--xbox:hover,
-.link-social--xbox:focus {
-  background: #107c10;
-  color: #fff; }
-
-.feeds {
+.blog {
   border-bottom: 1px solid #ccc; }
 
 /*
@@ -4042,39 +3972,108 @@ posts
 @media (min-width: 576px) {
   .post__title {
     max-height: 3rem;
-    overflow: hidden; }
-  .post-wrapper--title-one-line .post__title {
-    max-height: 1.5rem; } }
+    overflow: hidden; } }
 
-.post__body {
+.post__date {
   color: #333;
   font-size: 0.75rem;
   font-weight: 400; }
 
-@media (min-width: 576px) {
-  .post__body {
-    max-height: 2.25rem;
-    overflow: hidden; } }
+.links {
+  border-bottom: 1px solid #ccc; }
 
-/*
-pins
-====================
-*/
-.pin-wrapper {
-  overflow: visible; }
+.link-social {
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  display: inline-block;
+  font-weight: 600;
+  padding: 5px 10px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 16, 0.5); }
 
-.pin {
-  background-position: center;
-  -webkit-background-size: cover;
-          background-size: cover;
-  border: 1px solid #ccc !important;
-  -webkit-border-radius: 0.5rem;
-          border-radius: 0.5rem; }
+.link-social:hover,
+.link-social:focus {
+  text-decoration: none; }
 
-.pin:hover,
-.pin:focus {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1); }
+.link-social--atom {
+  background: #584b4f;
+  color: #efeae1; }
+
+.link-social--atom:hover,
+.link-social--atom:focus {
+  background: #746268;
+  color: #efeae1; }
+
+.link-social--facebook {
+  background: #3b5998;
+  color: #fff; }
+
+.link-social--facebook:hover,
+.link-social--facebook:focus {
+  background: #4c70ba;
+  color: #fff; }
+
+.link-social--github {
+  background: #24292e;
+  color: #eee; }
+
+.link-social--github:hover,
+.link-social--github:focus {
+  background: #3a434b;
+  color: #eee; }
+
+.link-social--goodreads {
+  background: #e3dfc9;
+  color: #382110; }
+
+.link-social--goodreads:hover,
+.link-social--goodreads:focus {
+  background: #f4f3eb;
+  color: #382110; }
+
+.link-social--letterboxd {
+  background: #14181c;
+  color: #9ab; }
+
+.link-social--letterboxd:hover,
+.link-social--letterboxd:focus {
+  background: #29323a;
+  color: #9ab; }
+
+.link-social--linkedin {
+  background: #2e8dd7;
+  color: #fff; }
+
+.link-social--linkedin:hover,
+.link-social--linkedin:focus {
+  background: #59a4df;
+  color: #fff; }
+
+.link-social--pinterest {
+  background: #c72527;
+  color: #fff; }
+
+.link-social--pinterest:hover,
+.link-social--pinterest:focus {
+  background: #dc4345;
+  color: #fff; }
+
+.link-social--twitter {
+  background: #2298f0;
+  color: #fff; }
+
+.link-social--twitter:hover,
+.link-social--twitter:focus {
+  background: #52aef3;
+  color: #fff; }
+
+.link-social--xbox {
+  background: #107c10;
+  color: #fff; }
+
+.link-social--xbox:hover,
+.link-social--xbox:focus {
+  background: #16a916;
+  color: #fff; }
 
 .work {
   border-bottom: 1px solid #ccc; }

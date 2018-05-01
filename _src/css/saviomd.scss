@@ -43,9 +43,9 @@ animate.css
 ====================
 */
 @import "../../node_modules/animate.css/source/_base";
+@import "../../node_modules/animate.css/source/fading_entrances/fadeInDown";
 @import "../../node_modules/animate.css/source/fading_entrances/fadeInLeft";
 @import "../../node_modules/animate.css/source/fading_entrances/fadeInRight";
-@import "../../node_modules/animate.css/source/fading_entrances/fadeInUp";
 
 /*
 saviomd
@@ -56,8 +56,8 @@ saviomd
 @import "_titles";
 @import "_header";
 @import "_about";
-@import "_link-social";
-@import "_feeds";
+@import "_blog";
+@import "_links";
 @import "_work";
 @import "_contact";
 @import "_footer";

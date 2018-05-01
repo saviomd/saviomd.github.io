@@ -37,27 +37,33 @@ $link-social-variants: (
 	)
 );
 
+.links {
+	border-bottom: 1px solid #ccc;
+}
+
 .link-social {
-	border-radius: $spacer / 2;
-	display: block;
-	font-size: 22px;
-	text-align: center;
-	width: 44px;
+	border-radius: 5px;
+	display: inline-block;
+	font-weight: 600;
+	padding: 5px 10px;
+	text-shadow: 0 -1px 0 rgba(0, 0, 16, 0.5);
 }
 
 .link-social:hover,
 .link-social:focus {
-	box-shadow: -2px 2px 0 rgba(0, 0, 16, 0.5);
 	text-decoration: none;
-	transform: rotate(-2deg) scale(1.2);
 }
 
 @each $name, $colors in $link-social-variants {
 
-	.link-social--#{$name},
+	.link-social--#{$name} {
+		background: nth($colors, 1);
+		color: nth($colors, 2);
+	}
+
 	.link-social--#{$name}:hover,
 	.link-social--#{$name}:focus {
-		background: nth($colors, 1);
+		background: lighten(nth($colors, 1), 10%);
 		color: nth($colors, 2);
 	}
 
