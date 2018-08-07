@@ -30,7 +30,7 @@ bootstrap
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -55,7 +55,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -176,8 +176,9 @@ img {
   vertical-align: middle;
   border-style: none; }
 
-svg:not(:root) {
-  overflow: hidden; }
+svg {
+  overflow: hidden;
+  vertical-align: middle; }
 
 table {
   border-collapse: collapse; }
@@ -3682,6 +3683,49 @@ animate.css
 .animated.infinite {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite; }
+
+.animated.delay-1s {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s; }
+
+.animated.delay-2s {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s; }
+
+.animated.delay-3s {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s; }
+
+.animated.delay-4s {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s; }
+
+.animated.delay-5s {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s; }
+
+.animated.fast {
+  -webkit-animation-duration: 800ms;
+          animation-duration: 800ms; }
+
+.animated.faster {
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms; }
+
+.animated.slow {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s; }
+
+.animated.slower {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s; }
+
+@media (prefers-reduced-motion) {
+  .animated {
+    -webkit-animation: unset !important;
+            animation: unset !important;
+    -webkit-transition: none !important;
+    transition: none !important; } }
 
 @-webkit-keyframes fadeInDown {
   from {
