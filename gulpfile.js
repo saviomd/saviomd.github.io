@@ -13,10 +13,10 @@ var eslintConfig = './node_modules/tools-config-saviomd/eslint-config.js';
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
 var htmlminConfig = require('tools-config-saviomd/htmlmin-config');
-var jade = require('gulp-jade');
-var jadeConfig = require('tools-config-saviomd/jade-config');
 var postcss = require('gulp-postcss');
 var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
+var pug = require('gulp-pug');
+var pugConfig = require('tools-config-saviomd/pug-config');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var scss = require('postcss-scss');
@@ -37,15 +37,15 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('html', function() {
-	return gulp.src('_src/pages/*.jade')
-		.pipe(jade(jadeConfig))
+	return gulp.src('_src/pages/*.pug')
+		.pipe(pug(pugConfig))
 		.pipe(htmlmin(htmlminConfig))
 		.pipe(gulp.dest('./'))
 });
 
 gulp.task('manifests', function() {
-	return gulp.src('_src/manifests/*.jade')
-		.pipe(jade(jadeConfig))
+	return gulp.src('_src/manifests/*.pug')
+		.pipe(pug(pugConfig))
 		.pipe(rename({ extname: '.json' }))
 		.pipe(gulp.dest('./'))
 });
@@ -99,8 +99,8 @@ gulp.task('default', ['clean'], function() {
 });
 
 gulp.task('dev', ['browserSync'], function() {
-	gulp.watch('_src/**/*.jade', ['html', browserSync.reload])
-	gulp.watch('_src/manifests/*.jade', ['manifests', browserSync.reload])
+	gulp.watch('_src/**/*.pug', ['html', browserSync.reload])
+	gulp.watch('_src/manifests/*.pug', ['manifests', browserSync.reload])
 	gulp.watch('_src/css/*.scss', ['css', browserSync.reload])
 	gulp.watch('_src/js/*.js', ['js', browserSync.reload])
 });

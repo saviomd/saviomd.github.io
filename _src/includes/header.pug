@@ -1,4 +1,4 @@
-include /data/sections.jade
+include /data/sections
 
 header.header
 	h1.header__title.container-fluid.my-0= site.name
@@ -8,4 +8,4 @@ header.header
 			ul.header__nav.list-unstyled.mb-0.float-sm-right
 				each section in sections
 					li.float-sm-left
-						a.header__nav-link.px-3.text-center(class=(section.id === 'contact') ? 'js-link-contact' : '', href='##{section.id}', ga-on='click', ga-event-category=site.name, ga-event-action='Cabeçalho', ga-event-label=section.name)= section.name
+						a.header__nav-link.px-3.text-center(class=(section.id === 'contact') ? 'js-link-contact' : '', href=`#${section.id}`, ga-on='click', ga-event-category=site.name, ga-event-action='Cabeçalho', ga-event-label=section.name)= section.name
