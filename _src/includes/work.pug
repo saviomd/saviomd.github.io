@@ -10,9 +10,10 @@ section#work.work.container-fluid.py-3
 						.work__item.mb-4.py-3.clearfix
 							header
 								h3.title.title--sub= item.name
-							ul.list-inline.mb-3
+							.mb-3= item.description
+							ul.list-inline
 								each tag in item.tags
-									li.work__technology.list-inline-item= tag
+									li.work__technology.list-inline-item.small= tag
 							if item.url
 								.text-right
 									a.btn.work__btn(href=item.url, rel='noopener', target='_blank', ga-on='click', ga-event-category=site.name, ga-event-action='Trabalhos', ga-event-label=item.name)= 'Visite o site'

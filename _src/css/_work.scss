@@ -6,10 +6,9 @@
 	border-bottom: 1px solid #ccc;
 }
 
-.work__technology:after {
-	content: ",";
-}
-
-.work__technology:last-child:after {
-	content: ".";
+.work__technology {
+	border: 1px solid #ccc;
+	border-radius: $spacer/2;
+	margin-bottom: $spacer/2;
+	padding: $spacer/4 $spacer/2;
 }
