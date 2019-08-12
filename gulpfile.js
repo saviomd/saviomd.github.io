@@ -1,26 +1,20 @@
 var autoprefixer = require('autoprefixer');
-var autoprefixerConfig = require('tools-config-saviomd/autoprefixer-config');
 var babel = require('gulp-babel');
 var browserSync = require('browser-sync');
-var browserSyncConfig = require('tools-config-saviomd/browser-sync-config');
 var concat = require('gulp-concat');
 var cssnano = require('cssnano');
-var cssnanoConfig = require('tools-config-saviomd/cssnano-config');
 var del = require('del');
 var eslint = require('gulp-eslint');
-var eslintConfig = './node_modules/tools-config-saviomd/eslint-config.js';
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
-var htmlminConfig = require('tools-config-saviomd/htmlmin-config');
 var postcss = require('gulp-postcss');
 var postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
+var projectData = require('./package.json');
 var pug = require('gulp-pug');
-var pugConfig = require('tools-config-saviomd/pug-config');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var scss = require('postcss-scss');
 var stylelint = require('stylelint');
-var stylelintConfig = require('tools-config-saviomd/stylelint-config');
 var uglify = require('gulp-uglify');
 
 var server = browserSync.create();
@@ -34,36 +28,36 @@ function clean() {
 
 function html() {
 	return gulp.src('_src/pages/*.pug')
-		.pipe(pug(pugConfig))
-		.pipe(htmlmin(htmlminConfig))
+		.pipe(pug(projectData.pug))
+		.pipe(htmlmin(projectData.htmlmin))
 		.pipe(gulp.dest('./'))
 }
 
 function manifests() {
 	return gulp.src('_src/manifests/*.pug')
-		.pipe(pug(pugConfig))
+		.pipe(pug(projectData.pug))
 		.pipe(rename({ extname: '.json' }))
 		.pipe(gulp.dest('./'))
 }
 
 function cssLint() {
 	return gulp.src('_src/css/_*.scss')
-		.pipe(postcss([ stylelint(stylelintConfig) ], { syntax: scss }))
+		.pipe(postcss([ stylelint() ], { syntax: scss }))
 }
 
 function cssBuild() {
 	return gulp.src('_src/css/saviomd.scss', { sourcemaps: true })
 		.pipe(sass().on('error', sass.logError))
-		.pipe(postcss([ autoprefixer(autoprefixerConfig), postcssFlexbugsFixes() ]))
+		.pipe(postcss([ autoprefixer(), postcssFlexbugsFixes() ]))
 		.pipe(gulp.dest('css'))
-		.pipe(postcss([ cssnano(cssnanoConfig) ]))
+		.pipe(postcss([ cssnano() ]))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('css', { sourcemaps: '.' }))
 }
 
 function jsLint() {
 	return gulp.src('_src/js/_*.js')
-		.pipe(eslint(eslintConfig))
+		.pipe(eslint())
 		.pipe(eslint.format())
 		.pipe(eslint.failAfterError())
 }
@@ -79,7 +73,7 @@ function jsBuild() {
 }
 
 function serve(cb) {
-	server.init(browserSyncConfig);
+	server.init(projectData.browserSync);
 	cb();
 }
 

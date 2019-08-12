@@ -24,6 +24,7 @@
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
     "del": "^5.0.0",
+    "eslint-config-xo": "^0.24.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
@@ -39,12 +40,59 @@
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-scss": "^2.0.0",
     "stylelint": "^10.1.0",
-    "tools-config-saviomd": "github:saviomd/tools-config-saviomd",
+    "stylelint-config-suitcss": "^14.0.0",
     "wowjs": "^1.1.3"
   },
   "babel": {
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "browserSync": {
+    "ghostMode": {
+      "clicks": true,
+      "forms": true,
+      "scroll": true
+    },
+    "server": {
+      "baseDir": "./"
+    },
+    "https": true,
+    "startPath": "?a=0"
+  },
+  "cssnano": {
+    "preset": "default"
+  },
+  "eslintConfig": {
+    "extends": "xo/esnext",
+    "env": {
+      "browser": true,
+      "jquery": true,
+      "node": false
+    }
+  },
+  "htmlmin": {
+    "collapseBooleanAttributes": true,
+    "collapseWhitespace": true,
+    "minifyCSS": true,
+    "minifyJS": true,
+    "removeAttributeQuotes": true,
+    "removeComments": true
+  },
+  "pug": {
+    "basedir": "_src",
+    "pretty": true
+  },
+  "stylelint": {
+    "extends": "stylelint-config-suitcss",
+    "rules": {
+      "indentation": "tab",
+      "selector-max-id": 0,
+      "selector-pseudo-element-colon-notation": "single"
+    }
   }
 }
