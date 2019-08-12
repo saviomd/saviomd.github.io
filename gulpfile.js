@@ -1,7 +1,6 @@
 var autoprefixer = require('autoprefixer');
 var autoprefixerConfig = require('tools-config-saviomd/autoprefixer-config');
 var babel = require('gulp-babel');
-var babelConfig = require('tools-config-saviomd/babel-config');
 var browserSync = require('browser-sync');
 var browserSyncConfig = require('tools-config-saviomd/browser-sync-config');
 var concat = require('gulp-concat');
@@ -20,87 +19,94 @@ var pugConfig = require('tools-config-saviomd/pug-config');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var scss = require('postcss-scss');
-var sourcemaps = require('gulp-sourcemaps');
 var stylelint = require('stylelint');
 var stylelintConfig = require('tools-config-saviomd/stylelint-config');
 var uglify = require('gulp-uglify');
 
-/*
-tasks
-====================
-*/
-gulp.task('clean', function(cb) {
-	return del([
-			'+(css|js)',
-			'+(404.html|index.html|manifest.json)'
-		], cb)
-});
+var server = browserSync.create();
 
-gulp.task('html', function() {
+function clean() {
+	return del([
+		'+(css|js)',
+		'+(404.html|index.html|manifest.json)'
+	])
+}
+
+function html() {
 	return gulp.src('_src/pages/*.pug')
 		.pipe(pug(pugConfig))
 		.pipe(htmlmin(htmlminConfig))
 		.pipe(gulp.dest('./'))
-});
+}
 
-gulp.task('manifests', function() {
+function manifests() {
 	return gulp.src('_src/manifests/*.pug')
 		.pipe(pug(pugConfig))
 		.pipe(rename({ extname: '.json' }))
 		.pipe(gulp.dest('./'))
-});
+}
 
-gulp.task('cssLint', function() {
+function cssLint() {
 	return gulp.src('_src/css/_*.scss')
 		.pipe(postcss([ stylelint(stylelintConfig) ], { syntax: scss }))
-});
+}
 
-gulp.task('css', ['cssLint'], function() {
-	return gulp.src('_src/css/saviomd.scss')
-		.pipe(sourcemaps.init())
+function cssBuild() {
+	return gulp.src('_src/css/saviomd.scss', { sourcemaps: true })
 		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss([ autoprefixer(autoprefixerConfig), postcssFlexbugsFixes() ]))
 		.pipe(gulp.dest('css'))
 		.pipe(postcss([ cssnano(cssnanoConfig) ]))
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('css'))
-});
+		.pipe(gulp.dest('css', { sourcemaps: '.' }))
+}
 
-gulp.task('jsLint', function() {
+function jsLint() {
 	return gulp.src('_src/js/_*.js')
 		.pipe(eslint(eslintConfig))
 		.pipe(eslint.format())
 		.pipe(eslint.failAfterError())
-});
+}
 
-gulp.task('js', ['jsLint'], function() {
-	return gulp.src(require('./_src/js/saviomd.js'))
-		.pipe(sourcemaps.init())
-		.pipe(babel(babelConfig))
+function jsBuild() {
+	return gulp.src(require('./_src/js/saviomd.js'), { sourcemaps: true })
+		.pipe(babel())
 		.pipe(concat('saviomd.js'))
 		.pipe(gulp.dest('js'))
 		.pipe(uglify())
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('js'))
-});
+		.pipe(gulp.dest('js', { sourcemaps: '.' }))
+}
 
-gulp.task('browserSync', function() {
-	browserSync.init(browserSyncConfig);
-});
+function serve(cb) {
+	server.init(browserSyncConfig);
+	cb();
+}
 
-/*
-build and dev tasks
-====================
-*/
-gulp.task('default', ['clean'], function() {
-	gulp.start('html', 'manifests', 'css', 'js');
-});
+function reload(cb) {
+	server.reload();
+	cb();
+}
 
-gulp.task('dev', ['browserSync'], function() {
-	gulp.watch('_src/**/*.pug', ['html', browserSync.reload])
-	gulp.watch('_src/manifests/*.pug', ['manifests', browserSync.reload])
-	gulp.watch('_src/css/*.scss', ['css', browserSync.reload])
-	gulp.watch('_src/js/*.js', ['js', browserSync.reload])
-});
+function css(cb) {
+	return gulp.series(cssLint, cssBuild)(cb);
+}
+
+function js(cb) {
+	return gulp.series(jsLint, jsBuild)(cb);
+}
+
+function watch(cb) {
+	gulp.watch('_src/**/*.pug', gulp.series(html, reload))
+	gulp.watch('_src/manifests/*.pug', gulp.series(manifests, reload))
+	gulp.watch('_src/css/*.scss', gulp.series(css, reload))
+	gulp.watch('_src/js/*.js', gulp.series(js, reload))
+	cb()
+}
+
+exports.default = gulp.series(
+	clean,
+	gulp.parallel(html, manifests, css, js),
+);
+
+exports.dev = gulp.series(serve, watch);
