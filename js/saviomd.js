@@ -10978,9 +10978,7 @@
 });
 "use strict";
 
-/* eslint-disable no-use-before-define */
 var saviomd = saviomd || {};
-/* eslint-enable no-use-before-define */
 
 saviomd.contact = function () {
   /*
@@ -11014,67 +11012,7 @@ saviomd.contact = function () {
 }();
 "use strict";
 
-/* global ga */
-
-/* eslint-disable no-use-before-define */
 var saviomd = saviomd || {};
-/* eslint-enable no-use-before-define */
-
-saviomd.blog = function () {
-  var template = '<li class="animated fadeInRight col-12 col-sm-6 col-md-4 mb-3">' + '<a href="{{link}}" class="post" rel="noopener" target="_blank" ga-on="click" ga-event-category="saviomd.com" ga-event-action="{{feed}}" ga-event-label="{{title}}">' + '<div class="post__title" title="{{title}}">{{title}}</div>' + '<div class="post__date">{{date}}</div>' + '</a>' + '</li>';
-  var $blog = $('.js-blog');
-  $blog.html('<li class="loading col-12"></li>');
-  $.ajax({
-    dataType: 'xml',
-    type: 'GET',
-    url: 'https://saviomd.com/blog/atom.xml'
-  }).done(function (response) {
-    var itens = $(response).find('entry').slice(0, 6);
-    var html = '';
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = itens[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var item = _step.value;
-        var htmlItem = template;
-        var link = $(item).find('link').attr('href');
-        var title = $(item).find('title').text();
-        var updated = $(item).find('updated').text().split('T')[0].split('-');
-        var date = updated[2] + '/' + updated[1] + '/' + updated[0];
-        htmlItem = htmlItem.replace(/{{feed}}/g, 'Blog').replace(/{{link}}/g, link).replace(/{{title}}/g, title).replace(/{{date}}/g, date);
-        html += htmlItem;
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return != null) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-
-    $blog.html(html);
-  }).fail(function () {
-    $blog.html('<li class="animated fadeInRight col-12 text-center">N&atilde;o foi poss&iacute;vel carregar</li>');
-
-    if (typeof ga !== 'undefined') {
-      ga('send', 'event', 'saviomd.com', 'Blog', 'Erro - Ajax fail');
-    }
-  });
-}();
-"use strict";
-
-/* eslint-disable no-use-before-define */
-var saviomd = saviomd || {};
-/* eslint-enable no-use-before-define */
 
 saviomd.header = function () {
   /*

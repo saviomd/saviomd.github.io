@@ -1,6 +1,4 @@
-/* eslint-disable no-use-before-define */
 const saviomd = saviomd || {};
-/* eslint-enable no-use-before-define */
 
 saviomd.header = (function () {
 	/*
