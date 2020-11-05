@@ -1,11 +1,12 @@
+/* eslint-disable-next-line no-use-before-define */
 const saviomd = saviomd || {};
 
-saviomd.header = (function () {
+saviomd.header = (() => {
 	/*
 	Toggle nav menu
 	====================
 	*/
-	$('.js-btn-nav').on('click', function (e) {
+	$('.js-btn-nav').on('click', (e) => {
 		e.preventDefault();
 		$(this).siblings('ul').toggleClass('active');
 	});

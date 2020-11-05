@@ -1,16 +1,17 @@
+/* eslint-disable-next-line no-use-before-define */
 const saviomd = saviomd || {};
 
-saviomd.contact = (function () {
+saviomd.contact = (() => {
 	/*
 	Exibir contato
 	====================
 	*/
-	$('.js-link-contact').on('click', function (e) {
+	$('.js-link-contact').on('click', (e) => {
 		e.preventDefault();
 		if ($(this).hasClass('active')) {
 			$('.js-close-contact').trigger('click');
 		} else {
-			$('.header').animate({marginTop: $('.contact').height()});
+			$('.header').animate({ marginTop: $('.contact').height() });
 			$(this).addClass('active');
 		}
 	});
@@ -19,9 +20,9 @@ saviomd.contact = (function () {
 	Fechar contato
 	====================
 	*/
-	$('.js-close-contact').on('click', e => {
+	$('.js-close-contact').on('click', (e) => {
 		e.preventDefault();
-		$('.header').animate({marginTop: 0});
+		$('.header').animate({ marginTop: 0 });
 		$('.js-link-contact').removeClass('active');
 	});
 })();
