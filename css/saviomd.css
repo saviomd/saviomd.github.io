@@ -4637,6 +4637,15 @@ a:focus {
   background: #f4f3eb;
   color: #382110; }
 
+.link-social--instagram {
+  background: #b900b4;
+  color: #fff; }
+
+.link-social--instagram:hover,
+.link-social--instagram:focus {
+  background: #ec00e6;
+  color: #fff; }
+
 .link-social--letterboxd {
   background: #14181c;
   color: #9ab; }
@@ -4664,6 +4673,15 @@ a:focus {
   background: #dc4345;
   color: #fff; }
 
+.link-social--spotify {
+  background: #000;
+  color: #1db954; }
+
+.link-social--spotify:hover,
+.link-social--spotify:focus {
+  background: #1a1a1a;
+  color: #1db954; }
+
 .link-social--trueachievements {
   background: #000;
   color: #baff00; }
@@ -4680,6 +4698,15 @@ a:focus {
 .link-social--twitter:hover,
 .link-social--twitter:focus {
   background: #52aef3;
+  color: #fff; }
+
+.link-social--unsplash {
+  background: #111;
+  color: #fff; }
+
+.link-social--unsplash:hover,
+.link-social--unsplash:focus {
+  background: #2b2b2b;
   color: #fff; }
 
 .link-social--xbox {
