@@ -30,7 +30,7 @@ bootstrap
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -50,7 +50,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -192,9 +192,8 @@ label {
 button {
   border-radius: 0; }
 
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color; }
+button:focus:not(:focus-visible) {
+  outline: 0; }
 
 input,
 button,
@@ -2520,7 +2519,6 @@ button.bg-dark:focus {
 .user-select-all {
   -webkit-user-select: all !important;
      -moz-user-select: all !important;
-      -ms-user-select: all !important;
           user-select: all !important; }
 
 .user-select-auto {
@@ -2554,7 +2552,6 @@ button.bg-dark:focus {
   position: fixed !important; }
 
 .position-sticky {
-  position: -webkit-sticky !important;
   position: sticky !important; }
 
 .fixed-top {
@@ -2571,9 +2568,8 @@ button.bg-dark:focus {
   left: 0;
   z-index: 1030; }
 
-@supports ((position: -webkit-sticky) or (position: sticky)) {
+@supports (position: sticky) {
   .sticky-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020; } }
