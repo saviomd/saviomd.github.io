@@ -38,7 +38,7 @@
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.5.1",
     "jquery-smooth-scroll": "^2.2.0",
-    "postcss": "^8.2.6",
+    "postcss": "^8.2.10",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-scss": "^3.0.4",
     "stylelint": "^13.10.0",
