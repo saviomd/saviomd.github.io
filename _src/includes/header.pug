@@ -5,7 +5,7 @@ header.header
 	.header__nav-wrapper
 		nav.clearfix.container-fluid.animated.fadeInDown
 			a.btn.btn--nav.d-sm-none.float-right.js-btn-nav(href='#')= 'Menu'
-			ul.header__nav.list-unstyled.mb-0.float-sm-right
+			ul.header__nav.list-unstyled.mb-0.float-sm-end
 				each section in sections
-					li.float-sm-left
+					li.float-sm-start
 						a.header__nav-link.px-3.text-center(class=(section.id === 'contact') ? 'js-link-contact' : '', href=`#${section.id}`, ga-on='click', ga-event-category=site.name, ga-event-action='Cabeçalho', ga-event-label=section.name)= section.name

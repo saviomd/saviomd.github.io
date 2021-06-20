@@ -8,7 +8,7 @@ saviomd.header = (() => {
 	*/
 	$('.js-btn-nav').on('click', (e) => {
 		e.preventDefault();
-		$(this).siblings('ul').toggleClass('active');
+		$('.header__nav').toggleClass('active');
 	});
 
 	/*

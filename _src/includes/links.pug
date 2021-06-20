@@ -4,5 +4,5 @@ section#links.links.container-fluid.py-3
 	h2.title= 'Links'
 	ul.list-inline.mb-0
 		each link in links
-			li.list-inline-item.mb-3.mr-3
+			li.list-inline-item.mb-3.me-3
 				a(class='link-social link-social--' + link.class, href=link.url, rel='noopener', target='_blank', title=link.name, ga-on='click', ga-event-category=site.name, ga-event-action='Sobre', ga-event-label=link.name)= link.name
