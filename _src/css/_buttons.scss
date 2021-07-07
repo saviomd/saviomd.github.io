@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .btn {
 	background: #900;
 	border-radius: 5px;
@@ -16,13 +18,7 @@
 	text-decoration: none;
 }
 
-.btn--close {
-	position: absolute;
-	right: $spacer;
-	top: $spacer;
-}
-
 .btn--nav:before {
 	content: "☰";
-	padding-right: ($spacer / 4);
+	padding-right: math.div($spacer, 4);
 }

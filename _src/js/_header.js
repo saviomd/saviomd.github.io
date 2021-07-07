@@ -2,18 +2,15 @@
 const saviomd = saviomd || {};
 
 saviomd.header = (() => {
-	/*
-	Toggle nav menu
-	====================
-	*/
-	$('.js-btn-nav').on('click', (e) => {
+	document.querySelector('#btn-nav').addEventListener('click', (e) => {
 		e.preventDefault();
-		$('.header__nav').toggleClass('active');
+		document.querySelector('#header-nav').classList.toggle('active');
 	});
 
-	/*
-	Animacao p/ scroll
-	====================
-	*/
-	$('.header__nav-link').smoothScroll();
+	document.querySelectorAll('.header__nav-link').forEach((navLink) => {
+		navLink.addEventListener('click', (e) => {
+			e.preventDefault();
+			document.querySelector(e.target.hash).scrollIntoView();
+		});
+	});
 })();

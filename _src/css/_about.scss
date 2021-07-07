@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .about {
 	background: #eee;
 }
@@ -19,7 +21,7 @@
 
 .about__text {
 	background: #fff;
-	border-radius: $spacer / 2;
+	border-radius: math.div($spacer, 2);
 	position: relative;
 }
 

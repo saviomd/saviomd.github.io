@@ -4,8 +4,8 @@ header.header
 	h1.header__title.container-fluid.my-0= site.name
 	.header__nav-wrapper
 		nav.clearfix.container-fluid.animated.fadeInDown
-			a.btn.btn--nav.d-sm-none.float-right.js-btn-nav(href='#')= 'Menu'
-			ul.header__nav.list-unstyled.mb-0.float-sm-end
+			a#btn-nav.btn.btn--nav.d-sm-none.float-right(href='#')= 'Menu'
+			ul#header-nav.header__nav.list-unstyled.mb-0.float-sm-end
 				each section in sections
 					li.float-sm-start
-						a.header__nav-link.px-3.text-center(class=(section.id === 'contact') ? 'js-link-contact' : '', href=`#${section.id}`, ga-on='click', ga-event-category=site.name, ga-event-action='Cabeçalho', ga-event-label=section.name)= section.name
+						a.header__nav-link.px-3.text-center(id=(section.id === 'contact') ? 'link-contact' : '', href=`#${section.id}`, ga-on='click', ga-event-category=site.name, ga-event-action='Cabeçalho', ga-event-label=section.name)= section.name
