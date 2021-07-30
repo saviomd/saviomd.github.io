@@ -14,5 +14,5 @@ section#projects.projects.container-fluid.py-3
 						each tag in item.tags
 							li.projects__technology.list-inline-item.small= tag
 					if item.url
-						.text-right
+						.text-end
 							a.btn.projects__btn(href=item.url, rel='noopener', target='_blank', ga-on='click', ga-event-category=site.name, ga-event-action=sectionName, ga-event-label=item.name)= 'Visitar'
