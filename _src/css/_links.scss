@@ -67,7 +67,6 @@ $link-social-variants: (
 }
 
 @each $name, $colors in $link-social-variants {
-
 	.link-social--#{$name} {
 		background: nth($colors, 1);
 		color: nth($colors, 2);
@@ -78,5 +77,4 @@ $link-social-variants: (
 		background: lighten(nth($colors, 1), 10%);
 		color: nth($colors, 2);
 	}
-
 }

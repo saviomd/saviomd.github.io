@@ -27,7 +27,6 @@ a:focus {
 }
 
 @keyframes rotate {
-
 	0% {
 		transform: rotateZ(0deg);
 	}
@@ -35,7 +34,6 @@ a:focus {
 	100% {
 		transform: rotateZ(360deg);
 	}
-
 }
 
 .loading:after {

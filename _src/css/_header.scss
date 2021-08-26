@@ -13,12 +13,10 @@
 }
 
 @include media-breakpoint-up(md) {
-
 	.header__title {
 		font-size: 80px;
 		height: 75px;
 	}
-
 }
 
 .header__nav-wrapper {
@@ -29,11 +27,9 @@
 }
 
 @include media-breakpoint-up(sm) {
-
 	.header__nav-wrapper {
 		padding: 0;
 	}
-
 }
 
 .header__nav {
@@ -44,11 +40,9 @@
 }
 
 @include media-breakpoint-up(sm) {
-
 	.header__nav {
 		max-height: initial;
 	}
-
 }
 
 .header__nav.active {
@@ -57,6 +51,7 @@
 
 .header__nav-link {
 	$font-size: 18px;
+
 	color: #fff;
 	display: block;
 	font-family: "Lato", arial, serif;
