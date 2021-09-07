@@ -1,49 +1,49 @@
 body {
-	color: #333;
-	overflow-x: hidden;
-	width: 100%;
+  color: #333;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 a {
-	color: #900;
-	font-weight: 600;
-	text-decoration: none;
-	transition: 0.3s;
+  color: #900;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 a:hover,
 a:focus {
-	color: #c00;
-	text-decoration: underline;
+  color: #c00;
+  text-decoration: underline;
 }
 
 ::selection {
-	background: #900;
-	color: #fff;
+  background: #900;
+  color: #fff;
 }
 
 .container-fluid {
-	max-width: map-get($container-max-widths, xl);
+  max-width: map-get($container-max-widths, xl);
 }
 
 @keyframes rotate {
-	0% {
-		transform: rotateZ(0deg);
-	}
+  0% {
+    transform: rotateZ(0deg);
+  }
 
-	100% {
-		transform: rotateZ(360deg);
-	}
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
 
-.loading:after {
-	animation: rotate 1s infinite linear;
-	border: 6px solid #c00;
-	border-radius: 36px;
-	border-top-color: transparent;
-	content: "";
-	display: block;
-	height: 36px;
-	margin: 0 auto;
-	width: 36px;
+.loading::after {
+  animation: rotate 1s infinite linear;
+  border: 6px solid #c00;
+  border-radius: 36px;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 36px;
+  margin: 0 auto;
+  width: 36px;
 }

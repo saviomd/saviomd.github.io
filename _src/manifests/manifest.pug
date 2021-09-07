@@ -1,17 +1,14 @@
 include /data/site
 
 | {
-| 	"short_name": "#{site.name}",
-| 	"name": "#{site.name}",
-| 	"description": "#{site.description}",
-| 	"icons": [
-| 		{
-| 			"src": "#{site.url}img/icon-256.png",
-| 			"sizes": "256x256"
-| 		}
-| 	],
-| 	"start_url": "#{site.url}",
-| 	"display": "browser",
-| 	"orientation": "portrait",
-| 	"theme_color": "#{site.themeColor}"
+| "short_name": "#{ site.name }",
+| "name": "#{ site.name }",
+| "description": "#{ site.description }",
+| "icons": [
+| { "src": "#{ site.url }img/icon-256.png", "sizes": "256x256" }
+| ],
+| "start_url": "#{ site.url }",
+| "display": "minimal-ui",
+| "orientation": "portrait",
+| "theme_color": "#{ site.themeColor }"
 | }

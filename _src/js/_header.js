@@ -2,15 +2,15 @@
 const saviomd = saviomd || {};
 
 saviomd.header = (() => {
-	document.querySelector('#btn-nav').addEventListener('click', (e) => {
-		e.preventDefault();
-		document.querySelector('#header-nav').classList.toggle('active');
-	});
+  document.querySelector("#btn-nav").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#header-nav").classList.toggle("active");
+  });
 
-	document.querySelectorAll('.header__nav-link').forEach((navLink) => {
-		navLink.addEventListener('click', (e) => {
-			e.preventDefault();
-			document.querySelector(e.target.hash).scrollIntoView();
-		});
-	});
+  document.querySelectorAll(".header__nav-link").forEach((navLink) => {
+    navLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(e.target.hash).scrollIntoView();
+    });
+  });
 })();

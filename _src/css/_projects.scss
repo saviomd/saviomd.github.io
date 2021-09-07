@@ -1,16 +1,16 @@
 @use "sass:math";
 
 .projects {
-	border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .projects__item {
-	border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .projects__technology {
-	border: 1px solid #ccc;
-	border-radius: math.div($spacer, 2);
-	margin-bottom: math.div($spacer, 2);
-	padding: math.div($spacer, 4) math.div($spacer, 2);
+  border: 1px solid #ccc;
+  border-radius: math.div($spacer, 2);
+  margin-bottom: math.div($spacer, 2);
+  padding: math.div($spacer, 4) math.div($spacer, 2);
 }

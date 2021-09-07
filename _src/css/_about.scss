@@ -1,33 +1,34 @@
 @use "sass:math";
 
 .about {
-	background: #eee;
+  background: #eee;
 }
 
 .about__content {
-	background: url("https://avatar-ssl.xboxlive.com/avatar/saviomd/avatar-body.png") no-repeat right -20px;
-	font-size: 18px;
-	min-height: 240px;
-	padding-right: 130px;
+  background: url("https://avatar-ssl.xboxlive.com/avatar/saviomd/avatar-body.png")
+    no-repeat right -20px;
+  font-size: 18px;
+  min-height: 240px;
+  padding-right: 130px;
 }
 
 @include media-breakpoint-up(md) {
-	.about__content {
-		font-size: 21px;
-	}
+  .about__content {
+    font-size: 21px;
+  }
 }
 
 .about__text {
-	background: #fff;
-	border-radius: math.div($spacer, 2);
-	position: relative;
+  background: #fff;
+  border-radius: math.div($spacer, 2);
+  position: relative;
 }
 
-.about__text:after {
-	border: 15px solid transparent;
-	border-left-color: #fff;
-	content: "";
-	position: absolute;
-	right: -30px;
-	top: 20px;
+.about__text::after {
+  border: 15px solid transparent;
+  border-left-color: #fff;
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 20px;
 }

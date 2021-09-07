@@ -7780,7 +7780,7 @@ a:focus {
             transform: rotateZ(360deg);
   }
 }
-.loading:after {
+.loading::after {
   -webkit-animation: rotate 1s infinite linear;
           animation: rotate 1s infinite linear;
   border: 6px solid #c00;
@@ -7812,7 +7812,7 @@ a:focus {
   text-decoration: none;
 }
 
-.btn--nav:before {
+.btn--nav::before {
   content: "☰";
   padding-right: 0.25rem;
 }
@@ -7922,7 +7922,7 @@ a:focus {
   position: relative;
 }
 
-.about__text:after {
+.about__text::after {
   border: 15px solid transparent;
   border-left-color: #fff;
   content: "";

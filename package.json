@@ -1,6 +1,6 @@
 {
   "name": "saviomd.com",
-  "version": "1.0.20210825",
+  "version": "1.0.20210906",
   "description": "Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web",
   "author": "Sávio Mendes",
   "license": "UNLICENSED",
@@ -14,9 +14,10 @@
     "start": "gulp dev"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-env": "^7.15.4",
+    "@prettier/plugin-pug": "^1.16.5",
     "animate.css": "^4.1.1",
-    "autoprefixer": "^10.3.2",
+    "autoprefixer": "^10.3.4",
     "autotrack": "^2.4.1",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
@@ -25,13 +26,16 @@
     "cssnano": "^5.0.8",
     "del": "^6.0.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^3.4.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^6.0.0",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-postcss": "^9.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-prettier": "^4.0.0",
     "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
@@ -39,9 +43,12 @@
     "postcss": "^8.3.6",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-scss": "^4.0.0",
-    "sass": "^1.38.1",
+    "prettier": "^2.3.2",
+    "sass": "^1.39.0",
     "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-prettier": "^1.2.0"
   },
   "babel": {
     "presets": [
@@ -68,22 +75,12 @@
     "preset": "default"
   },
   "eslintConfig": {
-    "extends": "airbnb-base",
+    "extends": [
+      "airbnb-base",
+      "plugin:prettier/recommended"
+    ],
     "env": {
-      "browser": true,
-      "jquery": true
-    },
-    "rules": {
-      "indent": [
-        "error",
-        "tab"
-      ],
-      "no-tabs": [
-        "error",
-        {
-          "allowIndentationTabs": true
-        }
-      ]
+      "browser": true
     }
   },
   "htmlmin": {
@@ -99,7 +96,10 @@
     "pretty": true
   },
   "stylelint": {
-    "extends": "stylelint-config-standard",
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-prettier/recommended"
+    ],
     "rules": {
       "at-rule-no-unknown": [
         true,
@@ -110,10 +110,7 @@
             "use"
           ]
         }
-      ],
-      "indentation": "tab",
-      "selector-max-id": 0,
-      "selector-pseudo-element-colon-notation": "single"
+      ]
     }
   }
 }

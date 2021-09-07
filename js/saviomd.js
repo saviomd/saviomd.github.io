@@ -1333,12 +1333,12 @@
 var saviomd = saviomd || {};
 
 saviomd.header = function () {
-  document.querySelector('#btn-nav').addEventListener('click', function (e) {
+  document.querySelector("#btn-nav").addEventListener("click", function (e) {
     e.preventDefault();
-    document.querySelector('#header-nav').classList.toggle('active');
+    document.querySelector("#header-nav").classList.toggle("active");
   });
-  document.querySelectorAll('.header__nav-link').forEach(function (navLink) {
-    navLink.addEventListener('click', function (e) {
+  document.querySelectorAll(".header__nav-link").forEach(function (navLink) {
+    navLink.addEventListener("click", function (e) {
       e.preventDefault();
       document.querySelector(e.target.hash).scrollIntoView();
     });

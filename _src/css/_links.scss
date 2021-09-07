@@ -1,80 +1,80 @@
 $link-social-variants: (
-	facebook: (
-		#3b5998,
-		#fff
-	),
-	github: (
-		#24292e,
-		#eee
-	),
-	goodreads: (
-		#e3dfc9,
-		#382110
-	),
-	instagram: (
-		#b900b4,
-		#fff,
-	),
-	letterboxd: (
-		#14181c,
-		#9ab
-	),
-	linkedin: (
-		#2e8dd7,
-		#fff
-	),
-	pinterest: (
-		#c72527,
-		#fff
-	),
-	spotify: (
-		#000,
-		#1db954,
-	),
-	trueachievements: (
-		#000,
-		#baff00
-	),
-	twitter: (
-		#2298f0,
-		#fff
-	),
-	unsplash: (
-		#111,
-		#fff
-	),
-	xbox: (
-		#107c10,
-		#fff
-	)
+  facebook: (
+    #3b5998,
+    #fff,
+  ),
+  github: (
+    #24292e,
+    #eee,
+  ),
+  goodreads: (
+    #e3dfc9,
+    #382110,
+  ),
+  instagram: (
+    #b900b4,
+    #fff,
+  ),
+  letterboxd: (
+    #14181c,
+    #9ab,
+  ),
+  linkedin: (
+    #2e8dd7,
+    #fff,
+  ),
+  pinterest: (
+    #c72527,
+    #fff,
+  ),
+  spotify: (
+    #000,
+    #1db954,
+  ),
+  trueachievements: (
+    #000,
+    #baff00,
+  ),
+  twitter: (
+    #2298f0,
+    #fff,
+  ),
+  unsplash: (
+    #111,
+    #fff,
+  ),
+  xbox: (
+    #107c10,
+    #fff,
+  ),
 );
 
 .links {
-	border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .link-social {
-	border-radius: 5px;
-	display: inline-block;
-	font-weight: 600;
-	padding: 5px 10px;
-	text-shadow: 0 -1px 0 rgba(0, 0, 16, 0.5);
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: 600;
+  padding: 5px 10px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 16, 0.5);
 }
 
 .link-social:hover,
 .link-social:focus {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 @each $name, $colors in $link-social-variants {
-	.link-social--#{$name} {
-		background: nth($colors, 1);
-		color: nth($colors, 2);
-	}
+  .link-social--#{$name} {
+    background: nth($colors, 1);
+    color: nth($colors, 2);
+  }
 
-	.link-social--#{$name}:hover,
-	.link-social--#{$name}:focus {
-		background: lighten(nth($colors, 1), 10%);
-		color: nth($colors, 2);
-	}
+  .link-social--#{$name}:hover,
+  .link-social--#{$name}:focus {
+    background: lighten(nth($colors, 1), 10%);
+    color: nth($colors, 2);
+  }
 }

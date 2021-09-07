@@ -1,9 +1,17 @@
 section#contact.contact.container-fluid.py-3
-	- sectionName = 'Contato'
-	.row.justify-content-center
-		.contact__content.col-12.col-md-6
-			h2.title= sectionName
-			p
-				= 'Ofertas de emprego para trabalhar pouco e ganhar muito, convites para jogar futebol e etc podem ser enviados para o meu email'
-				a.ms-1(class='contact__link', href='mailto:savio@saviomd.com?subject=[Contato site] ', rel='noopener', target='_blank', ga-on='click', ga-event-category=site.name, ga-event-action=sectionName, ga-event-label='Enviar email')= 'clicando aqui'
-				= '.'
+  - sectionName = 'Contato';
+  .row.justify-content-center
+    .contact__content.col-12.col-md-6
+      h2.title= sectionName
+      p
+        = 'Ofertas de emprego para trabalhar pouco e ganhar muito, convites para jogar futebol e etc podem ser enviados para o meu email'
+        a.ms-1.contact__link(
+          href="mailto:savio@saviomd.com?subject=[Contato site] ",
+          rel="noopener",
+          target="_blank",
+          ga-on="click",
+          ga-event-category=site.name,
+          ga-event-action=sectionName,
+          ga-event-label="Enviar email"
+        )= 'clicando aqui'
+        = '.'

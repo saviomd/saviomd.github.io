@@ -2,11 +2,10 @@ include /data/site
 
 doctype html
 html.no-js(lang=site.lang)
+  block pageData
 
-	block pageData
-
-	include /includes/head
-	body
-		include /includes/header
-		block content
-		include /includes/footer
+  include /includes/head
+  body
+    include /includes/header
+    block content
+    include /includes/footer
