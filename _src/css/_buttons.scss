@@ -2,11 +2,11 @@
 
 .btn {
   background: #900;
-  border-radius: 5px;
+  border-radius: math.div($spacer, 2);
   color: #fff;
   display: inline-block;
   font-weight: 600;
-  padding: 5px 10px;
+  padding: math.div($spacer, 4) math.div($spacer, 2);
   text-shadow: 0 -1px 0 rgba(0, 0, 16, 0.5);
 }
 

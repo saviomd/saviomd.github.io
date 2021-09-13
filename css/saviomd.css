@@ -44,7 +44,8 @@ bootstrap
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-body-rgb: 33, 37, 41;
+  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-bg-rgb: 255, 255, 255;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -3638,7 +3639,7 @@ progress {
 
 .text-body {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-body-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-muted {
@@ -3729,7 +3730,7 @@ progress {
 
 .bg-body {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-body-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-transparent {
@@ -7795,11 +7796,11 @@ a:focus {
 
 .btn {
   background: #900;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   color: #fff;
   display: inline-block;
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 0.25rem 0.5rem;
   text-shadow: 0 -1px 0 rgba(0, 0, 16, 0.5);
 }
 
@@ -7936,10 +7937,10 @@ a:focus {
 }
 
 .link-social {
-  border-radius: 5px;
+  border-radius: 0.5rem;
   display: inline-block;
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 0.25rem 0.5rem;
   text-shadow: 0 -1px 0 rgba(0, 0, 16, 0.5);
 }
 
@@ -8084,11 +8085,19 @@ a:focus {
   border-bottom: 1px solid #ccc;
 }
 
+.projects__icon {
+  background-color: #eee;
+  width: 100%;
+}
+
 .projects__item {
-  border-bottom: 1px solid #ccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff));
+  background-image: linear-gradient(#eee, #fff);
+  border-radius: 0.5rem;
 }
 
 .projects__technology {
+  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;

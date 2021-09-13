@@ -4,11 +4,18 @@
   border-bottom: 1px solid #ccc;
 }
 
+.projects__icon {
+  background-color: #eee;
+  width: 100%;
+}
+
 .projects__item {
-  border-bottom: 1px solid #ccc;
+  background-image: linear-gradient(#eee, #fff);
+  border-radius: math.div($spacer, 2);
 }
 
 .projects__technology {
+  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: math.div($spacer, 2);
   margin-bottom: math.div($spacer, 2);

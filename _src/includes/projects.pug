@@ -6,14 +6,16 @@ section#projects.projects.container-fluid.py-3
   ul.list-unstyled.row
     each item in projects
       li.col-12.col-md-6
-        .projects__item.mb-4.py-3.clearfix
-          header
-            h3.title.title--sub= item.name
-          .mb-3= item.description
-          ul.list-inline
-            each tag in item.tags
-              li.projects__technology.list-inline-item.small= tag
-          if item.url
+        .projects__item.g-0.mb-4.p-3.row
+          .col-3.pe-3
+            img.projects__icon(alt=item.name, src=item.icon)
+          .col-9
+            header
+              h3.title.title--sub= item.name
+            .mb-3= item.description
+            ul.list-inline
+              each tag in item.tags
+                li.projects__technology.list-inline-item.small= tag
             .text-end
               a.btn.projects__btn(
                 href=item.url,
