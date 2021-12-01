@@ -1,7 +1,7 @@
 include /data/projects
 
 section#projects.projects.container-fluid.py-3
-  - sectionName = 'Projetos';
+  - sectionName = "Projetos";
   h2.title= sectionName
   ul.list-unstyled.row
     each item in projects
@@ -25,4 +25,4 @@ section#projects.projects.container-fluid.py-3
                 ga-event-category=site.name,
                 ga-event-action=sectionName,
                 ga-event-label=item.name
-              )= 'Visitar'
+              )= "Visitar"

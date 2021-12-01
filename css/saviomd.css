@@ -667,9 +667,9 @@ progress {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: calc(var(--bs-gutter-y) * -1);
-  margin-right: calc(var(--bs-gutter-x) * -0.5);
-  margin-left: calc(var(--bs-gutter-x) * -0.5);
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 .row > * {
   -ms-flex-negative: 0;
@@ -7820,7 +7820,7 @@ a:focus {
 
 .title {
   color: #300;
-  font-family: "Lato", arial, serif;
+  font-family: Lato, arial, serif;
   font-size: 30px;
   font-weight: 400;
   line-height: 1.2;
@@ -7886,7 +7886,7 @@ a:focus {
 .header__nav-link {
   color: #fff;
   display: block;
-  font-family: "Lato", arial, serif;
+  font-family: Lato, arial, serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 54px;

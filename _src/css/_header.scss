@@ -1,6 +1,6 @@
 .header {
   background: #fff;
-  box-shadow: 0 -3px 3px rgba(0, 0, 16, 0.5);
+  box-shadow: 0 -3px 3px rgb(0 0 16 / 50%);
 }
 
 .header__title {
@@ -9,7 +9,7 @@
   height: 40px;
   letter-spacing: -3px;
   overflow: hidden;
-  text-shadow: 1px -1px 0 rgba(0, 0, 16, 0.5);
+  text-shadow: 1px -1px 0 rgb(0 0 16 / 50%);
 }
 
 @include media-breakpoint-up(md) {
@@ -22,7 +22,7 @@
 .header__nav-wrapper {
   background: #900;
   background-image: linear-gradient(#900, #600);
-  box-shadow: 0 3px 3px rgba(0, 0, 16, 0.5);
+  box-shadow: 0 3px 3px rgb(0 0 16 / 50%);
   padding: $spacer 0;
 }
 
@@ -54,11 +54,11 @@
 
   color: #fff;
   display: block;
-  font-family: "Lato", arial, serif;
+  font-family: Lato, arial, serif;
   font-size: $font-size;
   font-weight: 400;
   line-height: $font-size * 3;
-  text-shadow: 0 -1px 0 rgba(0, 0, 16, 0.5);
+  text-shadow: 0 -1px 0 rgb(0 0 16 / 50%);
 }
 
 .header__nav-link:hover,
