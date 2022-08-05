@@ -1,0 +1,21 @@
+{
+  "short_name": "saviomd.com",
+  "name": "saviomd.com » Sávio Mendes, desenvolvedor front-end e designer de interfaces",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "minimal-ui",
+  "background_color": "#900",
+  "theme_color": "#900",
+  "description": "Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web"
+}
