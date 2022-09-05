@@ -14,6 +14,7 @@ type PropsType = {
 
 const variants = {
   primary: "bg-primary-default text-white",
+  exophase: "bg-[#212121] text-[#00a2d2]",
   facebook: `bg-[#3b5998] text-white`,
   github: "bg-[#24292e] text-[#eee]",
   goodreads: "bg-[#e3dfc9] text-[#382110]",
@@ -49,7 +50,7 @@ function Button({
 
   return (
     <ButtonTag
-      className={`inline-block cursor-pointer rounded-lg py-1 px-2 font-semibold text-white shadow-inner transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:shadow-md ${variants[variant]}`}
+      className={`inline-block cursor-pointer rounded-lg py-1 px-2 font-semibold text-white shadow-lg transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-none ${variants[variant]}`}
       href={href}
       onClick={handleClick}
       rel={target === "_blank" ? "noopener noreferrer" : undefined}

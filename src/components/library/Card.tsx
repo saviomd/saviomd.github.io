@@ -6,7 +6,7 @@ type PropsType = {
 
 function Card({ children }: PropsType) {
   return (
-    <div className="rounded-lg bg-gradient-to-b from-slate-200 to-white p-4">
+    <div className="rounded-lg bg-gradient-to-br from-slate-200 to-white p-4 shadow-md">
       {children}
     </div>
   );

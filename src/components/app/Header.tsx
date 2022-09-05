@@ -21,11 +21,11 @@ function Header() {
   return (
     <header>
       <Container>
-        <h1 className="h-[32px] overflow-hidden font-verdana text-4xl font-bold tracking-tighter text-primary-default [text-shadow:_1px_-1px_0_rgb(0_0_16_/_50%)] sm:h-[61px] sm:text-7xl">
+        <h1 className="h-[40px] overflow-hidden font-italiana text-5xl font-bold text-primary-default sm:h-[61px] sm:text-7xl md:h-[81px] md:text-8xl">
           saviomd.com
         </h1>
       </Container>
-      <div className="bg-primary-default bg-gradient-to-b from-primary-default to-primary-dark py-2 sm:py-0">
+      <div className="bg-gradient-to-b from-primary-default to-primary-dark py-2 sm:py-0">
         <Container>
           <div className="block text-right sm:hidden">
             <Button label="☰ Menu" onClick={toggleMenu} />
@@ -38,7 +38,7 @@ function Header() {
             {sections.map(({ id, name }) => (
               <li className="sm:inline-block" key={id}>
                 <a
-                  className="block px-4 py-2 font-verdana text-lg text-white transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:bg-primary-default sm:py-4"
+                  className="block px-4 py-2 text-lg text-white transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:bg-primary-default"
                   href={`#${id}`}
                   onClick={scrollToSection}
                 >

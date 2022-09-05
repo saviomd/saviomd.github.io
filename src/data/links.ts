@@ -59,6 +59,11 @@ const links = [
     name: "TrueAchievements",
     url: "https://www.trueachievements.com/gamer/saviomd",
   },
+  {
+    id: "exophase",
+    name: "Exophase",
+    url: "https://www.exophase.com/xbox/user/saviomd",
+  },
 ];
 
 export default links;

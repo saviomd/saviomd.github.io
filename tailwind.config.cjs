@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
@@ -9,13 +11,12 @@ module.exports = {
       },
       colors: {
         primary: {
-          dark: "#600",
-          default: "#900",
-          hover: "#c00",
+          default: colors.red[700],
+          dark: colors.red[900],
         },
       },
       fontFamily: {
-        verdana: "Verdana, Geneva, sans-serif",
+        italiana: "Italiana, serif",
       },
     },
   },
