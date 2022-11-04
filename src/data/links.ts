@@ -1,4 +1,6 @@
-const links = [
+import { ILink } from "../types";
+
+const links: ILink[] = [
   {
     id: "linkedin",
     name: "LinkedIn",

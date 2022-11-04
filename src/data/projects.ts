@@ -1,4 +1,6 @@
-const projects = [
+import { IProject } from "../types";
+
+const projects: IProject[] = [
   {
     description:
       "Web app com dados e estatísticas de times, partidas e jogadores do modo Pro Clubs do FIFA",
@@ -35,9 +37,9 @@ const projects = [
   },
   {
     description: "Web app com comandos de dribles e comemorações do FIFA",
-    icon: "https://saviomd.com/driblesfifa/img/icon-256.png",
+    icon: "https://saviomd.com/driblesfifa/img/icon-512.png",
     name: "Dribles FIFA",
-    tags: ["Layout", "HTML", "Pug", "CSS", "Sass", "JavaScript", "jQuery"],
+    tags: ["Layout", "HTML", "CSS", "JavaScript", "Svelte"],
     url: "https://saviomd.com/driblesfifa/",
   },
 ];

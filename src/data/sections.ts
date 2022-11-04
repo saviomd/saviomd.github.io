@@ -1,4 +1,6 @@
-const sections = [
+import { ISection } from "../types";
+
+const sections: ISection[] = [
   {
     id: "about",
     name: "Sobre",
