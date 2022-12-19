@@ -17,14 +17,14 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="text-typography-default">
       <Header />
       <About />
       <Links />
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 

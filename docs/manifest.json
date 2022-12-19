@@ -15,7 +15,7 @@
   ],
   "start_url": ".",
   "display": "fullscreen",
-  "background_color": "#900",
-  "theme_color": "#900",
+  "background_color": "#b91c1c",
+  "theme_color": "#b91c1c",
   "description": "Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web"
 }

@@ -12,7 +12,11 @@ module.exports = {
       colors: {
         primary: {
           default: colors.red[700],
-          dark: colors.red[900],
+          light: colors.red[500],
+        },
+        typography: {
+          default: colors.slate[900],
+          title: colors.slate[800],
         },
       },
       fontFamily: {
