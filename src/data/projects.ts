@@ -4,7 +4,7 @@ const projects: IProject[] = [
   {
     description:
       "Web app com dados e estatísticas de times, partidas e jogadores do modo Pro Clubs do FIFA",
-    icon: "https://proclubshead.com/assets/img/22/appicon.png",
+    icon: "https://proclubshead.com/assets/img/23/appicon.png",
     name: "Pro Clubs Head",
     tags: [
       "Arquitetura de informação",
