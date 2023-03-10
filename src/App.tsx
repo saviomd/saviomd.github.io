@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+import "animate.css/animate.css";
 import "./App.css";
 import {
   About,
@@ -17,14 +18,14 @@ function App() {
   }, []);
 
   return (
-    <div className="text-typography-default">
+    <>
       <Header />
       <About />
       <Links />
       <Projects />
       <Contact />
       <Footer />
-    </div>
+    </>
   );
 }
 

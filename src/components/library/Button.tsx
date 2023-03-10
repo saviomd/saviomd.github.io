@@ -50,7 +50,7 @@ function Button({
 
   return (
     <ButtonTag
-      className={`inline-block cursor-pointer rounded-lg py-1 px-2 font-semibold shadow-lg transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-none ${variants[variant]}`}
+      className={`inline-block cursor-pointer rounded-lg py-1 px-2 font-semibold shadow-md shadow-layer-2-dark/50 transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-layer-2-dark/50 active:translate-y-0 active:shadow-none  ${variants[variant]}`}
       href={href}
       onClick={handleClick}
       rel={target === "_blank" ? "noopener noreferrer" : undefined}

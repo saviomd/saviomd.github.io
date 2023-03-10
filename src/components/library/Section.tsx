@@ -11,7 +11,9 @@ function Section({ bg, children, hasPaddingY = true, id }: PropsType) {
   return (
     <section
       className={`${
-        bg === "light" ? "bg-slate-200" : "border-b border-slate-200"
+        bg === "light"
+          ? "bg-layer-2-light dark:bg-layer-2-dark"
+          : "border-b border-layer-2-light dark:border-layer-2-dark"
       } ${hasPaddingY ? "py-4" : ""}`}
       id={id}
     >

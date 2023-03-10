@@ -18,7 +18,7 @@ function Heading({ children, level }: PropsType) {
   const HeadingTag: ElementType = `h${level}`;
   return (
     <HeadingTag
-      className={`mb-2 font-italiana font-bold text-typography-title ${levels[level]}`}
+      className={`mb-2 font-italiana font-bold text-typography-title-light dark:text-typography-title-dark ${levels[level]}`}
     >
       {children}
     </HeadingTag>

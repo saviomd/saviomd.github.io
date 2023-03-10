@@ -1,5 +1,13 @@
 import "../src/App.css";
 
+export const decorators = [
+  (Story) => (
+    <div className="text-typography-default-light dark:bg-layer-1-dark dark:text-typography-default-dark">
+      {Story()}
+    </div>
+  ),
+];
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

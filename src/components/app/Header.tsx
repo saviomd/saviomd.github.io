@@ -19,13 +19,15 @@ function Header() {
   };
 
   return (
-    <header className="bg-gradient-to-b from-primary-default to-primary-light pt-8 sm:pt-12 md:pt-16">
-      <Container>
-        <h1 className="h-[40px] overflow-hidden font-italiana text-5xl font-bold text-white sm:h-[61px] sm:text-7xl md:h-[81px] md:text-8xl">
-          saviomd.com
-        </h1>
-      </Container>
-      <div className="bg-white py-2 sm:py-0">
+    <header>
+      <div className="overflow-hidden bg-gradient-to-b from-primary-default to-primary-light pt-8 sm:pt-12 md:pt-16">
+        <Container>
+          <h1 className="animate__animated animate__slideInUp h-[40px] font-italiana text-5xl font-bold text-layer-1-light dark:text-layer-1-dark sm:h-[61px] sm:text-7xl md:h-[81px] md:text-8xl">
+            saviomd.com
+          </h1>
+        </Container>
+      </div>
+      <div className="py-2 sm:py-0">
         <Container>
           <div className="block text-right sm:hidden">
             <Button label="☰ Menu" onClick={toggleMenu} />
