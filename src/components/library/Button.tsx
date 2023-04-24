@@ -8,6 +8,7 @@ type PropsType = {
   href?: string;
   label: string;
   onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
+  rel?: string;
   target?: AnchorTargetType;
   variant?: keyof typeof variants;
 };
@@ -21,6 +22,7 @@ const variants = {
   instagram: "bg-[#b900b4] text-white",
   letterboxd: "bg-[#14181c] text-[#9ab]",
   linkedin: "bg-[#2e8dd7] text-white",
+  mastodon: "bg-[#6d6eff] text-white",
   pinterest: "bg-[#c72527] text-white",
   spotify: "bg-[#000] text-[#1db954]",
   trueachievements: "bg-[#000] text-[#baff00]",
@@ -35,10 +37,12 @@ function Button({
   href,
   label,
   onClick,
+  rel,
   variant = "primary",
   target,
 }: PropsType) {
-  const ButtonTag: ElementType = href ? "a" : "button";
+  const className = `inline-block cursor-pointer rounded-lg py-1 px-2 font-semibold shadow-md shadow-layer-2-dark/50 transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-layer-2-dark/50 active:translate-y-0 active:shadow-none ${variants[variant]}`;
+
   const handleClick = () => {
     if (gaEvent) {
       trackGaEvent(gaEvent);
@@ -48,16 +52,35 @@ function Button({
     }
   };
 
-  return (
-    <ButtonTag
-      className={`inline-block cursor-pointer rounded-lg py-1 px-2 font-semibold shadow-md shadow-layer-2-dark/50 transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-layer-2-dark/50 active:translate-y-0 active:shadow-none  ${variants[variant]}`}
-      href={href}
-      onClick={handleClick}
-      rel={target === "_blank" ? "noopener noreferrer" : undefined}
-      target={target}
-    >
-      {label}
-    </ButtonTag>
+  if (href && !onClick) {
+    const attrRel =
+      [
+        ...(rel ? [rel] : []),
+        ...(target === "_blank" ? ["noopener", "noreferrer"] : []),
+      ].join(" ") || undefined;
+    return (
+      <a
+        className={className}
+        href={href}
+        onClick={handleClick}
+        rel={attrRel}
+        target={target}
+      >
+        {label}
+      </a>
+    );
+  }
+
+  if (onClick && !href) {
+    return (
+      <button className={className} onClick={handleClick} type="button">
+        {label}
+      </button>
+    );
+  }
+
+  throw new Error(
+    "href or onClick prop (and only one of them) needs to be present"
   );
 }
 

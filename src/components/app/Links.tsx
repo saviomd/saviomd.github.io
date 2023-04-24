@@ -17,6 +17,7 @@ function Links() {
                   gaEvent={{ action: sectionName, label: name }}
                   href={url}
                   label={name}
+                  rel="me"
                   target="_blank"
                   variant={variant}
                 />

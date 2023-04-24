@@ -37,6 +37,16 @@ const links: ILink[] = [
     url: "https://www.facebook.com/saviomd",
   },
   {
+    id: "goodreads",
+    name: "Goodreads",
+    url: "https://www.goodreads.com/saviomd",
+  },
+  {
+    id: "mastodon",
+    name: "Mastodon",
+    url: "https://mastodon.social/@saviomd",
+  },
+  {
     id: "pinterest",
     name: "Pinterest",
     url: "https://www.pinterest.com/saviomd",
@@ -45,11 +55,6 @@ const links: ILink[] = [
     id: "unsplash",
     name: "Unsplash",
     url: "https://unsplash.com/@saviomd",
-  },
-  {
-    id: "goodreads",
-    name: "Goodreads",
-    url: "https://www.goodreads.com/saviomd",
   },
   {
     id: "xbox",
