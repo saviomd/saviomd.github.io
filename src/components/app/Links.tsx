@@ -12,7 +12,7 @@ function Links() {
           {links.map(({ id, name, url }) => {
             const variant = id as keyof typeof variants;
             return (
-              <li className="mr-4 mb-4 inline-block" key={name}>
+              <li className="mb-4 mr-4 inline-block" key={name}>
                 <Button
                   gaEvent={{ action: sectionName, label: name }}
                   href={url}

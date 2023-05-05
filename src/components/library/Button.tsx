@@ -1,4 +1,4 @@
-import { ElementType, MouseEvent } from "react";
+import { MouseEvent } from "react";
 
 import { AnchorTargetType, IGaEvent } from "../../types";
 import { trackGaEvent } from "../../utils";
