@@ -4,18 +4,20 @@ import { links } from "../../data";
 
 function Links() {
   const sectionName = "Links";
+
   return (
     <Container>
       <Section id="links">
         <Heading level={1}>{sectionName}</Heading>
-        <ul>
-          {links.map(({ id, name, url }) => {
+        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+          {links.map(({ icon, id, name, url }) => {
             const variant = id as keyof typeof variants;
             return (
-              <li className="mb-4 mr-4 inline-block" key={name}>
+              <li key={name}>
                 <Button
                   gaEvent={{ action: sectionName, label: name }}
                   href={url}
+                  icon={icon}
                   label={name}
                   rel="me"
                   target="_blank"

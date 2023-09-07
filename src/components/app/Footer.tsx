@@ -7,7 +7,8 @@ function Footer() {
       <Container>
         <div className="mb-1">© 2007-{year} Sávio Mendes</div>
         <div className="mb-1">
-          Powered by React, Tailwind, Vite, GitHub Pages, Cloudflare.
+          Powered by React, Tailwind, Font Awesome, Vite, GitHub Pages,
+          Cloudflare.
           <br />
           Italiana font by Santiago Orozco and Google Fonts.
         </div>

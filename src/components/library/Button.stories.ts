@@ -1,6 +1,22 @@
+import {
+  faGithub,
+  faInstagram,
+  faMastodon,
+  faPinterest,
+  faXbox,
+} from "@fortawesome/free-brands-svg-icons";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Button, { variantKeys } from "./Button";
+
+const icons = {
+  null: null,
+  faGithub,
+  faInstagram,
+  faMastodon,
+  faPinterest,
+  faXbox,
+};
 
 const meta = {
   title: "library/Button",
@@ -12,6 +28,13 @@ const meta = {
   argTypes: {
     gaEvent: { control: { type: null } },
     href: { control: { type: null } },
+    icon: {
+      control: {
+        type: "select",
+      },
+      options: Object.keys(icons),
+      mapping: icons,
+    },
     rel: { control: { type: null } },
     target: { control: { type: null } },
     variant: {

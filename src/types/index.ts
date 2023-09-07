@@ -1,3 +1,5 @@
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+
 export interface IGaEvent {
   action: string;
   label?: string;
@@ -5,6 +7,7 @@ export interface IGaEvent {
 }
 
 export interface ILink {
+  icon: IconDefinition;
   id: string;
   name: string;
   url: string;

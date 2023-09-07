@@ -1,72 +1,108 @@
+import { faFilm, faGamepad } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faGithub,
+  faGoodreads,
+  faInstagram,
+  faLinkedin,
+  faMastodon,
+  faPinterest,
+  faSpotify,
+  faThreads,
+  faUnsplash,
+  faXbox,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+
 import { ILink } from "../types";
 
 const links: ILink[] = [
   {
+    icon: faLinkedin,
     id: "linkedin",
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/saviomd",
   },
   {
+    icon: faGithub,
     id: "github",
     name: "GitHub",
-    url: "http://github.com/saviomd",
+    url: "https://github.com/saviomd",
   },
   {
-    id: "twitter",
-    name: "Twitter",
-    url: "https://twitter.com/saviomd",
-  },
-  {
+    icon: faFilm,
     id: "letterboxd",
     name: "Letterboxd",
-    url: "http://letterboxd.com/saviomd",
+    url: "https://letterboxd.com/saviomd",
   },
   {
-    id: "spotify",
-    name: "Spotify",
-    url: "https://open.spotify.com/user/saviomd",
-  },
-  {
-    id: "instagram",
-    name: "Instagram",
-    url: "https://www.instagram.com/saviomd",
-  },
-  {
-    id: "facebook",
-    name: "Facebook",
-    url: "https://www.facebook.com/saviomd",
-  },
-  {
-    id: "goodreads",
-    name: "Goodreads",
-    url: "https://www.goodreads.com/saviomd",
-  },
-  {
-    id: "mastodon",
-    name: "Mastodon",
-    url: "https://mastodon.social/@saviomd",
-  },
-  {
+    icon: faPinterest,
     id: "pinterest",
     name: "Pinterest",
     url: "https://www.pinterest.com/saviomd",
   },
   {
+    icon: faUnsplash,
     id: "unsplash",
     name: "Unsplash",
     url: "https://unsplash.com/@saviomd",
   },
   {
-    id: "xbox",
-    name: "Xbox Live",
-    url: "http://live.xbox.com/Profile?gamertag=saviomd",
+    icon: faThreads,
+    id: "threads",
+    name: "Threads",
+    url: "https://www.threads.net/@saviomd",
   },
   {
+    icon: faMastodon,
+    id: "mastodon",
+    name: "Mastodon",
+    url: "https://mastodon.social/@saviomd",
+  },
+  {
+    icon: faXTwitter,
+    id: "x",
+    name: "Twitter / X",
+    url: "https://twitter.com/saviomd",
+  },
+  {
+    icon: faSpotify,
+    id: "spotify",
+    name: "Spotify",
+    url: "https://open.spotify.com/user/saviomd",
+  },
+  {
+    icon: faGoodreads,
+    id: "goodreads",
+    name: "Goodreads",
+    url: "https://www.goodreads.com/saviomd",
+  },
+  {
+    icon: faInstagram,
+    id: "instagram",
+    name: "Instagram",
+    url: "https://www.instagram.com/saviomd",
+  },
+  {
+    icon: faFacebook,
+    id: "facebook",
+    name: "Facebook",
+    url: "https://www.facebook.com/saviomd",
+  },
+  {
+    icon: faXbox,
+    id: "xbox",
+    name: "Xbox",
+    url: "https://account.xbox.com/Profile?gamerTag=saviomd",
+  },
+  {
+    icon: faGamepad,
     id: "trueachievements",
     name: "TrueAchievements",
     url: "https://www.trueachievements.com/gamer/saviomd",
   },
   {
+    icon: faGamepad,
     id: "exophase",
     name: "Exophase",
     url: "https://www.exophase.com/xbox/user/saviomd",

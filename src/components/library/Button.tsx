@@ -1,4 +1,6 @@
-import { MouseEvent } from "react";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ElementType, MouseEvent } from "react";
 
 import { AnchorTargetType, IGaEvent } from "../../types";
 import { trackGaEvent } from "../../utils";
@@ -6,6 +8,7 @@ import { trackGaEvent } from "../../utils";
 type PropsType = {
   gaEvent?: IGaEvent;
   href?: string;
+  icon?: IconDefinition;
   label: string;
   onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
   rel?: string;
@@ -16,18 +19,19 @@ type PropsType = {
 const variants = {
   primary: "bg-primary-default text-white",
   exophase: "bg-[#212121] text-[#00a2d2]",
-  facebook: `bg-[#3b5998] text-white`,
-  github: "bg-[#24292e] text-[#eee]",
-  goodreads: "bg-[#e3dfc9] text-[#382110]",
-  instagram: "bg-[#b900b4] text-white",
-  letterboxd: "bg-[#14181c] text-[#9ab]",
-  linkedin: "bg-[#2e8dd7] text-white",
-  mastodon: "bg-[#6d6eff] text-white",
-  pinterest: "bg-[#c72527] text-white",
-  spotify: "bg-[#000] text-[#1db954]",
-  trueachievements: "bg-[#000] text-[#baff00]",
-  twitter: "bg-[#2298f0] text-white",
-  unsplash: "bg-[#111] text-white",
+  facebook: `bg-[#1877f2] text-white`,
+  github: "bg-[#24292f] text-[#eee]",
+  goodreads: "bg-[#d6d0c4] text-[#382110]",
+  instagram: "bg-[#d300c5] text-white",
+  letterboxd: "bg-[#14181c] text-[#00c030]",
+  linkedin: "bg-[#0a66c2] text-white",
+  mastodon: "bg-[#6364ff] text-white",
+  pinterest: "bg-[#e60023] text-white",
+  spotify: "bg-[#1db954] text-black",
+  threads: "bg-[#101010] text-[#f3f5f7]",
+  trueachievements: "bg-[#161616] text-[#baff00]",
+  unsplash: "bg-[#eee] text-[#111]",
+  x: "bg-[#14171a] text-white",
   xbox: "bg-[#107c10] text-white",
 };
 const variantKeys = Object.keys(variants);
@@ -35,13 +39,22 @@ const variantKeys = Object.keys(variants);
 function Button({
   gaEvent,
   href,
+  icon,
   label,
   onClick,
   rel,
   variant = "primary",
   target,
 }: PropsType) {
-  const className = `inline-block cursor-pointer rounded-lg py-1 px-2 font-semibold shadow-md shadow-layer-2-dark/50 transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-layer-2-dark/50 active:translate-y-0 active:shadow-none ${variants[variant]}`;
+  if (!href && !onClick) {
+    throw new Error(
+      "href or onClick prop (and only one of them) needs to be present"
+    );
+  }
+
+  const isButton = !href && onClick;
+
+  const ButtonTag: ElementType = isButton ? "button" : "a";
 
   const handleClick = () => {
     if (gaEvent) {
@@ -52,35 +65,31 @@ function Button({
     }
   };
 
-  if (href && !onClick) {
-    const attrRel =
-      [
-        ...(rel ? [rel] : []),
-        ...(target === "_blank" ? ["noopener", "noreferrer"] : []),
-      ].join(" ") || undefined;
-    return (
-      <a
-        className={className}
-        href={href}
-        onClick={handleClick}
-        rel={attrRel}
-        target={target}
-      >
-        {label}
-      </a>
-    );
-  }
-
-  if (onClick && !href) {
-    return (
-      <button className={className} onClick={handleClick} type="button">
-        {label}
-      </button>
-    );
-  }
-
-  throw new Error(
-    "href or onClick prop (and only one of them) needs to be present"
+  return (
+    <ButtonTag
+      className={`inline-block cursor-pointer rounded-lg px-3 py-2 font-semibold shadow-md shadow-layer-2-dark/50 transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-layer-2-dark/50 active:translate-y-0 active:shadow-none ${
+        variants[variant]
+      } ${icon ? "w-full" : ""}`}
+      onClick={handleClick}
+      {...(isButton
+        ? { type: "button" }
+        : {
+            href,
+            rel:
+              [
+                ...(rel ? [rel] : []),
+                ...(target === "_blank" ? ["noopener", "noreferrer"] : []),
+              ].join(" ") || undefined,
+            target,
+          })}
+    >
+      {label}
+      {icon && (
+        <div className="text-end text-3xl">
+          <FontAwesomeIcon icon={icon} />
+        </div>
+      )}
+    </ButtonTag>
   );
 }
 
