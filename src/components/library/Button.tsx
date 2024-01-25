@@ -48,7 +48,7 @@ function Button({
 }: PropsType) {
   if (!href && !onClick) {
     throw new Error(
-      "href or onClick prop (and only one of them) needs to be present"
+      "href or onClick prop (and only one of them) needs to be present",
     );
   }
 

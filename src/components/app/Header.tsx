@@ -22,7 +22,7 @@ function Header() {
     <header>
       <div className="overflow-hidden bg-gradient-to-b from-primary-default to-primary-light pt-8 sm:pt-12 md:pt-16">
         <Container>
-          <h1 className="animate__animated animate__slideInUp h-[40px] font-italiana text-5xl font-bold text-layer-1-light dark:text-layer-1-dark sm:h-[61px] sm:text-7xl md:h-[81px] md:text-8xl">
+          <h1 className="animate__animated animate__slideInUp h-[40px] font-italiana text-5xl font-bold text-layer-1-light sm:h-[61px] sm:text-7xl md:h-[81px] md:text-8xl dark:text-layer-1-dark">
             saviomd.com
           </h1>
         </Container>

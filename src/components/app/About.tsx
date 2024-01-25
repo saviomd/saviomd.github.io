@@ -11,7 +11,7 @@ function About() {
             de interfaces, carioca, flamenguista, maluco por filmes, ala direito
             nas peladas de terça, fã de Iron Maiden, Van Halen, Faith No More,
             John Mayer, Dave Matthews Band, Mr. Big, blá blá blá, etc.
-            <span className="absolute -top-[30px] right-28 border-[15px] border-transparent border-b-layer-1-light dark:border-b-layer-1-dark sm:-right-[30px] sm:top-[20px] sm:border-b-transparent sm:border-l-layer-1-light dark:sm:border-l-layer-1-dark" />
+            <span className="absolute -top-[30px] right-28 border-[15px] border-transparent border-b-layer-1-light sm:-right-[30px] sm:top-[20px] sm:border-b-transparent sm:border-l-layer-1-light dark:border-b-layer-1-dark dark:sm:border-b-transparent dark:sm:border-l-layer-1-dark" />
           </div>
         </div>
       </Container>
