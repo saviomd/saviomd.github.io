@@ -1,4 +1,4 @@
-import { faFilm, faGamepad } from "@fortawesome/free-solid-svg-icons";
+import { faFilm, faGamepad, faMusic } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
   faGithub,
@@ -70,6 +70,12 @@ const links: ILink[] = [
     id: "spotify",
     name: "Spotify",
     url: "https://open.spotify.com/user/saviomd",
+  },
+  {
+    icon: faMusic,
+    id: "setlistfm",
+    name: "setlist.fm",
+    url: "https://www.setlist.fm/user/saviomd",
   },
   {
     icon: faGoodreads,

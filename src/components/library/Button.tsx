@@ -27,6 +27,7 @@ const variants = {
   linkedin: "bg-[#0a66c2] text-white",
   mastodon: "bg-[#6364ff] text-white",
   pinterest: "bg-[#e60023] text-white",
+  setlistfm: "bg-white text-[#85b146]",
   spotify: "bg-[#1db954] text-black",
   threads: "bg-[#101010] text-[#f3f5f7]",
   trueachievements: "bg-[#161616] text-[#baff00]",

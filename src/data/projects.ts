@@ -3,7 +3,7 @@ import { IProject } from "../types";
 const projects: IProject[] = [
   {
     description:
-      "Web app com dados e estatísticas de times, partidas e jogadores do modo Pro Clubs do FIFA",
+      "Web app com dados e estatísticas de times, partidas e jogadores do modo Clubs do EA Sports FC / FIFA",
     icon: "https://proclubshead.com/assets/img/24/icon-512.png",
     name: "Pro Clubs Head",
     tags: [
@@ -36,7 +36,8 @@ const projects: IProject[] = [
     url: "https://saviomd.com/movieratings/",
   },
   {
-    description: "Web app com comandos de dribles e comemorações do FIFA",
+    description:
+      "Web app com comandos de dribles e comemorações do EA Sports FC / FIFA",
     icon: "https://saviomd.com/driblesfifa/img/icon-512.png",
     name: "Dribles FIFA",
     tags: ["Layout", "HTML", "CSS", "JavaScript", "Svelte"],
