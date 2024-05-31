@@ -1,4 +1,4 @@
-import { IGaEvent } from "../types";
+import { IGaEvent } from "src/types";
 
 const trackGaEvent = ({ action, label, value }: IGaEvent) => {
   if (window.ga) {

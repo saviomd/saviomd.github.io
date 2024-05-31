@@ -11,7 +11,7 @@ const meta = {
   },
   argTypes: {
     bg: { control: "select", options: ["undefined", "light"] },
-    id: { control: { type: null } },
+    id: { control: false },
   },
 } satisfies Meta<typeof Section>;
 

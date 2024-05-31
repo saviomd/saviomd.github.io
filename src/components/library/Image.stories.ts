@@ -11,8 +11,8 @@ const meta = {
     layout: "centered",
   },
   argTypes: {
-    alt: { control: { type: null } },
-    src: { control: { type: null } },
+    alt: { control: false },
+    src: { control: false },
   },
 } satisfies Meta<typeof Image>;
 

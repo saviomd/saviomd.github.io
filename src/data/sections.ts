@@ -1,4 +1,4 @@
-import { ISection } from "../types";
+import { ISection } from "src/types";
 
 const sections: ISection[] = [
   {

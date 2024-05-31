@@ -14,7 +14,7 @@ import {
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { ILink } from "../types";
+import { ILink } from "src/types";
 
 const links: ILink[] = [
   {

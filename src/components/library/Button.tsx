@@ -2,8 +2,8 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ElementType, MouseEvent } from "react";
 
-import { AnchorTargetType, IGaEvent } from "../../types";
-import { trackGaEvent } from "../../utils";
+import { AnchorTargetType, IGaEvent } from "src/types";
+import { trackGaEvent } from "src/utils";
 
 type PropsType = {
   gaEvent?: IGaEvent;
@@ -68,7 +68,7 @@ function Button({
 
   return (
     <ButtonTag
-      className={`inline-block cursor-pointer rounded-lg px-3 py-2 font-semibold shadow-md shadow-layer-2-dark/50 transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-layer-2-dark/50 active:translate-y-0 active:shadow-none ${
+      className={`inline-block cursor-pointer touch-manipulation select-none rounded-lg px-3 py-2 font-semibold shadow-md shadow-layer-2-dark/50 transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-layer-2-dark/50 active:translate-y-0 active:shadow-none ${
         variants[variant]
       } ${icon ? "w-full" : ""}`}
       onClick={handleClick}

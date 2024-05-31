@@ -1,6 +1,6 @@
-import { Button, Container, Heading, Section } from "../library";
-import { variants } from "../library/Button";
-import { links } from "../../data";
+import { Button, Container, Heading, Section } from "src/components/library";
+import { variants } from "src/components/library/Button";
+import { links } from "src/data";
 
 function Links() {
   const sectionName = "Links";

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-import { IGaEvent, AnchorTargetType } from "../../types";
-import { trackGaEvent } from "../../utils";
+import { IGaEvent, AnchorTargetType } from "src/types";
+import { trackGaEvent } from "src/utils";
 
 type PropsType = {
   children: ReactNode;

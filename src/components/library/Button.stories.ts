@@ -6,6 +6,7 @@ import {
   faXbox,
 } from "@fortawesome/free-brands-svg-icons";
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 
 import Button, { variantKeys } from "./Button";
 
@@ -26,8 +27,8 @@ const meta = {
     layout: "centered",
   },
   argTypes: {
-    gaEvent: { control: { type: null } },
-    href: { control: { type: null } },
+    gaEvent: { control: false },
+    href: { control: false },
     icon: {
       control: {
         type: "select",
@@ -35,8 +36,8 @@ const meta = {
       options: Object.keys(icons),
       mapping: icons,
     },
-    rel: { control: { type: null } },
-    target: { control: { type: null } },
+    rel: { control: false },
+    target: { control: false },
     variant: {
       control: "select",
       options: variantKeys,
@@ -49,9 +50,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    href: "./",
     label: "Button",
-    onClick: undefined,
+    onClick: fn(),
     variant: "primary",
   },
 };

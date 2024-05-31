@@ -1,4 +1,4 @@
-import { Container, Heading, Section } from "../library";
+import { Container, Heading, Section } from "src/components/library";
 
 function About() {
   return (

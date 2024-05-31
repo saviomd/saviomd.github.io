@@ -1,8 +1,8 @@
 import { MouseEvent, useState } from "react";
 
-import { Button, Container } from "../library";
-import { sections } from "../../data";
-import { trackGaEvent } from "../../utils";
+import { Button, Container } from "src/components/library";
+import { sections } from "src/data";
+import { trackGaEvent } from "src/utils";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
