@@ -36,6 +36,12 @@ const links: ILink[] = [
     url: "https://letterboxd.com/saviomd",
   },
   {
+    icon: faInstagram,
+    id: "instagram",
+    name: "Instagram",
+    url: "https://www.instagram.com/saviomd",
+  },
+  {
     icon: faPinterest,
     id: "pinterest",
     name: "Pinterest",
@@ -46,24 +52,6 @@ const links: ILink[] = [
     id: "unsplash",
     name: "Unsplash",
     url: "https://unsplash.com/@saviomd",
-  },
-  {
-    icon: faThreads,
-    id: "threads",
-    name: "Threads",
-    url: "https://www.threads.net/@saviomd",
-  },
-  {
-    icon: faMastodon,
-    id: "mastodon",
-    name: "Mastodon",
-    url: "https://mastodon.social/@saviomd",
-  },
-  {
-    icon: faXTwitter,
-    id: "x",
-    name: "Twitter / X",
-    url: "https://twitter.com/saviomd",
   },
   {
     icon: faSpotify,
@@ -84,10 +72,22 @@ const links: ILink[] = [
     url: "https://www.goodreads.com/saviomd",
   },
   {
-    icon: faInstagram,
-    id: "instagram",
-    name: "Instagram",
-    url: "https://www.instagram.com/saviomd",
+    icon: faThreads,
+    id: "threads",
+    name: "Threads",
+    url: "https://www.threads.net/@saviomd",
+  },
+  {
+    icon: faMastodon,
+    id: "mastodon",
+    name: "Mastodon",
+    url: "https://mastodon.social/@saviomd",
+  },
+  {
+    icon: faXTwitter,
+    id: "x",
+    name: "Twitter / X",
+    url: "https://twitter.com/saviomd",
   },
   {
     icon: faFacebook,
