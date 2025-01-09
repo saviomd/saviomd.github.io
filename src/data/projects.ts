@@ -1,4 +1,10 @@
-import { IProject } from "src/types";
+export interface IProject {
+  description: string;
+  icon: string;
+  name: string;
+  tags: string[];
+  url: string;
+}
 
 const projects: IProject[] = [
   {

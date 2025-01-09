@@ -1,4 +1,7 @@
-import { ISection } from "src/types";
+export interface ISection {
+  id: string;
+  name: string;
+}
 
 const sections: ISection[] = [
   {

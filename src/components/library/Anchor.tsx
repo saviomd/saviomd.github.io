@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { IGaEvent, AnchorTargetType } from "src/types";
+import type { IGaEvent, AnchorTargetType } from "src/types";
 import { trackGaEvent } from "src/utils";
 
 type PropsType = {

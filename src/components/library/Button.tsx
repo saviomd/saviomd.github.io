@@ -2,7 +2,7 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ElementType, MouseEvent } from "react";
 
-import { AnchorTargetType, IGaEvent } from "src/types";
+import type { AnchorTargetType, IGaEvent } from "src/types";
 import { trackGaEvent } from "src/utils";
 
 type PropsType = {

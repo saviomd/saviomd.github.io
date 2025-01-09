@@ -1,9 +1,11 @@
-import { faFilm, faGamepad, faMusic } from "@fortawesome/free-solid-svg-icons";
+import { faGamepad, faMusic } from "@fortawesome/free-solid-svg-icons";
+import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
   faGithub,
   faGoodreads,
   faInstagram,
+  faLetterboxd,
   faLinkedin,
   faMastodon,
   faPinterest,
@@ -14,7 +16,12 @@ import {
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { ILink } from "src/types";
+export interface ILink {
+  icon: IconDefinition;
+  id: string;
+  name: string;
+  url: string;
+}
 
 const links: ILink[] = [
   {
@@ -30,7 +37,7 @@ const links: ILink[] = [
     url: "https://github.com/saviomd",
   },
   {
-    icon: faFilm,
+    icon: faLetterboxd,
     id: "letterboxd",
     name: "Letterboxd",
     url: "https://letterboxd.com/saviomd",

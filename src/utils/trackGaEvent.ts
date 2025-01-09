@@ -1,9 +1,12 @@
-import { IGaEvent } from "src/types";
+import ReactGA from "react-ga4";
 
-const trackGaEvent = ({ action, label, value }: IGaEvent) => {
-  if (window.ga) {
-    window.ga("send", "event", "saviomd.com", action, label, value);
-  }
+import type { IGaEvent } from "src/types";
+
+const trackGaEvent = (gaEvent: IGaEvent) => {
+  ReactGA.event({
+    ...gaEvent,
+    category: "saviomd.com",
+  });
 };
 
 export default trackGaEvent;
