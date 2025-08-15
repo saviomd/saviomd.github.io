@@ -55,12 +55,6 @@ const links: ILink[] = [
     url: "https://www.pinterest.com/saviomd",
   },
   {
-    icon: faUnsplash,
-    id: "unsplash",
-    name: "Unsplash",
-    url: "https://unsplash.com/@saviomd",
-  },
-  {
     icon: faSpotify,
     id: "spotify",
     name: "Spotify",
@@ -77,6 +71,36 @@ const links: ILink[] = [
     id: "goodreads",
     name: "Goodreads",
     url: "https://www.goodreads.com/saviomd",
+  },
+  {
+    icon: faUnsplash,
+    id: "unsplash",
+    name: "Unsplash",
+    url: "https://unsplash.com/@saviomd",
+  },
+  {
+    icon: faGamepad,
+    id: "ignplaylist",
+    name: "IGN Playlist",
+    url: "https://www.ign.com/playlist/saviomd",
+  },
+  {
+    icon: faXbox,
+    id: "xbox",
+    name: "Xbox",
+    url: "https://www.xbox.com/play/user/saviomd",
+  },
+  {
+    icon: faGamepad,
+    id: "trueachievements",
+    name: "TrueAchievements",
+    url: "https://www.trueachievements.com/gamer/saviomd",
+  },
+  {
+    icon: faGamepad,
+    id: "exophase",
+    name: "Exophase",
+    url: "https://www.exophase.com/xbox/user/saviomd",
   },
   {
     icon: faThreads,
@@ -101,24 +125,6 @@ const links: ILink[] = [
     id: "facebook",
     name: "Facebook",
     url: "https://www.facebook.com/saviomd",
-  },
-  {
-    icon: faXbox,
-    id: "xbox",
-    name: "Xbox",
-    url: "https://account.xbox.com/Profile?gamerTag=saviomd",
-  },
-  {
-    icon: faGamepad,
-    id: "trueachievements",
-    name: "TrueAchievements",
-    url: "https://www.trueachievements.com/gamer/saviomd",
-  },
-  {
-    icon: faGamepad,
-    id: "exophase",
-    name: "Exophase",
-    url: "https://www.exophase.com/xbox/user/saviomd",
   },
 ];
 

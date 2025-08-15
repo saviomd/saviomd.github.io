@@ -22,6 +22,7 @@ const variants = {
   facebook: `bg-[#1877f2] text-white`,
   github: "bg-[#24292f] text-[#eee]",
   goodreads: "bg-[#d6d0c4] text-[#382110]",
+  ignplaylist: "bg-[#bf1313] text-[#f6f8f7]",
   instagram: "bg-[#d300c5] text-white",
   letterboxd: "bg-[#14181c] text-[#00c030]",
   linkedin: "bg-[#0a66c2] text-white",
