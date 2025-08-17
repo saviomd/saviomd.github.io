@@ -28,7 +28,7 @@ function Projects() {
                   <p className="mb-4">{description}</p>
                   <ul>
                     {tags.map((tag) => (
-                      <li className="mb-2 mr-2 inline-block" key={tag}>
+                      <li className="mr-2 mb-2 inline-block" key={tag}>
                         <Tag>{tag}</Tag>
                       </li>
                     ))}

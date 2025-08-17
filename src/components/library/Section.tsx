@@ -13,7 +13,7 @@ function Section({ bg, children, hasPaddingY = true, id }: PropsType) {
       className={`${
         bg === "light"
           ? "bg-layer-2-light dark:bg-layer-2-dark"
-          : "border-b border-layer-2-light dark:border-layer-2-dark"
+          : "border-layer-2-light dark:border-layer-2-dark border-b"
       } ${hasPaddingY ? "py-4" : ""}`}
       id={id}
     >

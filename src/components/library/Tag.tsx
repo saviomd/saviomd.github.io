@@ -6,7 +6,7 @@ type PropsType = {
 
 function Tag({ children }: PropsType) {
   return (
-    <span className="inline-block rounded-lg border border-layer-2-light bg-layer-1-light px-2 py-1 text-sm dark:border-layer-2-dark dark:bg-layer-1-dark">
+    <span className="border-layer-2-light bg-layer-1-light dark:border-layer-2-dark dark:bg-layer-1-dark inline-block rounded-lg border px-2 py-1 text-sm">
       {children}
     </span>
   );

@@ -19,7 +19,7 @@ function Anchor({ gaEvent, children, href, target }: PropsType) {
 
   return (
     <a
-      className="font-semibold text-primary-default underline transition duration-300 hover:text-primary-light"
+      className="text-primary-default hover:text-primary-light font-semibold underline transition duration-300"
       href={href}
       onClick={handleClick}
       rel={target === "_blank" ? "noopener noreferrer" : undefined}

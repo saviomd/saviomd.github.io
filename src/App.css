@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --background-image-avatar: url("https://avatar-ssl.xboxlive.com/avatar/saviomd/avatar-body.png");
+
+  --color-layer-1-dark: #0f172a;
+  --color-layer-1-light: var(--color-white);
+  --color-layer-2-dark: #334155;
+  --color-layer-2-light: #e2e8f0;
+  --color-primary-default: #b91c1c;
+  --color-primary-light: #ef4444;
+  --color-typography-default-dark: #e2e8f0;
+  --color-typography-default-light: #0f172a;
+  --color-typography-title-dark: #cbd5e1;
+  --color-typography-title-light: #1e293b;
+
+  --font-italiana: Italiana, sans-serif;
+
+  --text-shadow-button: 0 -1px 0 rgb(0 0 16 / 50%);
+}

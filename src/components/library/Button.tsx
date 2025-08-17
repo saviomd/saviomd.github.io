@@ -69,7 +69,7 @@ function Button({
 
   return (
     <ButtonTag
-      className={`inline-block cursor-pointer touch-manipulation select-none rounded-lg px-3 py-2 font-semibold shadow-md shadow-layer-2-dark/50 transition duration-300 [text-shadow:_0_-1px_0_rgb(0_0_16_/_50%)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-layer-2-dark/50 active:translate-y-0 active:shadow-none ${
+      className={`shadow-layer-2-dark/50 hover:shadow-layer-2-dark/50 text-shadow-button inline-block cursor-pointer touch-manipulation rounded-lg px-3 py-2 font-semibold shadow-md transition duration-300 select-none hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:shadow-none ${
         variants[variant]
       } ${icon ? "w-full" : ""}`}
       onClick={handleClick}
