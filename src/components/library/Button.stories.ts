@@ -5,8 +5,8 @@ import {
   faPinterest,
   faXbox,
 } from "@fortawesome/free-brands-svg-icons";
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 
 import Button, { variantKeys } from "./Button";
 
