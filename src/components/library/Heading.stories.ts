@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import Heading, { HeadingLevelType, levelKeys } from "./Heading";
+import Heading, { levelKeys } from "./Heading";
+import type { HeadingLevelType } from "./Heading";
 
 const meta = {
   title: "library/Heading",

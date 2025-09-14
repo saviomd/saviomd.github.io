@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import type { IGaEvent, AnchorTargetType } from "src/types";
 import { trackGaEvent } from "src/utils";

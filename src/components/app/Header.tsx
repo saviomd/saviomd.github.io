@@ -1,4 +1,5 @@
-import { MouseEvent, useState } from "react";
+import { useState } from "react";
+import type { MouseEvent } from "react";
 
 import { Button, Container } from "src/components/library";
 import { sections } from "src/data";
