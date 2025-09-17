@@ -13,9 +13,9 @@ function About() {
           <Heading level={1}>Sobre</Heading>
           {text.map((item, index) => (
             <div
-              className={`animate__animated animate__delay-${
-                index + 1
-              }s animate__fadeInRight bg-layer-1-light dark:bg-layer-1-dark relative mb-4 rounded-lg p-4 text-xl`}
+              className={`animate__animated animate__delay-${String(
+                index + 1,
+              )}s animate__fadeInRight bg-layer-1-light dark:bg-layer-1-dark relative mb-4 rounded-lg p-4 text-xl`}
               key={item}
             >
               {item}

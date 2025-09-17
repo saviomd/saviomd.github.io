@@ -5,7 +5,7 @@ import type { ElementType, MouseEvent } from "react";
 import type { AnchorTargetType, IGaEvent } from "src/types";
 import { trackGaEvent } from "src/utils";
 
-type PropsType = {
+interface IProps {
   gaEvent?: IGaEvent;
   href?: string;
   icon?: IconDefinition;
@@ -14,7 +14,7 @@ type PropsType = {
   rel?: string;
   target?: AnchorTargetType;
   variant?: keyof typeof variants;
-};
+}
 
 const variants = {
   primary: "bg-primary-default text-white",
@@ -47,7 +47,7 @@ function Button({
   rel,
   variant = "primary",
   target,
-}: PropsType) {
+}: IProps) {
   if (!href && !onClick) {
     throw new Error(
       "href or onClick prop (and only one of them) needs to be present",

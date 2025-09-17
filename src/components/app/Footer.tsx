@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="py-4 text-sm">
       <Container>
-        <div className="mb-1">© 2007-{year} Sávio Mendes</div>
+        <div className="mb-1">&copy; 2007-{year} Sávio Mendes</div>
         <div className="mb-1">
           Powered by React, Tailwind, Font Awesome, Vite, GitHub Pages,
           Cloudflare.

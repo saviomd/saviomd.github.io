@@ -1,15 +1,15 @@
-type PropsType = {
+interface IProps {
   alt: string;
   aspectRatio?: "square" | "video";
   src: string;
-};
+}
 
 const aspectRatios = {
   square: "aspect-square",
   video: "aspect-video",
 };
 
-function Image({ alt, aspectRatio, src }: PropsType) {
+function Image({ alt, aspectRatio, src }: IProps) {
   return (
     <img
       alt={alt}

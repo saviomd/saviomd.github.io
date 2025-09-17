@@ -1,13 +1,13 @@
 import type { ReactNode } from "react";
 
-type PropsType = {
+interface IProps {
   bg?: "light";
   children: ReactNode;
   hasPaddingY?: boolean;
   id: string;
-};
+}
 
-function Section({ bg, children, hasPaddingY = true, id }: PropsType) {
+function Section({ bg, children, hasPaddingY = true, id }: IProps) {
   return (
     <section
       className={`${
