@@ -6,6 +6,7 @@ import reactPlugin from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import storybook from "eslint-plugin-storybook";
+import unicorn from "eslint-plugin-unicorn";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -50,6 +51,7 @@ export default defineConfig(
   reactRefresh.configs.vite,
   jsxA11y.flatConfigs.recommended,
   storybook.configs["flat/recommended"],
+  unicorn.configs.unopinionated,
   // Any other config imports go at the top
   prettier,
   {

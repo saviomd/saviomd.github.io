@@ -9,10 +9,10 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (event: MouseEvent<HTMLAnchorElement>) => {
-    const { hash, innerText } = event.currentTarget;
+    const { hash, textContent } = event.currentTarget;
     event.preventDefault();
     document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
-    trackGaEvent({ action: "Cabeçalho", label: innerText });
+    trackGaEvent({ action: "Cabeçalho", label: textContent });
   };
 
   const toggleMenu = () => {

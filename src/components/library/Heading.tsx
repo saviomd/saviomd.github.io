@@ -12,7 +12,7 @@ const levels = {
   2: "text-2xl",
   3: "text-xl",
 };
-const levelKeys = Object.keys(levels).map((item) => parseInt(item, 10));
+const levelKeys = Object.keys(levels).map((item) => Number.parseInt(item, 10));
 
 function Heading({ children, level }: IProps) {
   const HeadingTag = `h${String(level)}` as ElementType;

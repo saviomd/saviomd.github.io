@@ -14,7 +14,7 @@ const meta = {
     level: {
       control: {
         min: levelKeys[0],
-        max: levelKeys[levelKeys.length - 1],
+        max: levelKeys.at(-1),
       },
     },
   },
