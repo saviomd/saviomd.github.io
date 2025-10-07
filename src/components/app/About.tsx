@@ -15,11 +15,13 @@ function About() {
             <div
               className={`animate__animated animate__delay-${String(
                 index + 1,
-              )}s animate__fadeInRight bg-layer-1-light dark:bg-layer-1-dark relative mb-4 rounded-lg p-4 text-xl`}
+              )}s animate__fadeInRight bg-layer-1-light dark:bg-layer-1-dark relative rounded-xl p-4 text-xl ${index > 0 ? "mb-4" : ""}`}
               key={item}
             >
               {item}
-              <span className="border-b-layer-1-light sm:border-l-layer-1-light dark:border-b-layer-1-dark dark:sm:border-l-layer-1-dark absolute -top-[30px] right-28 border-15 border-transparent sm:top-[20px] sm:-right-[30px] sm:border-b-transparent dark:sm:border-b-transparent" />
+              {index === 0 && (
+                <span className="border-b-layer-1-light sm:border-l-layer-1-light dark:border-b-layer-1-dark dark:sm:border-l-layer-1-dark absolute -top-[30px] right-28 border-15 border-transparent sm:top-[20px] sm:-right-[30px] sm:border-b-transparent dark:sm:border-b-transparent" />
+              )}
             </div>
           ))}
         </div>

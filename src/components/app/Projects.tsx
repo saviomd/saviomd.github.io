@@ -22,7 +22,7 @@ function Projects() {
               <Card>
                 <div className="grid grid-cols-12 gap-4">
                   <div className="col-span-3">
-                    <Image alt={name} aspectRatio="square" src={icon} />
+                    <Image alt={name} aspectRatio="square" rounded src={icon} />
                   </div>
                   <div className="col-span-9">
                     <Heading level={2}>{name}</Heading>
