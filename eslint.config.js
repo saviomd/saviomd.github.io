@@ -47,7 +47,7 @@ export default defineConfig(
       },
     },
   },
-  reactHooks.configs["recommended-latest"],
+  reactHooks.configs.flat.recommended,
   reactRefresh.configs.vite,
   jsxA11y.flatConfigs.recommended,
   storybook.configs["flat/recommended"],

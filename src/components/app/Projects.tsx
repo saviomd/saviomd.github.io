@@ -6,8 +6,8 @@ import {
   Image,
   Section,
   Tag,
-} from "src/components/library";
-import { projects } from "src/data";
+} from "~/components/library";
+import { projects } from "~/data";
 
 function Projects() {
   const sectionName = "Projetos";

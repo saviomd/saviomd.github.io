@@ -1,6 +1,7 @@
 import { faGamepad, faMusic } from "@fortawesome/free-solid-svg-icons";
 import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import {
+  faBluesky,
   faFacebook,
   faGithub,
   faGoodreads,
@@ -49,12 +50,6 @@ const links: ILink[] = [
     url: "https://www.instagram.com/saviomd",
   },
   {
-    icon: faPinterest,
-    id: "pinterest",
-    name: "Pinterest",
-    url: "https://www.pinterest.com/saviomd",
-  },
-  {
     icon: faSpotify,
     id: "spotify",
     name: "Spotify",
@@ -73,12 +68,6 @@ const links: ILink[] = [
     url: "https://www.goodreads.com/saviomd",
   },
   {
-    icon: faUnsplash,
-    id: "unsplash",
-    name: "Unsplash",
-    url: "https://unsplash.com/@saviomd",
-  },
-  {
     icon: faGamepad,
     id: "ignplaylist",
     name: "IGN Playlist",
@@ -92,6 +81,12 @@ const links: ILink[] = [
   },
   {
     icon: faGamepad,
+    id: "xboxachievements",
+    name: "Xbox Achievements",
+    url: "https://www.xboxachievements.com/profiles/saviomd",
+  },
+  {
+    icon: faGamepad,
     id: "trueachievements",
     name: "TrueAchievements",
     url: "https://www.trueachievements.com/gamer/saviomd",
@@ -101,6 +96,24 @@ const links: ILink[] = [
     id: "exophase",
     name: "Exophase",
     url: "https://www.exophase.com/xbox/user/saviomd",
+  },
+  {
+    icon: faPinterest,
+    id: "pinterest",
+    name: "Pinterest",
+    url: "https://www.pinterest.com/saviomd",
+  },
+  {
+    icon: faUnsplash,
+    id: "unsplash",
+    name: "Unsplash",
+    url: "https://unsplash.com/@saviomd",
+  },
+  {
+    icon: faBluesky,
+    id: "bluesky",
+    name: "Bluesky",
+    url: "https://bsky.app/profile/saviomd.bsky.social",
   },
   {
     icon: faThreads,

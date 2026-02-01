@@ -1,4 +1,4 @@
-import { Anchor, Container, Heading, Section } from "src/components/library";
+import { Anchor, Container, Heading, Section } from "~/components/library";
 
 function Contact() {
   const sectionName = "Contato";

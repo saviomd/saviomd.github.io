@@ -10,7 +10,7 @@ interface IProps {
 function Section({ bg, children, hasPaddingY = true, id }: IProps) {
   return (
     <section
-      className={`${
+      className={`overflow-hidden ${
         bg === "light"
           ? "bg-layer-2-light dark:bg-layer-2-dark"
           : "border-layer-2-light dark:border-layer-2-dark border-b"

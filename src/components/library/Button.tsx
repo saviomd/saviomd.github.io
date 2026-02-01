@@ -2,8 +2,8 @@ import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { ElementType, MouseEvent } from "react";
 
-import type { AnchorTargetType, IGaEvent } from "src/types";
-import { trackGaEvent } from "src/utils";
+import type { AnchorTargetType, IGaEvent } from "~/types";
+import { trackGaEvent } from "~/utils";
 
 interface IProps {
   gaEvent?: IGaEvent;
@@ -18,6 +18,7 @@ interface IProps {
 
 const variants = {
   primary: "bg-primary-default text-white",
+  bluesky: "bg-[#006aff] text-white",
   exophase: "bg-[#212121] text-[#00a2d2]",
   facebook: `bg-[#1877f2] text-white`,
   github: "bg-[#24292f] text-[#eee]",
@@ -35,6 +36,7 @@ const variants = {
   unsplash: "bg-[#eee] text-[#111]",
   x: "bg-[#14171a] text-white",
   xbox: "bg-[#107c10] text-white",
+  xboxachievements: "bg-[#f0f3f2] text-[#018b14]",
 };
 const variantKeys = Object.keys(variants);
 

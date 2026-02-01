@@ -1,4 +1,4 @@
-import { Container, Heading, Section } from "src/components/library";
+import { Container, Heading, Section } from "~/components/library";
 
 const text = [
   "Olá, meu nome é Sávio Mendes, sou desenvolvedor front-end e designer de interfaces, graduado em Sistemas para Internet pelo CEFET-RJ, pós-graduado em Design de Interface Gráfica pelo SENAC Rio, pós-graduado em Liderança e Inovação pela FGV.",

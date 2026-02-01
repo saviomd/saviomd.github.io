@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
-import type { IGaEvent, AnchorTargetType } from "src/types";
-import { trackGaEvent } from "src/utils";
+import type { IGaEvent, AnchorTargetType } from "~/types";
+import { trackGaEvent } from "~/utils";
 
 interface IProps {
   children: ReactNode;

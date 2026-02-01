@@ -1,4 +1,4 @@
-import { Container } from "src/components/library";
+import { Container } from "~/components/library";
 
 function Footer() {
   const year = new Date().getFullYear();
