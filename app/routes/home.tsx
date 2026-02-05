@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 
-import "animate.css/animate.css";
-import "./App.css";
 import {
   About,
   Contact,
@@ -9,16 +7,18 @@ import {
   Header,
   Links,
   Projects,
-} from "./components/app";
-import { trackGaPageView } from "./utils";
+} from "~/components/app";
+import { PageMetadata } from "~/components/library";
+import { trackGaPageView } from "~/utils";
 
-function App() {
+export default function Home() {
   useEffect(() => {
     trackGaPageView();
   }, []);
 
   return (
     <>
+      <PageMetadata />
       <Header />
       <About />
       <Links />
@@ -28,5 +28,3 @@ function App() {
     </>
   );
 }
-
-export default App;
