@@ -1,15 +1,15 @@
 const color = "#b91c1c";
 const iconSizes = ["192", "512"];
-const url = `${import.meta.env.PROD ? "https://saviomd.com" : ""}${import.meta.env.BASE_URL}`;
+const url = import.meta.env.PROD ? "https://saviomd.com" : "";
 
-export const manifest = {
+const manifest = {
   background_color: color,
   description:
     "Site pessoal de Sávio Mendes com portfólio de trabalhos realizados em desenvolvimento e design web",
   display: "standalone",
   icons: iconSizes.map((size) => ({
     sizes: `${size}x${size}`,
-    src: `${url}img/icon-${size}.png`,
+    src: `${url}/img/icon-${size}.png`,
     type: "image/png",
   })),
   name: "saviomd.com » Sávio Mendes, desenvolvedor front-end e designer de interfaces",
@@ -18,10 +18,4 @@ export const manifest = {
   theme_color: color,
 };
 
-export function loader() {
-  return Response.json(manifest, {
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-    },
-  });
-}
+export default manifest;

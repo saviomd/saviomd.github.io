@@ -1,4 +1,4 @@
-import { manifest } from "~/routes/webAppManifest";
+import { manifest } from "~/data";
 
 function PageMetadata() {
   const description = manifest.description;
@@ -12,7 +12,7 @@ function PageMetadata() {
     <>
       <link rel="apple-touch-icon" href={icon.small} />
       <link rel="icon" type="image/png" href={icon.small} />
-      <link rel="manifest" href={`${url}manifest.json`} />
+      <link rel="manifest" href={`${manifest.start_url}/manifest.json`} />
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="theme-color" content={manifest.theme_color} />
