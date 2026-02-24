@@ -6,10 +6,6 @@ import Logo from "/img/icon-192.png";
 const meta = {
   title: "library/Image",
   component: Image,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     alt: { control: false },
     src: { control: false },

@@ -5,10 +5,6 @@ import Tag from "./Tag";
 const meta = {
   title: "library/Tag",
   component: Tag,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof Tag>;
 
 export default meta;

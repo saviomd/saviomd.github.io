@@ -5,7 +5,6 @@ import About from "./About";
 const meta = {
   title: "app/About",
   component: About,
-  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },

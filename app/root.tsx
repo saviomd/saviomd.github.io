@@ -11,6 +11,9 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
+export const bodyClassName =
+  "text-typography-default-light dark:bg-layer-1-dark dark:text-typography-default-dark text-pretty";
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -29,7 +32,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="text-typography-default-light dark:bg-layer-1-dark dark:text-typography-default-dark text-pretty">
+      <body className={bodyClassName}>
         {children}
         <ScrollRestoration />
         <Scripts />

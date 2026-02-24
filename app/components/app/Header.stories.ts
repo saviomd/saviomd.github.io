@@ -5,7 +5,6 @@ import Header from "./Header";
 const meta = {
   title: "app/Header",
   component: Header,
-  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },

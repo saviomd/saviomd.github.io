@@ -5,7 +5,6 @@ import Links from "./Links";
 const meta = {
   title: "app/Links",
   component: Links,
-  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },

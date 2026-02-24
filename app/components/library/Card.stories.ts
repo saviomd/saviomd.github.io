@@ -5,10 +5,6 @@ import Card from "./Card";
 const meta = {
   title: "library/Card",
   component: Card,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof Card>;
 
 export default meta;

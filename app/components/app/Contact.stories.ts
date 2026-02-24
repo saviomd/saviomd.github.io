@@ -5,7 +5,6 @@ import Contact from "./Contact";
 const meta = {
   title: "app/Contact",
   component: Contact,
-  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },

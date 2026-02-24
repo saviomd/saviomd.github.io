@@ -6,10 +6,6 @@ import type { HeadingLevelType } from "./Heading";
 const meta = {
   title: "library/Heading",
   component: Heading,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     level: {
       control: {

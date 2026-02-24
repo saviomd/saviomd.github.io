@@ -5,7 +5,6 @@ import Projects from "./Projects";
 const meta = {
   title: "app/Projects",
   component: Projects,
-  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },

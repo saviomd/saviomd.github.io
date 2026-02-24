@@ -5,10 +5,6 @@ import Section from "./Section";
 const meta = {
   title: "library/Section",
   component: Section,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     bg: { control: "select", options: ["undefined", "light"] },
     id: { control: false },

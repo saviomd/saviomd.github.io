@@ -5,10 +5,6 @@ import Anchor from "./Anchor";
 const meta = {
   title: "library/Anchor",
   component: Anchor,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     gaEvent: { control: false },
     href: { control: false },

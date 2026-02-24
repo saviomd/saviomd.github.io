@@ -5,10 +5,6 @@ import Container from "./Container";
 const meta = {
   title: "library/Container",
   component: Container,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof Container>;
 
 export default meta;

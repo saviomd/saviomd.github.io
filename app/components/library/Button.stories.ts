@@ -22,10 +22,6 @@ const icons = {
 const meta = {
   title: "library/Button",
   component: Button,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     gaEvent: { control: false },
     href: { control: false },
