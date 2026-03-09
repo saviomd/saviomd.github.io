@@ -1,4 +1,4 @@
-interface IProps {
+interface Props {
   alt: string;
   aspectRatio?: "square" | "video";
   rounded?: boolean;
@@ -10,7 +10,7 @@ const aspectRatios = {
   video: "aspect-video",
 };
 
-function Image({ alt, aspectRatio, rounded = false, src }: IProps) {
+function Image({ alt, aspectRatio, rounded = false, src }: Props) {
   return (
     <img
       alt={alt}

@@ -1,8 +1,8 @@
 import ReactGA from "react-ga4";
 
-import type { IGaEvent } from "~/types";
+import type { GaEvent } from "~/types";
 
-const trackGaEvent = (gaEvent: IGaEvent) => {
+const trackGaEvent = (gaEvent: GaEvent) => {
   ReactGA.event({
     ...gaEvent,
     category: "saviomd.com",

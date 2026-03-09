@@ -29,8 +29,8 @@ const meta = {
       control: {
         type: "select",
       },
-      options: Object.keys(icons),
       mapping: icons,
+      options: Object.keys(icons),
     },
     rel: { control: false },
     target: { control: false },

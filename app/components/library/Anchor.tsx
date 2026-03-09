@@ -1,16 +1,16 @@
 import type { ReactNode } from "react";
 
-import type { IGaEvent, AnchorTargetType } from "~/types";
+import type { AnchorTarget, GaEvent } from "~/types";
 import { trackGaEvent } from "~/utils";
 
-interface IProps {
+interface Props {
   children: ReactNode;
-  gaEvent?: IGaEvent;
+  gaEvent?: GaEvent;
   href: string;
-  target?: AnchorTargetType;
+  target?: AnchorTarget;
 }
 
-function Anchor({ gaEvent, children, href, target }: IProps) {
+function Anchor({ gaEvent, children, href, target }: Props) {
   const handleClick = () => {
     if (gaEvent) {
       trackGaEvent(gaEvent);

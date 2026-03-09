@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import Heading, { levelKeys } from "./Heading";
-import type { HeadingLevelType } from "./Heading";
+import type { HeadingLevel } from "./Heading";
 
 const meta = {
   title: "library/Heading",
@@ -22,6 +22,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: "Lorem ipsum dolor sit amet",
-    level: levelKeys[0] as HeadingLevelType,
+    level: levelKeys[0] as HeadingLevel,
   },
 };

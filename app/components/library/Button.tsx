@@ -2,17 +2,17 @@ import type { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { ElementType, MouseEvent } from "react";
 
-import type { AnchorTargetType, IGaEvent } from "~/types";
+import type { AnchorTarget, GaEvent } from "~/types";
 import { trackGaEvent } from "~/utils";
 
-interface IProps {
-  gaEvent?: IGaEvent;
+interface Props {
+  gaEvent?: GaEvent;
   href?: string;
   icon?: IconDefinition;
   label: string;
   onClick?: (event?: MouseEvent<HTMLButtonElement>) => void;
   rel?: string;
-  target?: AnchorTargetType;
+  target?: AnchorTarget;
   variant?: keyof typeof variants;
 }
 
@@ -49,7 +49,7 @@ function Button({
   rel,
   variant = "primary",
   target,
-}: IProps) {
+}: Props) {
   if (!href && !onClick) {
     throw new Error(
       "href or onClick prop (and only one of them) needs to be present",

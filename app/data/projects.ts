@@ -1,4 +1,4 @@
-export interface IProject {
+interface Project {
   description: string;
   icon: string;
   name: string;
@@ -6,7 +6,7 @@ export interface IProject {
   url: string;
 }
 
-const projects: IProject[] = [
+const projects: Project[] = [
   {
     description:
       "Web app com dados e estatísticas de times, partidas e jogadores do modo Clubs do EA Sports FC / FIFA",

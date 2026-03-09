@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
-interface IProps {
+interface Props {
   children: ReactNode;
 }
 
-function Tag({ children }: IProps) {
+function Tag({ children }: Props) {
   return (
     <span className="border-layer-2-light bg-layer-1-light dark:border-layer-2-dark dark:bg-layer-1-dark inline-block rounded-lg border px-2 py-1 text-sm">
       {children}

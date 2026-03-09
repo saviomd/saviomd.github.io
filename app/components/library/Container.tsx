@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
-interface IProps {
+interface Props {
   children: ReactNode;
 }
 
-function Container({ children }: IProps) {
+function Container({ children }: Props) {
   return <div className="container mx-auto max-w-5xl px-4">{children}</div>;
 }
 

@@ -1,13 +1,13 @@
 import type { ReactNode } from "react";
 
-interface IProps {
+interface Props {
   bg?: "light";
   children: ReactNode;
   hasPaddingY?: boolean;
   id: string;
 }
 
-function Section({ bg, children, hasPaddingY = true, id }: IProps) {
+function Section({ bg, children, hasPaddingY = true, id }: Props) {
   return (
     <section
       className={`overflow-hidden ${

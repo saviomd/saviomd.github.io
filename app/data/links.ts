@@ -17,14 +17,14 @@ import {
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-export interface ILink {
+interface Link {
   icon: IconDefinition;
   id: string;
   name: string;
   url: string;
 }
 
-const links: ILink[] = [
+const links: Link[] = [
   {
     icon: faLinkedin,
     id: "linkedin",

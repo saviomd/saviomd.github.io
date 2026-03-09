@@ -1,9 +1,9 @@
-export interface ISection {
+interface Section {
   id: string;
   name: string;
 }
 
-const sections: ISection[] = [
+const sections: Section[] = [
   {
     id: "about",
     name: "Sobre",
